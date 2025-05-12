@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>H1 Collector</title>
+  <title>H1 Collector</title>
+  <style>
+    /* Копируем стили из ai-widget.js */
+    .ai-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
 
-    <style>
-        textarea { width: 300px; height: 200px; }
-        button { margin-top: 10px; margin-right: 10px; }
-    </style>
+    .ai-button:hover {
+      background-color: #45a049;
+    }
 
+    .ai-textarea {
+      width: 300px;
+      height: 200px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+  </style>
 </head>
-
 <body>
-    <textarea id="output" readonly></textarea><br>
-    <button id="collect">Collect H1</button>
-    <button id="highlight">Highlight "AI"</button>
-    <script src="popup.js"></script>
+  <textarea id="output" class="ai-textarea" readonly></textarea><br>
+  <button id="collect" class="ai-button">Collect H1</button>
+  <button id="highlight" class="ai-button">Highlight "AI"</button>
+  <script src="popup.js"></script>
 </body>
-
 </html>
