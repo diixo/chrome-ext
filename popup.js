@@ -19,7 +19,7 @@ document.getElementById('collect').addEventListener('click', async () => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
     function: () => {
-      return Array.from(document.querySelectorAll('h1')).map(h => h.innerText).join('\n');
+      return Array.from(document.querySelectorAll('h1, h2, h3')).map(h => h.innerText).join('\n');
     },
   }, (results) => {
     if (results && results[0]) {
