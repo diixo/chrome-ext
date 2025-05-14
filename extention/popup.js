@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // highlight AI button
+  /*
   document.getElementById('highlight').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       func: highlightAI
     });
   });
+  */
 
   // collect headers button
   document.getElementById('collect').addEventListener('click', async () => {
