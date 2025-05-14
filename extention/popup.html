@@ -4,19 +4,34 @@
   <title>AI-veex</title>
   <style>
 
-    .ai-button {
-      margin-top: 8px;
-      width: 100%;
-      background-color: #9058e0;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
+      .ai-button {
+        margin-top: 8px;
+        width: 100%;
+        background-color: #9058e0;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .ai-button:hover {
+        background-color: #7038c0;
+      }
+
+      .ax-button {
+        margin-top: 8px;
+        width: 100%;
+        background-color: #00A2C8;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
     }
 
-    .ai-button:hover {
-      background-color: #7038c0;
+    .ax-button:hover {
+      background-color: #00A2C8;
     }
 
     .ai-textarea {
@@ -30,6 +45,7 @@
       font-size: 14px;
       outline: none;
     }
+
   </style>
 </head>
 
@@ -41,6 +57,7 @@
   -->
   <button id="send-url" class="ai-button">Send url</button>
   <button id="send-html" class="ai-button">Send html</button>
+  <button id="send-selection" class="ax-button">Send selection</button>
   <script src="popup.js"></script>
 </body>
 </html>

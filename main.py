@@ -59,3 +59,29 @@ async def receive_html(data: HtmlPage):
         "h1_count": len(h1_tags),
         "h1_headers": h1_tags
     }
+
+
+class SelectionData(BaseModel):
+    url: str
+    selection_html: str
+
+@app.post("/receive-selection")
+async def receive_selection(data: SelectionData):
+    print(f"Received URL: {data.url}")
+    print(f"Received Selection HTML:\n{data.selection_html}")
+
+    #print(data.selection_html)
+
+    soup = BeautifulSoup(data.selection_html, 'html.parser')
+
+    paragraphs = [p.get_text(strip=True) for p in soup.find_all('p')]
+
+    #all_text = soup.get_text(separator='\n', strip=True)
+
+    print(f"Extracted Text:\n{paragraphs}")
+
+    return {
+        "status": "ok",
+        "paragraphs_found": len(paragraphs),
+        "paragraphs": paragraphs
+    }

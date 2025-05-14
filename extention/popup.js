@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok) {
         alert('URL sent successfully!');
-      document.getElementById('output').value = '';
+        document.getElementById('output').value = '';
       } else {
         alert('Failed to send URL. Status: ' + response.status);
       }
@@ -89,6 +89,50 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
           console.error('Error sending HTML:', error);
           alert('Error sending HTML. See console.');
+        }
+      }
+    });
+  });
+
+
+  document.getElementById('send-selection').addEventListener('click', async () => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: () => {
+        const selection = window.getSelection();
+        const container = document.createElement('div');
+        if (selection.rangeCount > 0) {
+          const range = selection.getRangeAt(0).cloneContents();
+          container.appendChild(range);
+        }
+        return container.innerHTML;
+      },
+    }, async (results) => {
+      if (results && results[0]) {
+        const selectedHtml = results[0].result;
+        const pageUrl = tab.url;
+
+        try {
+          const response = await fetch('http://localhost:3400/receive-selection', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              url: pageUrl,
+              selection_html: selectedHtml
+            })
+          });
+
+          if (response.ok) {
+            alert('Selection sent successfully!');
+            document.getElementById('output').value = '';
+          } else {
+            alert('Failed to send selection. Status: ' + response.status);
+          }
+        } catch (error) {
+          console.error('Error sending selection:', error);
+          alert('Error sending selection. See console.');
         }
       }
     });
