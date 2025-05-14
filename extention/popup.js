@@ -156,12 +156,71 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Error: ' + (data.detail || response.status));
       }
     }
-    catch (error) {
+    catch (error)
+    {
       console.error('Error sending selection:', error);
       alert('Request failed. See console.');
     }
   });
 
+
+  document.getElementById('add-selection-tags').addEventListener('click', async () => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const prompt = document.getElementById('output').value;
+
+    const [{ result: selectionHtml }] = await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: () => {
+        const selection = window.getSelection();
+        const range = selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
+        if (range) {
+          const container = document.createElement('div');
+          container.appendChild(range.cloneContents());
+          return container.innerHTML;
+        }
+        return '';
+      },
+    });
+
+    if (!selectionHtml) {
+      alert('No text selected.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3400/add-selection-tags', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: tab.url,
+          tag_prompt: prompt,
+          selection_html: selectionHtml,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.status === "ok")
+      {
+        const resultText = data.tags.join('\n');
+        document.getElementById('output').value = resultText;
+
+        alert('Selection sent successfully!');
+      }
+      else
+      {
+        console.error('Failed to parse selection:', data);
+        alert('Error: ' + (data.detail || response.status));
+      }
+    }
+    catch (error)
+    {
+      console.error('Error sending selection:', error);
+      alert('Request failed. See console.');
+    }
+  });
 
 });
 

@@ -35,7 +35,8 @@ async def get_data():
 
 @app.post("/receive-url")
 async def receive_url(data: PageData):
-    print(f"Received URL: {data.url}")
+    url = data.url.strip('/')
+    print(f"Received URL: {url}")
     print(f"Received Content:\n{data.content}")
     return {"status": "ok", "received_url": data.url, "content_length": len(data.content)}
 
@@ -46,7 +47,8 @@ class HtmlPage(BaseModel):
 
 @app.post("/receive-html")
 async def receive_html(data: HtmlPage):
-    print(f"Received URL: {data.url}")
+    url = data.url.strip('/')
+    print(f"Received URL: {url}")
 
     soup = BeautifulSoup(data.html, "html.parser")
 
@@ -55,7 +57,7 @@ async def receive_html(data: HtmlPage):
 
     return {
         "status": "ok",
-        "received_url": data.url,
+        "received_url": url,
         "h1_count": len(h1_tags),
         "h1_headers": h1_tags
     }
@@ -67,8 +69,9 @@ class SelectionData(BaseModel):
 
 @app.post("/receive-selection")
 async def receive_selection(data: SelectionData):
+    url = data.url.strip('/')
+    print(f"Received URL: {url}")
 
-    print(f"Received URL: {data.url}")
     print(f"Received Selection HTML:\n{data.selection_html}")
 
     #print(data.selection_html)
@@ -94,3 +97,42 @@ async def receive_selection(data: SelectionData):
         "paragraphs_found": len(paragraphs),
         "paragraphs": paragraphs
     }
+
+
+class SelectionTags(BaseModel):
+    url: str
+    tag_prompt: str
+    selection_html: str
+
+
+@app.post("/add-selection-tags")
+async def add_selection_tags(data: SelectionTags):
+
+    url = data.url.strip('/')
+    print(f"Received URL: {url}")
+    print(f"Received prompt: {data.tag_prompt}")
+    #print(f"Received Selection HTML:\n{data.selection_html}")
+
+    soup = BeautifulSoup(data.selection_html, 'html.parser')
+
+    category = data.tag_prompt.strip()
+
+    if category == "":
+        tag_base = [h.get_text(strip=True) for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6',])]
+        if len(tag_base) > 0:
+            category = tag_base[0]
+            print("category:", category)
+        else:
+            return { "status": "error", "tags_found": len(tags), "tags": [] }
+
+
+    tags = [p.get_text(strip=True).lower() for p in soup.find_all(['li',])]
+
+    print(f"Category:{category}\n{tags}")
+
+    return {
+        "status": "ok",
+        "tags_found": len(tags),
+        "tags": tags
+    }
+
