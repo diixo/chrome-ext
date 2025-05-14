@@ -1,0 +1,290 @@
+{
+  "tags": {
+    "ai": [
+      "ai assistant",
+      "ai chat",
+      "ai chatbots",
+      "ai copywriting",
+      "ai detection",
+      "ai forms",
+      "ai headshot",
+      "ai image generator",
+      "ai image processing",
+      "ai marketing",
+      "ai product photos",
+      "ai tools",
+      "ai video generator",
+      "ai voice changer",
+      "ai writing"
+    ],
+    "accounting": [
+      "debt collection",
+      "invoicing"
+    ],
+    "appointments & scheduling": [
+      "appointment scheduling",
+      "group meetings",
+      "gym management",
+      "online bookings"
+    ],
+    "business & commerce software": [
+      "cryptocurrencies",
+      "data dashboards",
+      "event management",
+      "field service management",
+      "legal software",
+      "online services",
+      "product reviews"
+    ],
+    "cloud storage": [
+      "file sharing"
+    ],
+    "cms": [
+      "blogging",
+      "landing pages",
+      "learning management system",
+      "personal website",
+      "website builder"
+    ],
+    "communication": [
+      "board meeting",
+      "collaboration",
+      "content collaboration",
+      "document collaboration",
+      "email clients",
+      "enterprise communication",
+      "fleet management & logistics",
+      "group chat and notification",
+      "instant messaging",
+      "messaging software",
+      "sms marketing",
+      "social & communications",
+      "social networks",
+      "video conferencing",
+      "voip",
+      "web & video conferencing"
+    ],
+    "crm": [
+      "contact management",
+      "customer engagement",
+      "customer support",
+      "enterprise ressource planning",
+      "help desk",
+      "lead generation",
+      "nonprofit crm",
+      "personal crm",
+      "real estate crm",
+      "sales automation",
+      "sales",
+      "small business crm"
+    ],
+    "design tools": [
+      "3d",
+      "animation",
+      "cad",
+      "css framework",
+      "graphic design software",
+      "image editing",
+      "logo maker",
+      "presentation",
+      "prototyping",
+      "typography",
+      "ui design",
+      "video editing",
+      "website design"
+    ],
+    "developer tools": [
+      "a/b testing",
+      "api tools",
+      "automated testing",
+      "browser testing",
+      "build tools",
+      "cloud computing",
+      "code collaboration",
+      "configuration management",
+      "continuous integration",
+      "devops tools",
+      "error tracking",
+      "mobile app builder",
+      "text editors",
+      "web development tools",
+      "wordpress plugins"
+    ],
+    "dns tools": [
+      "dns"
+    ],
+    "e-commerce": [
+      "customer feedback",
+      "discount codes",
+      "e-commerce analytics",
+      "e-commerce platform",
+      "e-commerce tools",
+      "inventory management",
+      "order fulfillment",
+      "payment gateways",
+      "price comparison",
+      "product information management",
+      "shopping cart"
+    ],
+    "education": [
+      "careers",
+      "digital assessments and tests",
+      "educational games",
+      "kids education",
+      "language learning",
+      "online calculators",
+      "online courses",
+      "research tools",
+      "school management",
+      "school management system",
+      "spaced repetition",
+      "writing services"
+    ],
+    "finance": [
+      "banking",
+      "budgeting",
+      "cryptocurrency wallets",
+      "financial reporting",
+      "financial risk management",
+      "forex",
+      "insurance administration and management",
+      "investment management",
+      "payments processing",
+      "personal finance",
+      "stock market",
+      "tax preparation"
+    ],
+    "health & fitness": [
+      "medical billing",
+      "medical practice management",
+      "sport & fitness"
+    ],
+    "hiring & recruitement": [
+      "applicant tracking",
+      "candidate screening & assessement",
+      "freelance marketplace",
+      "hiring & recruitement",
+      "job boards",
+      "recruitement",
+      "remote jobs"
+    ],
+    "human resources": [
+      "employee engagement",
+      "employee feedback system",
+      "employee onboarding",
+      "employee performance management",
+      "employee productivity",
+      "human resources tools",
+      "leave management",
+      "org charts",
+      "payroll management",
+      "resume builder",
+      "talent management",
+      "workforce management"
+    ],
+    "identity and access management": [
+      "identity providers",
+      "identity verification & protection",
+      "password management",
+      "single sign on",
+      "two factor authentification"
+    ],
+    "marketing": [
+      "ad networks",
+      "advertising",
+      "affiliate marketing",
+      "content marketing",
+      "email marketing",
+      "growth hacking",
+      "influencer marketing",
+      "marketing analytics",
+      "marketing automation",
+      "mobile app marketing",
+      "seo tools",
+      "social media management"
+    ],
+    "membership management": [
+      "association management",
+      "community management",
+      "e-learning",
+      "paid membership"
+    ],
+    "monitoring": [
+      "analytics",
+      "application performance monitoring",
+      "cloud monitoring",
+      "cyber security",
+      "diagnostics software",
+      "load and performance testing",
+      "log management",
+      "network monitoring",
+      "security & privacy",
+      "security monitoring",
+      "server monitoring",
+      "user experience monitoring",
+      "website monitoring"
+    ],
+    "online marketplace": [
+      "design resources",
+      "domains"
+    ],
+    "personal finance": [
+      "financial planner"
+    ],
+    "productivity": [
+      "app launcher",
+      "browsing experience",
+      "calendar",
+      "document management",
+      "email",
+      "goal setting and okrs",
+      "habit tracker",
+      "knowledge management",
+      "mind maps",
+      "news",
+      "newsletters",
+      "office & productivity",
+      "video downloader"
+    ],
+    "project management": [
+      "agile project management",
+      "business process management",
+      "budgeting and forecasting",
+      "calendar and scheduling",
+      "gantt charts",
+      "knowledge base",
+      "project retrospectives",
+      "resource management",
+      "risk management",
+      "task management",
+      "team collaboration",
+      "time tracking",
+      "workflow automation"
+    ],
+    "security & privacy": [
+      "bots & fraud detection",
+      "dns resolver",
+      "proxy providers",
+      "vpn"
+    ],
+    "startups": [
+      "startup community"
+    ],
+    "surveys software": [
+      "form builder"
+    ],
+    "web hosting": [
+      "cloud hosting",
+      "dns management",
+      "domain name registrar",
+      "domain name search",
+      "uk web hosting"
+    ],
+    "web scraping": [
+      "web scraping api"
+    ],
+    "web service automation": [
+      "data integration"
+    ]
+  }
+}

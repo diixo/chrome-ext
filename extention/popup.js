@@ -204,9 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok && data.status === "ok")
       {
-        const resultText = data.tags.join('\n');
-        document.getElementById('output').value = resultText;
-
+        document.getElementById('output').value = data.category;
         alert('Selection sent successfully!');
       }
       else
