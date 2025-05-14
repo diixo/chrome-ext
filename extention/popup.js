@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   */
 
   // collect headers button
+  /*
   document.getElementById('collect').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('output').value = results[0].result;
     }
   });
-
+  */
 
   document.getElementById('send-url').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
+  /*
   document.getElementById('send-html').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+  */
 
   document.getElementById('send-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
