@@ -1,11 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Функция для подсветки "AI"
+  // highlight "AI"
   function highlightAI() {
     document.body.innerHTML = document.body.innerHTML.replace(/(AI)/g, '<mark>$1</mark>');
   }
 
-  // Функция для сбора H1, H2, H3
+  // collect H1, H2, H3
   function collectHeaders() {
     return Array.from(document.querySelectorAll('h1, h2, h3')).map(h => h.innerText).join('\n');
   }
@@ -33,6 +33,33 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('output').value = results[0].result;
     }
   });
+
+  document.getElementById('send-url').addEventListener('click', async () => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const currentUrl = tab.url;
+    const content = document.getElementById('output').value;
+
+    try {
+      const response = await fetch('http://localhost:3400/receive-url', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: currentUrl, content: content })
+      });
+
+      if (response.ok) {
+        alert('URL sent successfully!');
+      document.getElementById('output').value = '';
+      } else {
+        alert('Failed to send URL. Status: ' + response.status);
+      }
+    } catch (error) {
+      console.error('Error sending URL:', error);
+      alert('Error sending URL. See console.');
+    }
+  });
+
 });
 
 

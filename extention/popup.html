@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>H1 Collector</title>
+  <title>AI-veex</title>
   <style>
-    /* Копируем стили из ai-widget.js */
+
     .ai-button {
+      margin-top: 8px;
+      width: 100%;
       background-color: #8858D8;
       color: white;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
     }
@@ -20,18 +22,22 @@
     .ai-textarea {
       width: 300px;
       height: 200px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       font-family: Arial, sans-serif;
       font-size: 14px;
+      outline: none;
     }
   </style>
 </head>
+
 <body>
   <textarea id="output" class="ai-textarea" readonly></textarea><br>
   <button id="collect" class="ai-button">Collect H123</button>
   <button id="highlight" class="ai-button">Highlight "AI"</button>
+  <button id="send-url" class="ai-button">Send text</button>
   <script src="popup.js"></script>
 </body>
 </html>
