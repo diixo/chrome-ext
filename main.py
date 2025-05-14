@@ -67,6 +67,7 @@ class SelectionData(BaseModel):
 
 @app.post("/receive-selection")
 async def receive_selection(data: SelectionData):
+
     print(f"Received URL: {data.url}")
     print(f"Received Selection HTML:\n{data.selection_html}")
 
@@ -74,7 +75,14 @@ async def receive_selection(data: SelectionData):
 
     soup = BeautifulSoup(data.selection_html, 'html.parser')
 
+    headings = [h.get_text(strip=True) for h in soup.find_all(['h1', 'h2', 'h3', 'h4'])]
+
     paragraphs = [p.get_text(strip=True) for p in soup.find_all('p')]
+
+    if (len(paragraphs) == 0):
+        paragraphs = [d.get_text(strip=True) for d in soup.find_all('div')]
+
+    #elements_text = [el.get_text(strip=True) for el in soup.find_all() if el.get_text(strip=True)]
 
     #all_text = soup.get_text(separator='\n', strip=True)
 
@@ -82,6 +90,7 @@ async def receive_selection(data: SelectionData):
 
     return {
         "status": "ok",
+        "headings_found": len(headings),
         "paragraphs_found": len(paragraphs),
         "paragraphs": paragraphs
     }

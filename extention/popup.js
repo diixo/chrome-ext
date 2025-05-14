@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
   document.getElementById('send-url').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentUrl = tab.url;
@@ -53,10 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok) {
         alert('URL sent successfully!');
         document.getElementById('output').value = '';
-      } else {
+      }
+      else {
         alert('Failed to send URL. Status: ' + response.status);
       }
-    } catch (error) {
+
+    }
+    catch (error)
+    {
       console.error('Error sending URL:', error);
       alert('Error sending URL. See console.');
     }
@@ -81,12 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ url: pageUrl, html: pageHtml })
           });
 
-          if (response.ok) {
+          if (response.ok)
+          {
             alert('Page HTML sent successfully!');
-          } else {
+          }
+          else
+          {
             alert('Failed to send HTML. Status: ' + response.status);
           }
-        } catch (error) {
+
+        }
+        catch (error)
+        {
           console.error('Error sending HTML:', error);
           alert('Error sending HTML. See console.');
         }
@@ -98,44 +109,56 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('send-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-    chrome.scripting.executeScript({
+    const [{ result: selectionHtml }] = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       function: () => {
         const selection = window.getSelection();
-        const container = document.createElement('div');
-        if (selection.rangeCount > 0) {
-          const range = selection.getRangeAt(0).cloneContents();
-          container.appendChild(range);
+        const range = selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
+        if (range) {
+          const container = document.createElement('div');
+          container.appendChild(range.cloneContents());
+          return container.innerHTML;
         }
-        return container.innerHTML;
+        return '';
       },
-    }, async (results) => {
-      if (results && results[0]) {
-        const selectedHtml = results[0].result;
-        const pageUrl = tab.url;
-
-        try {
-          const response = await fetch('http://localhost:3400/receive-selection', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              url: pageUrl,
-              selection_html: selectedHtml
-            })
-          });
-
-          if (response.ok) {
-            alert('Selection sent successfully!');
-            document.getElementById('output').value = '';
-          } else {
-            alert('Failed to send selection. Status: ' + response.status);
-          }
-        } catch (error) {
-          console.error('Error sending selection:', error);
-          alert('Error sending selection. See console.');
-        }
-      }
     });
+
+    if (!selectionHtml) {
+      alert('No text selected.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3400/receive-selection', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: tab.url,
+          selection_html: selectionHtml,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.status === "ok")
+      {
+        const resultText = data.paragraphs.join('\n');
+        document.getElementById('output').value = resultText;
+
+        alert('Selection sent successfully!');
+      }
+      else
+      {
+        console.error('Failed to parse selection:', data);
+        alert('Error: ' + (data.detail || response.status));
+      }
+    }
+    catch (error) {
+      console.error('Error sending selection:', error);
+      alert('Request failed. See console.');
+    }
   });
 
 
