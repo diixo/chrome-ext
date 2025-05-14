@@ -62,6 +62,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+  document.getElementById('send-html').addEventListener('click', async () => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: () => document.documentElement.outerHTML,
+    }, async (results) => {
+      if (results && results[0]) {
+        const pageHtml = results[0].result;
+        const pageUrl = tab.url;
+
+        try {
+          const response = await fetch('http://localhost:3400/receive-html', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url: pageUrl, html: pageHtml })
+          });
+
+          if (response.ok) {
+            alert('Page HTML sent successfully!');
+          } else {
+            alert('Failed to send HTML. Status: ' + response.status);
+          }
+        } catch (error) {
+          console.error('Error sending HTML:', error);
+          alert('Error sending HTML. See console.');
+        }
+      }
+    });
+  });
+
+
 });
 
 
