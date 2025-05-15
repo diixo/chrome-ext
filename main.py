@@ -34,7 +34,7 @@ if path.exists():
     dataset = json.load(fd)
 
 
-def add_new_tags(dataset: dict, key: str, i_tags: list):
+def save_new_tags(dataset: dict, key: str, i_tags: list):
     if "tags" not in dataset:
         dataset["tags"] = dict()
     chapter = dataset["tags"]
@@ -52,7 +52,7 @@ def add_new_tags(dataset: dict, key: str, i_tags: list):
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
 
-def add_new_item(dataset: dict, url: str, i_txt: list):
+def save_new_item(dataset: dict, url: str, i_txt: list):
     if "content" not in dataset:
         dataset["content"] = dict()
     chapter = dataset["content"]
@@ -105,7 +105,7 @@ async def parse_html(data: HtmlPage):
     print(f"item_list.sz={len(item_list)}")
     print(item_list)
 
-    add_new_item(dataset, url, item_list)
+    save_new_item(dataset, url, item_list)
 
     return {
         "status": "ok",
@@ -168,7 +168,7 @@ async def add_selection_tags(data: SelectionTags):
     print(f"Category:{category}\n{tags}")
 
     category = category.lower()
-    add_new_tags(dataset, category, tags)
+    save_new_tags(dataset, category, tags)
 
     return {
         "status": "ok",
