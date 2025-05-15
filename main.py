@@ -8,6 +8,21 @@ from pathlib import Path
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3400",
+    "http://127.0.0.1:3400",
+    "null",
+    "chrome-extension://*",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 filepath = "db.json"
 dataset = dict()
@@ -54,33 +69,15 @@ def add_new_item(dataset: dict, url: str, i_txt: list):
     with open(filepath, 'w', encoding='utf-8') as fd:
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
-
-origins = [
-    "http://localhost:3400",
-    "http://127.0.0.1:3400",
-    "null",
-    "chrome-extension://*",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
+"""
 class PageData(BaseModel):
     url: str
     content: str
-
 
 @app.get("/get-data")
 async def get_data():
     data = ["Item 1", "Item 2", "Item 3", "Item 4"]
     return {"items": data}
-
 
 @app.post("/receive-url")
 async def receive_url(data: PageData):
@@ -88,7 +85,7 @@ async def receive_url(data: PageData):
     print(f"Received URL: {url}")
     print(f"Received Content:\n{data.content}")
     return {"status": "ok", "received_url": data.url, "content_length": len(data.content)}
-
+"""
 
 class HtmlPage(BaseModel):
     url: str
@@ -104,16 +101,16 @@ async def parse_html(data: HtmlPage):
 
     tag_name = ["h1"] if data.tag_name == "" else data.tag_name
 
-    txt_list = [item.get_text(strip=True) for item in soup.find_all(tag_name)]
-    print(f"txt_list.sz={len(txt_list)}")
-    print(txt_list)
+    item_list = [item.get_text(strip=True) for item in soup.find_all(tag_name)]
+    print(f"item_list.sz={len(item_list)}")
+    print(item_list)
 
-    add_new_item(dataset, url, txt_list)
+    add_new_item(dataset, url, item_list)
 
     return {
         "status": "ok",
         "received_url": url,
-        "item_count": len(txt_list),
+        "items_count": "items:" + str(len(item_list)),
     }
 
 
@@ -132,7 +129,7 @@ async def save_selection(data: SelectionData):
 
     all_text = soup.get_text(strip=False).replace('\n', ' ')
 
-    print(f"Extracted Text:\n{all_text}")
+    #print(f"Extracted Text:\n{all_text}")
 
     return {
         "status": "ok",

@@ -73,8 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ url: pageUrl, tag_name: tag_name, html: pageHtml })
           });
 
+          const data = await response.json();
           if (response.ok)
           {
+            document.getElementById('output').value = data.items_count
             alert('Page HTML sent successfully!');
           }
           else
