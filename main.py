@@ -102,10 +102,11 @@ async def parse_html(data: HtmlPage):
 
     soup = BeautifulSoup(data.html, "html.parser")
 
-    tag_name = ["h1", "h2", "h3", "h4", "h5", "h6"] if data.tag_name == "" else data.tag_name
+    tag_name = ["h1"] if data.tag_name == "" else data.tag_name
 
     txt_list = [item.get_text(strip=True) for item in soup.find_all(tag_name)]
-    print("txt_list.sz=", len(txt_list))
+    print(f"txt_list.sz={len(txt_list)}")
+    print(txt_list)
 
     add_new_item(dataset, url, txt_list)
 
@@ -120,8 +121,8 @@ class SelectionData(BaseModel):
     url: str
     selection_html: str
 
-@app.post("/receive-selection")
-async def receive_selection(data: SelectionData):
+@app.post("/save-selection")
+async def save_selection(data: SelectionData):
     url = data.url.strip('/')
     print(f"Received URL: {url}")
 

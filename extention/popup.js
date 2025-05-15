@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  document.getElementById('send-selection').addEventListener('click', async () => {
+  document.getElementById('save-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
     const [{ result: selectionHtml }] = await chrome.scripting.executeScript({
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3400/receive-selection', {
+      const response = await fetch('http://localhost:3400/save-selection', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
