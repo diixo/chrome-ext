@@ -102,9 +102,9 @@ async def parse_html(data: HtmlPage):
 
     soup = BeautifulSoup(data.html, "html.parser")
 
-    tag_name = "h1" if data.tag_name == "" else data.tag_name
+    tag_name = ["h1", "h2", "h3", "h4", "h5", "h6"] if data.tag_name == "" else data.tag_name
 
-    txt_list = [item.get_text(strip=True) for item in soup.find_all("div", class_="tool-item-description-box---new")]
+    txt_list = [item.get_text(strip=True) for item in soup.find_all(tag_name)]
     print("txt_list.sz=", len(txt_list))
 
     add_new_item(dataset, url, txt_list)
@@ -127,28 +127,15 @@ async def receive_selection(data: SelectionData):
 
     print(f"Received Selection HTML:\n{data.selection_html}")
 
-    #print(data.selection_html)
-
     soup = BeautifulSoup(data.selection_html, 'html.parser')
 
-    headings = [h.get_text(strip=True) for h in soup.find_all(['h1', 'h2', 'h3', 'h4'])]
+    all_text = soup.get_text(strip=False).replace('\n', ' ')
 
-    paragraphs = [p.get_text(strip=True) for p in soup.find_all('p')]
-
-    if (len(paragraphs) == 0):
-        paragraphs = [d.get_text(strip=True) for d in soup.find_all('div')]
-
-    #elements_text = [el.get_text(strip=True) for el in soup.find_all() if el.get_text(strip=True)]
-
-    #all_text = soup.get_text(separator='\n', strip=True)
-
-    print(f"Extracted Text:\n{paragraphs}")
+    print(f"Extracted Text:\n{all_text}")
 
     return {
         "status": "ok",
-        "headings_found": len(headings),
-        "paragraphs_found": len(paragraphs),
-        "paragraphs": paragraphs
+        "all_text": all_text
     }
 
 

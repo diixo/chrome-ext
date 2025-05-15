@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok && data.status === "ok")
       {
-        const resultText = data.paragraphs.join('\n');
+        const resultText = data.all_text;
         document.getElementById('output').value = resultText;
 
         alert('Selection sent successfully!');
