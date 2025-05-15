@@ -68,9 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /*
-  document.getElementById('send-html').addEventListener('click', async () => {
+
+  document.getElementById('parse-html').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const tag_name = document.getElementById('output').value;
 
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
@@ -81,10 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const pageUrl = tab.url;
 
         try {
-          const response = await fetch('http://localhost:3400/receive-html', {
+          const response = await fetch('http://localhost:3400/parse-html', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ url: pageUrl, html: pageHtml })
+            body: JSON.stringify({ url: pageUrl, tag_name: tag_name, html: pageHtml })
           });
 
           if (response.ok)
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  */
+
 
   document.getElementById('send-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });

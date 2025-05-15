@@ -37,6 +37,24 @@ def add_new_tags(dataset: dict, key: str, i_tags: list):
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
 
+def add_new_item(dataset: dict, url: str, i_txt: list):
+    if "content" not in dataset:
+        dataset["content"] = dict()
+    chapter = dataset["content"]
+
+    if url not in chapter:
+        chapter[url] = []
+
+    txt = chapter[url]
+    txt_set = set(txt)
+    for t in i_txt:
+        if t not in txt_set: txt.append(t)
+    chapter[url] = txt
+
+    with open(filepath, 'w', encoding='utf-8') as fd:
+        json.dump(dataset, fd, ensure_ascii=False, indent=2)
+
+
 origins = [
     "http://localhost:3400",
     "http://127.0.0.1:3400",
@@ -74,23 +92,27 @@ async def receive_url(data: PageData):
 
 class HtmlPage(BaseModel):
     url: str
+    tag_name: str
     html: str
 
-@app.post("/receive-html")
-async def receive_html(data: HtmlPage):
+@app.post("/parse-html")
+async def parse_html(data: HtmlPage):
     url = data.url.strip('/')
     print(f"Received URL: {url}")
 
     soup = BeautifulSoup(data.html, "html.parser")
 
-    h1_tags = [h1.get_text(strip=True) for h1 in soup.find_all("h1")]
-    print("H1 Headers:", h1_tags)
+    tag_name = "h1" if data.tag_name == "" else data.tag_name
+
+    txt_list = [item.get_text(strip=True) for item in soup.find_all("div", class_="tool-item-description-box---new")]
+    print("txt_list.sz=", len(txt_list))
+
+    add_new_item(dataset, url, txt_list)
 
     return {
         "status": "ok",
         "received_url": url,
-        "h1_count": len(h1_tags),
-        "h1_headers": h1_tags
+        "item_count": len(txt_list),
     }
 
 
