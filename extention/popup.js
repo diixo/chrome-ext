@@ -22,22 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   */
 
-  // collect headers button
-  /*
-  document.getElementById('collect').addEventListener('click', async () => {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-    const results = await chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      func: collectHeaders
-    });
-
-    if (results && results[0] && results[0].result !== undefined) {
-      document.getElementById('output').value = results[0].result;
-    }
-  });
-  */
-
+/*
   document.getElementById('send-url').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentUrl = tab.url;
@@ -67,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Error sending URL. See console.');
     }
   });
-
+*/
 
   document.getElementById('parse-html').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
