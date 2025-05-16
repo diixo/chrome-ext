@@ -208,6 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  document.getElementById('open-main').addEventListener('click', () => {
+    chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
+  });
 });
 
 
