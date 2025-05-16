@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 */
 
+/*
   document.getElementById('parse-html').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const tag_name = document.getElementById('output').value;
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+*/
 
   document.getElementById('save-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
