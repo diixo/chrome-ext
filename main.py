@@ -127,13 +127,25 @@ async def save_selection(data: SelectionData):
 
     soup = BeautifulSoup(data.selection_html, 'html.parser')
 
-    all_text = soup.get_text(strip=False).replace('\n', ' ')
+    all_text = soup.get_text(strip=False)
+
+    #print("all_text:", all_text)
+
+    all_items = all_text.split('\n')
+
+    all_items = [ item for item in all_items if item.strip() != "" ]
+
+    if len(all_items) > 1:
+        all_items.append(all_text.replace('\n', ' '))
+
+    save_new_item(dataset, url, all_items)
 
     #print(f"Extracted Text:\n{all_text}")
 
     return {
         "status": "ok",
-        "all_text": all_text
+        "all_text": all_items[-1],
+        "items_count": "items:" + str(len(all_items)),
     }
 
 

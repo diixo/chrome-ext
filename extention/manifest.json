@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "AI-veex",
-  "version": "0.1",
+  "name": "aiveex",
+  "version": "0.0.25",
   "permissions": ["scripting", "activeTab"],
   "icons": {
     "16": "assets/icon-16.png",
