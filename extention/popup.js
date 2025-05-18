@@ -3,23 +3,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const statusEl = document.getElementById("status");
 
-  try {
-    const response = await fetch("http://127.0.0.1:3400/check-auth", {
-      method: "GET",
-      credentials: "include" // ⬅️ важно для отправки cookie
-    });
-
-    if (!response.ok) {
-      statusEl.textContent = "Не авторизован";
-      return;
-    }
-
-    const data = await response.json();
-    statusEl.textContent = "Привет, " + data.user;
-  } catch (err) {
-    console.error(err);
+  const response = await fetch("http://127.0.0.1:3400/check-auth", {
+    method: "GET",
+    credentials: "include"
+  }).catch(err => {
+    //console.error(err);
     statusEl.textContent = "Ошибка подключения";
+  });
+
+  if (!response || !response.ok) {
+    statusEl.textContent = "Не авторизован";
+    return;
   }
+
+  const data = await response.json();
+  statusEl.textContent = "Привет, " + data.user;
 
   // highlight "AI"
   function highlightAI() {
