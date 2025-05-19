@@ -225,6 +225,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
+  const logoutBtn = document.getElementById("logout-btn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", LogoutGoogle);
+  }
+
 
   document.getElementById('add-selection-tags').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -323,3 +328,28 @@ document.getElementById('highlight').addEventListener('click', async () => {
 });
 */
 
+function LogoutGoogle()
+{
+  chrome.storage.local.get("aiveex", (result) => {
+    const data = result.aiveex;
+
+    if (!data) {
+      console.log("User logged out already, or token is absent.");
+      return;
+    }
+
+    chrome.storage.local.remove("aiveex", () => {
+      if (chrome.runtime.lastError) {
+        console.error("Token deleting error:", chrome.runtime.lastError);
+        return;
+      }
+
+      console.log("Token was deleted. User logged out.");
+
+      const statusEl = document.getElementById("status");
+      if (statusEl) {
+        statusEl.textContent = "Logged out";
+      }
+    });
+  });
+}

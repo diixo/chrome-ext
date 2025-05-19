@@ -79,6 +79,28 @@
       outline: none;
     }
 
+    .google-btn {
+      display: flex;
+      align-items: center;        /* vertical centering */
+      justify-content: center;    /* horizontal centering */
+      background-color: white;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      color: #3c4043;
+      padding: 8px 16px;
+      cursor: pointer;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      margin-top: 8px;
+    }
+
+    .google-btn img {
+      height: 18px;
+      margin-right: 8px;
+      display: block;     /* centering */
+    }
+
   </style>
 
 </head>
@@ -98,6 +120,11 @@
   <button id="add-selection-tags" class="ag-button">Save selection as tags</button>
 
   <button id="open-main" class="am-button">Open main in new tab</button>
+
+  <div class="google-btn" id="logout-btn">
+    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" />
+    <span>Log-out from Google</span>
+  </div>
 
   <script src="popup.js"></script>
 </body>
