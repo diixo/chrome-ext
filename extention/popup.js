@@ -1,14 +1,25 @@
 
-document.addEventListener('DOMContentLoaded', async () => {
+function saveToken(user, email, token)
+{
+  const expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000; // 7 days
+  chrome.storage.local.set({
+    aiveex: { user, token, email, expiresAt },
+  }, () => {
+    console.log("Token was saved for 7 days.");
+  });
+}
 
-  const statusEl = document.getElementById("status");
-  if (!statusEl) {
-    console.error("Element #status not found!");
-    return;
-  }
+async function getStoredToken()
+{
+  return new Promise((resolve) => {
+    chrome.storage.local.get("aiveex", (result) => {
+      resolve(result.aiveex);
+    });
+  });
+}
 
-  const redirectUri = chrome.identity.getRedirectURL("provider_cb");
-
+async function authenticate(statusEl, redirectUri)
+{
   //chrome.tabs.create({ url: 'http://127.0.0.1:3400/login' })
 
   chrome.identity.launchWebAuthFlow(
@@ -23,25 +34,44 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
 
-      // Получаем access_token из responseUrl
       const url = new URL(responseUrl);
       const token = url.searchParams.get("token");
-      if (token)
-      {
-        const email = url.searchParams.get("email");
-        const user_name = url.searchParams.get("user");
+      const email = url.searchParams.get("email");
+      const user = url.searchParams.get("user");
+
+      if (token && email && user) {
         console.log("Access Token:", token);
         console.log("Email:", email);
-
-        statusEl.textContent = user_name + ", " + email;
-      }
-      else
-      {
+        statusEl.textContent = `${user}, ${email}`;
+        saveToken(user, email, token);
+      } else {
         statusEl.textContent = "Token not found in response";
       }
     }
   );
+}
 
+document.addEventListener('DOMContentLoaded', async () => {
+  const statusEl = document.getElementById("status");
+  if (!statusEl) {
+    console.error("Element #status not found!");
+    return;
+  }
+
+  const redirectUri = chrome.identity.getRedirectURL("provider_cb");
+
+  const stored = await getStoredToken();
+
+  if (stored && stored.token && stored.expiresAt > Date.now())
+  {
+    console.log("Using stored token:", stored.token);
+    statusEl.textContent = `${stored.user}, ${stored.email}`;
+  }
+  else
+  {
+    console.log("No valid token found, starting authentication...");
+    await authenticate(statusEl, redirectUri);
+  }
 
   // highlight "AI"
   function highlightAI() {
