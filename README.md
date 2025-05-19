@@ -34,24 +34,8 @@ JWT_SECRET_KEY=<your-secret-key>
 FRONTEND_URL=<your-frontend-url>
 ```
 
-## Refs
 
-* https://blog.futuresmart.ai/integrating-google-authentication-with-fastapi-a-step-by-step-guide
+## References:
 
+* Work with https://github.com/diixo/Google-OAuth-Integration-with-FastAPI
 
-## Что делать, если хотите на сервере узнать, кто вы (через Google)
-Для этого используют OAuth 2.0 с Google:
-
-Принцип работы:
-
-* Регистрируем Console Google Cloud расширение как WebApplication, получаем CLIENT_ID и т.д. (SECRET_KEY...) + downloaded json
-
-* Вы на клиенте (расширение или сайт) открываете страницу авторизации Google.
-
-* Google спрашивает разрешение и отдаёт авторизационный код.
-
-* Вы отправляете этот код на ваш сервер.
-
-* Сервер обменивает код на access_token и id_token (в котором есть email, имя и т.п.).
-
-* Сервер сохраняет JWT (или сессию) и кладёт в cookie (token).

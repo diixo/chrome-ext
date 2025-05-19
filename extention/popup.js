@@ -2,47 +2,46 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
   const statusEl = document.getElementById("status");
-
-
-  chrome.tabs.create({ url: 'http://127.0.0.1:3400/login' })
-
-  // chrome.identity.launchWebAuthFlow(
-  //   {
-  //     url: 'http://127.0.0.1:3400/login',
-  //     interactive: true,
-  //   },
-  //   (redirectUrl) => {
-  //     if (chrome.runtime.lastError) {
-  //       console.error(chrome.runtime.lastError);
-  //       statusEl.textContent = 'Ошибка: ' + chrome.runtime.lastError.message;
-  //       return;
-  //     }
-
-  //     console.log('Redirected to:', redirectUrl);
-
-  //     // Из redirectUrl можно извлечь токен, код или что-то еще
-  //     // Например, если сервер возвращает токен в параметрах
-  //     const url = new URL(redirectUrl);
-  //     const token = url.searchParams.get('token');  // или из hash: url.hash
-  //     console.log('Token:', token);
-
-  //     if (token) {
-  //       statusEl.textContent = 'Авторизация успешна!';
-  //       // Здесь можешь сохранить токен и дальше работать с ним
-  //     } else {
-  //       statusEl.textContent = 'Токен не найден в ответе';
-  //     }
-  //   }
-  // );
-
-
-  if (!response || !response.ok) {
-    statusEl.textContent = "Не авторизован";
+  if (!statusEl) {
+    console.error("Element #status not found!");
     return;
   }
 
-  const data = await response.json();
-  statusEl.textContent = "Привет, " + data.user;
+  const redirectUri = chrome.identity.getRedirectURL("provider_cb");
+
+  //chrome.tabs.create({ url: 'http://127.0.0.1:3400/login' })
+
+  chrome.identity.launchWebAuthFlow(
+    {
+      url: `http://127.0.0.1:3400/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
+      interactive: true,
+    },
+    (responseUrl) => {
+      if (chrome.runtime.lastError) {
+        console.error(chrome.runtime.lastError.message);
+        statusEl.textContent = "Authentication error";
+        return;
+      }
+
+      // Получаем access_token из responseUrl
+      const url = new URL(responseUrl);
+      const token = url.searchParams.get("token");
+      if (token)
+      {
+        const email = url.searchParams.get("email");
+        const user_name = url.searchParams.get("user");
+        console.log("Access Token:", token);
+        console.log("Email:", email);
+
+        statusEl.textContent = user_name + ", " + email;
+      }
+      else
+      {
+        statusEl.textContent = "Token not found in response";
+      }
+    }
+  );
+
 
   // highlight "AI"
   function highlightAI() {

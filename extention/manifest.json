@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "aiveex",
   "version": "0.0.25",
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["scripting", "activeTab", "identity"],
   "icons": {
     "16": "assets/icon-16.png",
     "32": "assets/icon-32.png",
