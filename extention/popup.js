@@ -3,13 +3,38 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const statusEl = document.getElementById("status");
 
-  const response = await fetch("http://127.0.0.1:3400/check-auth", {
-    method: "GET",
-    credentials: "include"
-  }).catch(err => {
-    //console.error(err);
-    statusEl.textContent = "Ошибка подключения";
-  });
+
+  chrome.tabs.create({ url: 'http://127.0.0.1:3400/login' })
+
+  // chrome.identity.launchWebAuthFlow(
+  //   {
+  //     url: 'http://127.0.0.1:3400/login',
+  //     interactive: true,
+  //   },
+  //   (redirectUrl) => {
+  //     if (chrome.runtime.lastError) {
+  //       console.error(chrome.runtime.lastError);
+  //       statusEl.textContent = 'Ошибка: ' + chrome.runtime.lastError.message;
+  //       return;
+  //     }
+
+  //     console.log('Redirected to:', redirectUrl);
+
+  //     // Из redirectUrl можно извлечь токен, код или что-то еще
+  //     // Например, если сервер возвращает токен в параметрах
+  //     const url = new URL(redirectUrl);
+  //     const token = url.searchParams.get('token');  // или из hash: url.hash
+  //     console.log('Token:', token);
+
+  //     if (token) {
+  //       statusEl.textContent = 'Авторизация успешна!';
+  //       // Здесь можешь сохранить токен и дальше работать с ним
+  //     } else {
+  //       statusEl.textContent = 'Токен не найден в ответе';
+  //     }
+  //   }
+  // );
+
 
   if (!response || !response.ok) {
     statusEl.textContent = "Не авторизован";
