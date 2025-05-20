@@ -2,6 +2,9 @@
 
 Simple template of chrome-extention
 
+Frontend of [Google-OAuth2-integration-with-FastAPI](https://github.com/diixo/Google-OAuth2-integration-with-FastAPI)
+
+
 
 * Run FastAPI-server:
 ```bash
@@ -23,10 +26,4 @@ google-auth
 ```
 
 `pip install "python-jose[cryptography]"`
-
-
-
-## References:
-
-* Work with https://github.com/diixo/Google-OAuth2-integration-with-FastAPI
 
