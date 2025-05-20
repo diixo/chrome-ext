@@ -28,5 +28,5 @@ google-auth
 
 ## References:
 
-* Work with https://github.com/diixo/Google-OAuth-Integration-with-FastAPI
+* Work with https://github.com/diixo/Google-OAuth2-integration-with-FastAPI
 

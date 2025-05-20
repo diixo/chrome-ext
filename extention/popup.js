@@ -44,7 +44,8 @@ async function authenticate(statusEl, redirectUri)
         console.log("Email:", email);
         statusEl.textContent = `${user}, ${email}`;
         saveToken(user, email, token);
-      } else {
+      }
+      else {
         statusEl.textContent = "Token not found in response";
       }
     }
