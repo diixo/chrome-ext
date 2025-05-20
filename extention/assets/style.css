@@ -237,9 +237,18 @@ li.search_result
 {
 list-style-type: none;text-align: left;padding: 2px 15px;
 }
-.lang-item 
+.lang-item
 {
-font-weight: 400;padding: 0.45rem 1.5rem;background-color: transparent;border: 0;clear: both;color: #212529;display: block;text-align: inherit;white-space: nowrap;width: 100%;
+font-weight: 400;
+padding: 0.45rem 1.5rem;
+background-color: transparent;
+border: 0;
+clear: both;
+color: #212529;
+display: block;
+text-align: inherit;
+white-space: nowrap;
+width: 100%;
 }
 .lang-wrap:before 
 {
@@ -528,10 +537,12 @@ border-bottom: 0;border-bottom-left-radius: 0;border-bottom-right-radius: 0;
 .accordion .sec:not(:first-of-type):not(:last-of-type) 
 {
 border-bottom: 0;border-radius: 0;
-}footer .mobile-footer .sec 
+}
+footer .mobile-footer .sec 
 {
 border: 1px solid #555;
-}footer .mobile-footer .sec-body 
+}
+footer .mobile-footer .sec-body 
 {
 background-color: #333;
 }
@@ -561,19 +572,35 @@ color: #fff;
 .collapse:not(.show) 
 {
 display: none;
-}/* search page separate design */.col-md-3 
+}
+/* search page separate design */.col-md-3 
 {
 -ms-flex: 0 0 33.333333%;flex: 0 0 33.333333%;max-width: 33.333333%;
-}form.result_form 
+}
+form.result_form 
 {
 color: #fff;font-weight: 600;
-}img.vi_thumimage 
+}
+img.vi_thumimage 
 {
 width: 100%;border-radius: 7px;  object-fit: cover;
-}a.search-info h3 
+}
+a.search-info h3 
 {
-font-weight: 600;font-size: 14px;text-align: left;line-height: 22px;margin-bottom: 24px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;padding-top: 0.5rem !important;color: #fff;
-}div#search_results 
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+    line-height: 22px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-top: 0.5rem !important;
+    color: #fff;
+}
+div#search_results
 {
 padding: 40px 60px;
 }/* convert page design */div#main-results
