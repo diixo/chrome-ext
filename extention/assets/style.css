@@ -240,7 +240,7 @@ background-color: #fff;color: #212529;display: flex !important;
 flex-direction: column !important;
 font-family: Nunito;
 font-size: 1rem;
-font-weight: 300;
+font-weight: 400;
 line-height: 1.6;
 margin: 0;
 overflow-x: hidden;
@@ -512,27 +512,28 @@ flex: 1 1 auto;min-height: 1px;padding: 1.25rem;
 }
 .search_form 
 {
-padding: 0.25rem !important;
-position: relative;
-}div#search_input 
+    padding: 0.25rem !important;
+    position: relative;
+}
+div#search_input
 {
 margin-bottom: 0 !important;
 }
 .form-control 
 {
-background-clip: padding-box;
-border: 1px solid #ced4da;
-border-radius: 2.0rem;
-color: #495057;
-background-color: #fff;
-display: block;
-font-size: 1rem;
-font-weight: 400;
-height: calc(1.5em + 0.75rem + 2px);
-line-height: 1.5;
-padding: 0.375rem 0.75rem;
-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-width: 100%;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 2.0rem;
+    color: #495057;
+    background-color: #fff;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    height: calc(1.5em + 0.75rem + 2px);
+    line-height: 1.5;
+    padding: 0.25rem 0.75rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    width: 100%;
 }
 input#search_url 
 {
@@ -543,14 +544,29 @@ outline: none !important;
 }
 .btn 
 {
-border-radius: 0.25rem;font-size: 1rem;line-height: 1.5;padding: 0.375rem 0.75rem;position: relative;background-color: transparent;border: 1px solid transparent;color: #212529;display: inline-block;font-weight: 400;text-align: center;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;-webkit-user-select: none;-moz-user-select: none;user-select: none;vertical-align: middle;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #212529;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    vertical-align: middle;
 }
 .btn-lg 
 {
 border-radius: 2.0rem;
-font-size: 1.25rem;
+font-size: 1.0rem;
 line-height: 1.5;
-padding: 0.5rem 1rem;
+padding: 0.375rem 1rem;
 }
 .btn-link 
 {
