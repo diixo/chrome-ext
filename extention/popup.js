@@ -30,7 +30,7 @@ async function authenticate(statusEl, redirectUri)
     (responseUrl) => {
       if (chrome.runtime.lastError) {
         console.error(chrome.runtime.lastError.message);
-        statusEl.textContent = "Authentication error";
+        statusEl.textContent = "Authentication: undefined user";
         return;
       }
 
