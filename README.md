@@ -24,15 +24,6 @@ google-auth
 
 `pip install "python-jose[cryptography]"`
 
-Create `.env` file
-```bash
-GOOGLE_CLIENT_ID=<your-google-client-id>
-GOOGLE_CLIENT_SECRET=<your-google-client-secret>
-SECRET_KEY=<your-secret-key>
-REDIRECT_URL=<your-redirect-url>
-JWT_SECRET_KEY=<your-secret-key>
-FRONTEND_URL=<your-frontend-url>
-```
 
 
 ## References:
