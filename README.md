@@ -14,7 +14,6 @@ uvicorn main:app --reload --port 3400
 Requirements:
 ```bash
 python-dotenv
-mysql-connector-python
 requests
 fastapi
 uvicorn
