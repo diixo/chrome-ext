@@ -1,4 +1,8 @@
 
+const baseUrl = 'http://127.0.0.1'; // or 'https://viix.co'
+const port = 8001;
+
+
 function saveToken(user, email, token)
 {
   const expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000; // 7 days
@@ -20,11 +24,11 @@ async function getStoredToken()
 
 async function authenticate(statusEl, redirectUri)
 {
-  //chrome.tabs.create({ url: 'http://127.0.0.1:8001/login' })
+  //chrome.tabs.create({ url: `${baseUrl}:${port}/login` })
 
   chrome.identity.launchWebAuthFlow(
     {
-      url: `http://127.0.0.1:8001/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
+      url: `${baseUrl}:${port}/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
       interactive: true,
     },
     (responseUrl) => {
@@ -103,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const content = document.getElementById('output').value;
 
     try {
-      const response = await fetch('http://127.0.0.1:8001/receive-url', {
+      const response = await fetch(`${baseUrl}:${port}/receive-url`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -142,7 +146,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const pageUrl = tab.url;
 
         try {
-          const response = await fetch('http://127.0.0.1:8001/parse-html', {
+          const response = await fetch(`${baseUrl}:${port}/parse-html`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: pageUrl, tag_name: tag_name, html: pageHtml })
@@ -193,7 +197,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8001/save-selection', {
+      const response = await fetch(`${baseUrl}:${port}/save-selection`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -256,7 +260,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8001/add-selection-tags', {
+      const response = await fetch(`${baseUrl}:${port}/add-selection-tags`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
