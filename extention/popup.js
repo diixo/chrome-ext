@@ -20,11 +20,11 @@ async function getStoredToken()
 
 async function authenticate(statusEl, redirectUri)
 {
-  //chrome.tabs.create({ url: 'http://127.0.0.1:3400/login' })
+  //chrome.tabs.create({ url: 'http://127.0.0.1:8001/login' })
 
   chrome.identity.launchWebAuthFlow(
     {
-      url: `http://127.0.0.1:3400/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
+      url: `http://127.0.0.1:8001/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
       interactive: true,
     },
     (responseUrl) => {
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const content = document.getElementById('output').value;
 
     try {
-      const response = await fetch('http://localhost:3400/receive-url', {
+      const response = await fetch('http://127.0.0.1:8001/receive-url', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const pageUrl = tab.url;
 
         try {
-          const response = await fetch('http://localhost:3400/parse-html', {
+          const response = await fetch('http://127.0.0.1:8001/parse-html', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: pageUrl, tag_name: tag_name, html: pageHtml })
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3400/save-selection', {
+      const response = await fetch('http://127.0.0.1:8001/save-selection', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3400/add-selection-tags', {
+      const response = await fetch('http://127.0.0.1:8001/add-selection-tags', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -17,11 +17,6 @@ python-dotenv
 requests
 fastapi
 uvicorn
-python-jose[cryptography]
-authlib
-pyjwt
-itsdangerous
-google-auth
 ```
 
 `pip install "python-jose[cryptography]"`
