@@ -41,9 +41,10 @@ From Google Chrome: `Manage extensions` by `Load unpacked`(**developer**-mode): 
 
 * Закодируй DER в base64: `base64 private_key.der > private_key.b64`
 
-* Вставь содержимое base64 удалив пробелы - в поле "key" в `manifest.json`.
+* Вставь содержимое файла `private_key.b64` одной строкой удалив пробелы - в поле "key" в `manifest.json`.
 
-ID:
+
+Актуальный **ID**:
 ```bash
 liefnpejhcabdhpfapmmngaabjioelja
 ```
