@@ -1,6 +1,6 @@
 
-const baseUrl = 'http://viix.co'
-//const baseUrl = 'http://127.0.0.1:8001';
+const originUrl = 'http://viix.co'
+//const originUrl = 'http://127.0.0.1:8001';
 
 
 
@@ -25,11 +25,11 @@ async function getStoredToken()
 
 async function authenticate(statusEl, redirectUri)
 {
-  //chrome.tabs.create({ url: `${baseUrl}/login` })
+  //chrome.tabs.create({ url: `${originUrl}/login` })
 
   chrome.identity.launchWebAuthFlow(
     {
-      url: `${baseUrl}/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
+      url: `${originUrl}/login?redirect_uri=${encodeURIComponent(redirectUri)}`,
       interactive: true,
     },
     (responseUrl) => {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const content = document.getElementById('output').value;
 
     try {
-      const response = await fetch(`${baseUrl}/receive-url`, {
+      const response = await fetch(`${originUrl}/receive-url`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const pageUrl = tab.url;
 
         try {
-          const response = await fetch(`${baseUrl}/parse-html`, {
+          const response = await fetch(`${originUrl}/parse-html`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: pageUrl, tag_name: tag_name, html: pageHtml })
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch(`${baseUrl}/save-selection`, {
+      const response = await fetch(`${originUrl}/save-selection`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-      const response = await fetch(`${baseUrl}/add-selection-tags`, {
+      const response = await fetch(`${originUrl}/add-selection-tags`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
