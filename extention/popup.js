@@ -64,7 +64,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
+  const chromeExtIdEl = document.getElementById("chromeExtId");
+  if (!statusEl) {
+    console.error("Element #status not found!");
+    return;
+  }
+
   const redirectUri = chrome.identity.getRedirectURL("provider_cb");
+
+  const chromeUri = chrome.identity.getRedirectURL();
+  chromeExtIdEl.textContent = "ID: " + new URL(chromeUri).host.split(".")[0]
 
   const stored = await getStoredToken();
 
