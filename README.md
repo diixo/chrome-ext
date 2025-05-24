@@ -10,3 +10,8 @@ Switch between local/remote server into `popup.js`:
 const originUrl = 'https://viix.co'
 //const originUrl = 'http://127.0.0.1:8001';
 ```
+
+
+## Installing extention:
+
+From Google Chrome: `Manage extensions` by `Load unpacked`(**developer**-mode): to select `extention`-directory of current repository.
