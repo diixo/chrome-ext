@@ -17,10 +17,10 @@ const originUrl = 'https://viix.co'
 From Google Chrome: `Manage extensions` by `Load unpacked`(**developer**-mode): to select `extention`-directory of current repository.
 
 
-## Установка chrome-extension:ID
+## Настройка chrome-extension:ID
 
 Если хочешь, чтобы ID расширения был постоянным — добавь приватный ключ в `manifest.json` с ключём "key".
-Публичный ключ не кладётся отдельно и не нужен в явном виде.
+Публичный ключ не используется, поэтому не нужен в явном виде.
 
 * Поле key - это закодированный в base64 приватный ключ (RSA), из которого автоматически генерируется публичный ключ.
 
@@ -33,7 +33,7 @@ From Google Chrome: `Manage extensions` by `Load unpacked`(**developer**-mode): 
 
 ## Генерация приватного ключа для подписи
 
-* Установи OpenSSL.
+* Установи Win64OpenSSL.
 
 * Сгенерируй RSA ключ: `openssl genrsa -out private_key.pem 2048`
 
