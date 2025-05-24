@@ -1,5 +1,5 @@
 
-const originUrl = 'http://viix.co'
+const originUrl = 'https://viix.co'
 //const originUrl = 'http://127.0.0.1:8001';
 
 
