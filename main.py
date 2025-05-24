@@ -9,10 +9,10 @@ from pathlib import Path
 app = FastAPI()
 
 origins = [
-    "http://localhost:3400",
-    "http://127.0.0.1:3400",
+    "http://localhost:8001",
+    "http://127.0.0.1:8001",
     "null",
-    "chrome-extension://*",
+    # "chrome-extension://*",
 ]
 
 app.add_middleware(
