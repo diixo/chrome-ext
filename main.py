@@ -46,67 +46,6 @@ def save_new_tags(dataset: dict, key: str, i_tags: list):
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
 
-def save_new_item(dataset: dict, url: str, i_txt: list):
-    if "content" not in dataset:
-        dataset["content"] = dict()
-    chapter = dataset["content"]
-
-    if url not in chapter:
-        chapter[url] = []
-
-    txt = chapter[url]
-    txt_set = set(txt)
-    for t in i_txt:
-        if t not in txt_set: txt.append(t)
-    chapter[url] = txt
-
-    with open(filepath, 'w', encoding='utf-8') as fd:
-        json.dump(dataset, fd, ensure_ascii=False, indent=2)
-
-"""
-class PageData(BaseModel):
-    url: str
-    content: str
-
-@app.get("/get-data")
-async def get_data():
-    data = ["Item 1", "Item 2", "Item 3", "Item 4"]
-    return {"items": data}
-
-@app.post("/receive-url")
-async def receive_url(data: PageData):
-    url = data.url.strip('/')
-    print(f"Received URL: {url}")
-    print(f"Received Content:\n{data.content}")
-    return {"status": "ok", "received_url": data.url, "content_length": len(data.content)}
-"""
-
-class HtmlPage(BaseModel):
-    url: str
-    tag_name: str
-    html: str
-
-@app.post("/parse-html")
-async def parse_html(data: HtmlPage):
-    url = data.url.strip('/')
-    print(f"Received URL: {url}")
-
-    soup = BeautifulSoup(data.html, "html.parser")
-
-    tag_name = ["h1"] if data.tag_name == "" else data.tag_name
-
-    item_list = [item.get_text(strip=True) for item in soup.find_all(tag_name)]
-    print(f"item_list.sz={len(item_list)}")
-    print(item_list)
-
-    save_new_item(dataset, url, item_list)
-
-    return {
-        "status": "ok",
-        "received_url": url,
-        "items_count": "items:" + str(len(item_list)),
-    }
-
 
 class SelectionTags(BaseModel):
     url: str
