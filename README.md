@@ -1,7 +1,5 @@
 # chrome-ext
 
-Simple template of chrome-extention
-
 Frontend of [Google-OAuth2-integration-with-FastAPI](https://github.com/diixo/Google-OAuth2-integration-with-FastAPI)
 
 
@@ -14,7 +12,10 @@ const originUrl = 'https://viix.co'
 
 ## Installing extention:
 
-From Google Chrome: `Manage extensions` by `Load unpacked`(**developer**-mode): to select `extention`-directory of current repository.
+From Google Chrome:
+
+* Enter `Manage extensions` to `Load unpacked`(**developer**-mode)
+* Select `extention`-directory of current repository.
 
 
 ## Настройка chrome-extension:ID
