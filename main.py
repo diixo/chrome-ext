@@ -8,12 +8,6 @@ from pathlib import Path
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:8001",
-    "http://127.0.0.1:8001",
-    "null",
-    # "chrome-extension://*",
-]
 
 app.add_middleware(
     CORSMiddleware,
@@ -111,41 +105,6 @@ async def parse_html(data: HtmlPage):
         "status": "ok",
         "received_url": url,
         "items_count": "items:" + str(len(item_list)),
-    }
-
-
-class SelectionData(BaseModel):
-    url: str
-    selection_html: str
-
-@app.post("/save-selection")
-async def save_selection(data: SelectionData):
-    url = data.url.strip('/')
-    print(f"Received URL: {url}")
-
-    print(f"Received Selection HTML:\n{data.selection_html}")
-
-    soup = BeautifulSoup(data.selection_html, 'html.parser')
-
-    all_text = soup.get_text(strip=False)
-
-    #print("all_text:", all_text)
-
-    all_items = all_text.split('\n')
-
-    all_items = [ item for item in all_items if item.strip() != "" ]
-
-    if len(all_items) > 1:
-        all_items.append(all_text.replace('\n', ' '))
-
-    save_new_item(dataset, url, all_items)
-
-    #print(f"Extracted Text:\n{all_text}")
-
-    return {
-        "status": "ok",
-        "all_text": all_items[-1],
-        "items_count": "items:" + str(len(all_items)),
     }
 
 
