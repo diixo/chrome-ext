@@ -4,15 +4,33 @@ const originUrl = 'http://127.0.0.1:8001';
 
 
 
+function parseJwt(token)
+{
+  const base64Url = token.split('.')[1];
+  const base64 = atob(base64Url);
+  const jsonPayload = decodeURIComponent([...base64].map(c =>
+    '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+  ).join(''));
+  return JSON.parse(jsonPayload);
+}
+
+
 function saveToken(user, email, token)
 {
-  const expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000; // 7 days
+  //const expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const payload = parseJwt(token);
+  // payload.exp - unix time in seconds
+  const expiresAt = new Date(payload.exp * 1000).toISOString();
+
   chrome.storage.local.set({
-    aiveex: { user, token, email, expiresAt },
+    "aiveex": { user, token, email, expiresAt },
   }, () => {
-    console.log("Token was saved for 7 days.");
+    console.log("Token was saved.");
+    //alert(`Token was saved with expire-time: ${expiresAt}`);
   });
 }
+
 
 async function getStoredToken()
 {
@@ -57,6 +75,7 @@ async function authenticate(statusEl, redirectUri)
   );
 }
 
+
 document.addEventListener('DOMContentLoaded', async () => {
   const statusEl = document.getElementById("status");
   if (!statusEl) {
@@ -77,7 +96,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const stored = await getStoredToken();
 
-  if (stored && stored.token && stored.expiresAt > Date.now())
+  if (stored && stored.token && new Date(stored.expiresAt).getTime() > Date.now())
   {
     console.log("Using stored token:", stored.token);
     statusEl.textContent = `${stored.user}, ${stored.email}`;
@@ -110,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   */
 
-/*
+  /*
   document.getElementById('send-url').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentUrl = tab.url;
@@ -140,9 +159,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       alert('Error sending URL. See console.');
     }
   });
-*/
+  */
 
-/*
+  /*
   document.getElementById('parse-html').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const tag_name = document.getElementById('output').value;
@@ -182,7 +201,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
   });
-*/
+  */
+
 
   document.getElementById('save-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
