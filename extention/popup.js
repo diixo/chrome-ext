@@ -1,6 +1,6 @@
 
-const originUrl = 'https://viix.co'
-//const originUrl = 'http://127.0.0.1:8001';
+//const originUrl = 'https://viix.co'
+const originUrl = 'http://127.0.0.1:8001';
 
 
 
@@ -206,11 +206,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
+    const stored = await getStoredToken();
+
+    if (stored && stored.token && stored.expiresAt > Date.now())
+    {
+      console.log("Using stored token:", stored.token);
+      statusEl.textContent = `${stored.user}, ${stored.email}`;
+    }
+    else
+    {
+      console.log("No valid user found for selection, starting authentication...");
+      alert('No valid user found for selection, starting authentication...!');
+      await authenticate(statusEl, redirectUri);
+      return;
+    }
+
     try {
       const response = await fetch(`${originUrl}/save-selection`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${stored.token}`,
         },
         body: JSON.stringify({
           url: tab.url,
