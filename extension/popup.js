@@ -129,29 +129,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   */
 
-  /*
-  document.getElementById('send-url').addEventListener('click', async () => {
+
+  document.getElementById('add-bookmark-page').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentUrl = tab.url;
-    const content = document.getElementById('output').value;
+    const tag_name = document.getElementById('output').value;
 
     try {
-      const response = await fetch(`${originUrl}/receive-url`, {
+      const response = await fetch(`${originUrl}/add-bookmark-page`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${stored.token}`,
         },
-        body: JSON.stringify({ url: currentUrl, content: content })
+        body: JSON.stringify({ url: currentUrl, tag_name: tag_name, html: "" })
       });
 
       if (response.ok) {
-        alert('URL sent successfully!');
+        alert('Added page to Bookmark successfully!');
         document.getElementById('output').value = '';
       }
       else {
         alert('Failed to send URL. Status: ' + response.status);
       }
-
     }
     catch (error)
     {
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       alert('Error sending URL. See console.');
     }
   });
-  */
+
 
   /*
   document.getElementById('parse-html').addEventListener('click', async () => {
@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${stored.token}`,
         },
         body: JSON.stringify({
           url: tab.url,
