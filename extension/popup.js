@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
   /*
-  document.getElementById('parse-html').addEventListener('click', async () => {
+  document.getElementById('parse-save-page').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const tag_name = document.getElementById('output').value;
 
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const pageUrl = tab.url;
 
         try {
-          const response = await fetch(`${originUrl}/parse-html`, {
+          const response = await fetch(`${originUrl}/parse-save-page`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: pageUrl, tag_name: tag_name, html: pageHtml })
