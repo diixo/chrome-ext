@@ -1,6 +1,6 @@
 
-//const originUrl = 'https://viix.co'
-const originUrl = 'http://127.0.0.1:8001';
+const originUrl = 'https://viix.co'
+//const originUrl = 'http://127.0.0.1:8001';
 
 
 
