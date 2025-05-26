@@ -103,8 +103,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   else
   {
+    statusEl.textContent = "Authentication: undefined user";
     console.log("No valid token found, starting authentication...");
     await authenticate(statusEl, redirectUri);
+    return
   }
 
   // highlight "AI"
@@ -240,7 +242,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const stored = await getStoredToken();
 
-    if (stored && stored.token && stored.expiresAt > Date.now())
+    if (stored && stored.token && new Date(stored.expiresAt).getTime() > Date.now())
     {
       console.log("Using stored token:", stored.token);
       statusEl.textContent = `${stored.user}, ${stored.email}`;
