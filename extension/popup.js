@@ -76,6 +76,68 @@ async function authenticate(statusEl, redirectUri)
 }
 
 
+async function add_selection_tags()
+{
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  const prompt = document.getElementById('output').value;
+
+  const [{ result: selectionHtml }] = await chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: () => {
+      const selection = window.getSelection();
+      const range = selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
+      if (range)
+      {
+        const container = document.createElement('div');
+        container.appendChild(range.cloneContents());
+        return container.innerHTML;
+      }
+      return '';
+    },
+  });
+
+  if (!selectionHtml) {
+    alert('No text selected.');
+    return;
+  }
+
+  const stored = await getStoredToken();
+
+  try {
+    const response = await fetch(`${originUrl}/add-selection-tags`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${stored.token}`,
+      },
+      body: JSON.stringify({
+        url: tab.url,
+        tag_prompt: prompt,
+        selection_html: selectionHtml,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.status === "ok")
+    {
+      document.getElementById('output').value = data.category;
+      alert('Selection sent successfully!');
+    }
+    else
+    {
+      console.error('Failed to parse selection:', data);
+      alert('Error: ' + (data.detail || response.status));
+    }
+  }
+  catch (error)
+  {
+    console.error('Error sending selection:', error);
+    alert('Request failed. See console.');
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', async () => {
   const statusEl = document.getElementById("status");
   if (!statusEl) {
@@ -296,66 +358,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 
-  document.getElementById('add-selection-tags').addEventListener('click', async () => {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    const prompt = document.getElementById('output').value;
+  document.getElementById('add-selection-tags').addEventListener('click', add_selection_tags);
 
-    const [{ result: selectionHtml }] = await chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      function: () => {
-        const selection = window.getSelection();
-        const range = selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
-        if (range) {
-          const container = document.createElement('div');
-          container.appendChild(range.cloneContents());
-          return container.innerHTML;
-        }
-        return '';
-      },
-    });
-
-    if (!selectionHtml) {
-      alert('No text selected.');
-      return;
-    }
-
-    try {
-      const response = await fetch(`${originUrl}/add-selection-tags`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${stored.token}`,
-        },
-        body: JSON.stringify({
-          url: tab.url,
-          tag_prompt: prompt,
-          selection_html: selectionHtml,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.status === "ok")
-      {
-        document.getElementById('output').value = data.category;
-        alert('Selection sent successfully!');
-      }
-      else
-      {
-        console.error('Failed to parse selection:', data);
-        alert('Error: ' + (data.detail || response.status));
-      }
-    }
-    catch (error)
-    {
-      console.error('Error sending selection:', error);
-      alert('Request failed. See console.');
-    }
-  });
 
   document.getElementById('open-main').addEventListener('click', () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
   });
+
 });
 
 
