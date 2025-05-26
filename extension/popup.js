@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
+    const result_txt = result.result
+
     try {
       const response = await fetch(`${originUrl}/add-bookmark-page`, {
         method: 'POST',
@@ -152,12 +154,12 @@ document.addEventListener('DOMContentLoaded', async () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${stored.token}`,
         },
-        body: JSON.stringify({ url: currentUrl, tag_name: tag_txt, html: result.result })
+        body: JSON.stringify({ url: currentUrl, tag_name: tag_txt, html: result_txt })
       });
 
       if (response.ok) {
         alert('Added page to Bookmark successfully!');
-        document.getElementById('output').value = '';
+        document.getElementById('output').value = result_txt;
       }
       else {
         alert('Failed to send URL. Status: ' + response.status);
