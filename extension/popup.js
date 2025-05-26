@@ -133,7 +133,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('add-bookmark-page').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentUrl = tab.url;
-    const tag_name = document.getElementById('output').value;
+    const tag_txt = document.getElementById('output').value;
+
+    const [result] = await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: () => {
+        const title = document.title;
+        const meta = document.querySelector('meta[name="description"]');
+        const description = meta?.content ?? null;
+        return description ? `${title}: ${description}` : title;
+      }
+    });
 
     try {
       const response = await fetch(`${originUrl}/add-bookmark-page`, {
@@ -142,7 +152,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${stored.token}`,
         },
-        body: JSON.stringify({ url: currentUrl, tag_name: tag_name, html: "" })
+        body: JSON.stringify({ url: currentUrl, tag_name: tag_txt, html: result.result })
       });
 
       if (response.ok) {
