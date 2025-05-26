@@ -358,7 +358,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 
+  /*
   document.getElementById('add-selection-tags').addEventListener('click', add_selection_tags);
+  */
 
 
   document.getElementById('open-main').addEventListener('click', () => {
