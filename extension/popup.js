@@ -159,7 +159,7 @@ async function search_ext()
 
   const query = "aiveex search text";
 
-  const response = await fetch(`${originUrl}/search?query=${encodeURIComponent(query)}`,
+  const response = await fetch(`${originUrl}/search-ext?query=${encodeURIComponent(query)}`,
   {
     method: 'GET',
     headers: {
@@ -210,7 +210,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     statusEl.textContent = "Authentication: undefined user";
     console.log("No valid token found, starting authentication...");
     await authenticate(statusEl, redirectUri);
-    return
   }
 
   // highlight "AI"
