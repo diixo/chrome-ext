@@ -41,6 +41,7 @@ async function getStoredToken()
   });
 }
 
+
 async function authenticate(statusEl, redirectUri)
 {
   //chrome.tabs.create({ url: `${originUrl}/login` })
@@ -135,6 +136,47 @@ async function add_selection_tags()
     console.error('Error sending selection:', error);
     alert('Request failed. See console.');
   }
+}
+
+
+async function search_get()
+{
+  const statusEl = document.getElementById("status");
+
+  const stored = await getStoredToken();
+
+  if (stored && stored.token && new Date(stored.expiresAt).getTime() > Date.now())
+  {
+    console.log("Using stored token:", stored.token);
+    statusEl.textContent = `${stored.user}, ${stored.email}`;
+  }
+  else
+  {
+    statusEl.textContent = "Authentication: undefined user";
+    console.log("No valid token found, starting authentication...");
+    return
+  }
+
+  const query = "aiveex search text";
+
+  const response = await fetch(`${originUrl}/search?query=${encodeURIComponent(query)}`,
+  {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${stored.token}`
+    }
+  });
+
+  if (!response.ok) {
+    console.error("Resoinse error:", response.status);
+  }
+  else {
+    const data = await response.json();
+    //const items = result.items;
+    console.log("Resulted items:", data);
+    document.getElementById('output').value = data
+  }
+
 }
 
 
@@ -366,6 +408,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('open-main').addEventListener('click', () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
   });
+
+  document.getElementById('search-get').addEventListener('click', search_get);
 
 });
 
