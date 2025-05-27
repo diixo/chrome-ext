@@ -187,18 +187,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  const chromeExtIdEl = document.getElementById("chromeExtId");
-  if (!statusEl) {
-    console.error("Element #status not found!");
-    return;
-  }
-
   const redirectUri = chrome.identity.getRedirectURL("provider_cb");
 
-  const chromeUri = chrome.identity.getRedirectURL();
-  chromeExtIdEl.textContent = "ID: " + new URL(chromeUri).host.split(".")[0]
+  const chromeExtIdEl = document.getElementById("chromeExtId");
+  if (!chromeExtIdEl) {
+    console.error("Element #status not found!");
+  }
+  else {
+    const chromeUri = chrome.identity.getRedirectURL();
+    chromeExtIdEl.textContent = "ID: " + new URL(chromeUri).host.split(".")[0]
+  }
 
-  const stored = await getStoredToken();
+  stored = await getStoredToken();
 
   if (stored && stored.token && new Date(stored.expiresAt).getTime() > Date.now())
   {
@@ -211,6 +211,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log("No valid token found, starting authentication...");
     await authenticate(statusEl, redirectUri);
   }
+
+  stored = await getStoredToken();
 
   // highlight "AI"
   function highlightAI() {
