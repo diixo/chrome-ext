@@ -139,7 +139,7 @@ async function add_selection_tags()
 }
 
 
-async function search_get()
+async function search_ext()
 {
   const statusEl = document.getElementById("status");
 
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
   });
 
-  document.getElementById('search-get').addEventListener('click', search_get);
+  document.getElementById('search-ext').addEventListener('click', search_ext);
 
 });
 
