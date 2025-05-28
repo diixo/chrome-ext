@@ -269,11 +269,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         alert('Added page to Bookmark successfully!');
         document.getElementById('output').value = html_txt;
       }
-      else if (response.status == 500) {
-        alert('Warning: bookmark was not added: already exist!');
-      }
       else {
-        alert('Failed to send URL. Status: ' + response.status);
+        const data = await response.json();
+        alert('Error: ' + (data.details || 'Unknown error'));
       }
     }
     catch (error)
