@@ -253,9 +253,24 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-    const html_txt = result.result
+    const stored = await getStoredToken();
+
+    if (stored && stored.token && new Date(stored.expiresAt).getTime() > Date.now())
+    {
+      console.log("Using stored token:", stored.token);
+      statusEl.textContent = `${stored.user}, ${stored.email}`;
+    }
+    else
+    {
+      statusEl.textContent = "Authentication: undefined user";
+      alert('No valid user found for selection, starting authentication...!');
+      await authenticate(statusEl, redirectUri);
+      return;
+    }
 
     try {
+      const html_txt = result.result
+
       const response = await fetch(`${originUrl}/add-bookmark-page`, {
         method: 'POST',
         headers: {
