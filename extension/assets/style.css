@@ -14,7 +14,7 @@ body
 {
     background-color: #fff;color: #212529;display: flex !important;
     flex-direction: column !important;
-    font-family: Roboto, sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
@@ -78,7 +78,7 @@ ol,ul
 }
 h1 
 {
-    font-size: 30px;
+    font-size: 28px;
     display: block;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -167,7 +167,7 @@ img
 }
 .mainnav .brand-logo,.mainnav .brand-logo:focus,.mainnav .brand-logo:hover 
 {
-    color: #fff;
+    color: #0C70F8;
 }
 .brand-logo 
 {
@@ -278,6 +278,10 @@ margin-bottom: 5rem !important;
 {
 margin-top: auto !important;
 }
+.mt-0
+{
+margin-top: 0rem !important;
+}
 .mt-3 
 {
 margin-top: 1rem !important;
@@ -285,6 +289,10 @@ margin-top: 1rem !important;
 .mt-5 
 {
 margin-top: 5rem !important;
+}
+.pb-1
+{
+padding-bottom: 0.5rem !important;
 }
 .pb-3 
 {
@@ -301,6 +309,10 @@ padding-top: 5rem !important;
 .pt-4 
 {
 padding-top: 1.5rem !important;
+}
+.p-0
+{
+padding: 0rem !important;
 }
 .p-4 
 {
