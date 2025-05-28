@@ -6,8 +6,10 @@ import json
 from pathlib import Path
 
 
-app = FastAPI()
+filepath = "db.json"
 
+
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,17 +20,15 @@ app.add_middleware(
 )
 
 
-filepath = "db.json"
-dataset = dict()
-path = Path(filepath)
+def save_new_tags(key: str, i_tags: list):
+    dataset = dict()
+    path = Path(filepath)
+
+    if path.exists():
+        fd = open(filepath, 'r', encoding='utf-8')
+        dataset = json.load(fd)
 
 
-if path.exists():
-    fd = open(filepath, 'r', encoding='utf-8')
-    dataset = json.load(fd)
-
-
-def save_new_tags(dataset: dict, key: str, i_tags: list):
     if "tags" not in dataset:
         dataset["tags"] = dict()
     chapter = dataset["tags"]
@@ -78,7 +78,7 @@ async def add_selection_tags(data: SelectionTags):
     print(f"Category:{category}\n{tags}")
 
     category = category.lower()
-    save_new_tags(dataset, category, tags)
+    save_new_tags(category, tags)
 
     return {
         "status": "ok",
