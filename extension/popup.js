@@ -1,6 +1,6 @@
 
-const originUrl = 'https://viix.co'
-//const originUrl = 'http://127.0.0.1:8001';
+//const originUrl = 'https://viix.co'
+const originUrl = 'http://127.0.0.1:8001';
 
 
 
@@ -246,6 +246,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       target: { tabId: tab.id },
       func: () => {
         const title = document.title;
+        return title;
         const meta = document.querySelector('meta[name="description"]');
         const description = meta?.content ?? null;
         return description ? `${title}: ${description}` : title;
@@ -264,9 +265,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         body: JSON.stringify({ url: currentUrl, tag_name: tag_txt, html: html_txt })
       });
 
-      if (response.ok) {
+      if (response.status == 200) {
         alert('Added page to Bookmark successfully!');
         document.getElementById('output').value = html_txt;
+      }
+      else if (response.status == 500) {
+        alert('Warning: bookmark was not added: already exist!');
       }
       else {
         alert('Failed to send URL. Status: ' + response.status);
