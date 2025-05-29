@@ -427,7 +427,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
   });
 
+  /*
   document.getElementById('search-ext').addEventListener('click', search_ext);
+  */
 
 });
 
