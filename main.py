@@ -6,8 +6,6 @@ import json
 from pathlib import Path
 
 
-filepath = "db.json"
-
 
 app = FastAPI()
 
@@ -21,6 +19,8 @@ app.add_middleware(
 
 
 def save_new_tags(key: str, i_tags: list):
+    filepath = "db.json"
+
     dataset = dict()
     path = Path(filepath)
 
@@ -66,12 +66,12 @@ async def add_selection_tags(data: SelectionTags):
     category = data.tag_prompt.strip()
 
     if category == "":
-        tag_base = [h.get_text(strip=True) for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6',])]
+        tag_base = [h.get_text(strip=True) for h in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span'])]
         if len(tag_base) > 0:
             category = tag_base[0]
             print("category:", category)
         else:
-            return { "status": "error", "tags_found": len(tags), "tags": [] }
+            return { "status": "error", "tags_found": 0, "tags": [] }
 
     tags = [p.get_text(strip=True).lower() for p in soup.find_all(['li',])]
 
@@ -86,3 +86,7 @@ async def add_selection_tags(data: SelectionTags):
         "category": category
     }
 
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8001)
