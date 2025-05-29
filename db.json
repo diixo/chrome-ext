@@ -285,6 +285,17 @@
     ],
     "web service automation": [
       "data integration"
+    ],
+    "datasets by task": [
+      "classification datasets",
+      "summarization datasets",
+      "translation datasets",
+      "ner datasets",
+      "corpora datasets",
+      "sentiment analysis datasets",
+      "speech datasets",
+      "embeddings datasets",
+      "generation datasets"
     ]
   },
   "content": {
