@@ -6,8 +6,9 @@ import json
 from pathlib import Path
 
 
-
+filepath = "db.json"
 app = FastAPI()
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,7 +20,6 @@ app.add_middleware(
 
 
 def save_new_tags(key: str, i_tags: list):
-    filepath = "db.json"
 
     dataset = dict()
     path = Path(filepath)
@@ -45,6 +45,69 @@ def save_new_tags(key: str, i_tags: list):
     with open(filepath, 'w', encoding='utf-8') as fd:
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
+
+def save_new_item(url: str, i_txt: list):
+    dataset = dict()
+    path = Path(filepath)
+
+    if path.exists():
+        fd = open(filepath, 'r', encoding='utf-8')
+        dataset = json.load(fd)
+
+    if "examples" not in dataset:
+        dataset["examples"] = dict()
+    chapter = dataset["examples"]
+
+    if url not in chapter:
+        chapter[url] = []
+
+    txt = chapter[url]
+    txt_set = set(txt)
+    for t in i_txt:
+        if t not in txt_set: txt.append(t)
+    chapter[url] = txt
+
+    with open(filepath, 'w', encoding='utf-8') as fd:
+        json.dump(dataset, fd, ensure_ascii=False, indent=2)
+
+
+class SelectionData(BaseModel):
+    url: str
+    selection_html: str
+
+
+@app.post("/save-selection")
+async def save_selection(data: SelectionData):
+
+    url = data.url.strip('/')
+    print(f"Received URL: {url}")
+
+    print(f"Received Selection HTML:\n{data.selection_html}")
+
+    soup = BeautifulSoup(data.selection_html, 'html.parser')
+
+    seen = set()
+    all_items = []
+    for el in soup.select("li, span"):
+        txt = el.get_text(" ", strip=True)
+        if not txt:
+            continue
+        if txt in seen:
+            continue
+        seen.add(txt)
+
+        if txt.find("More examples") < 0 and txt.find("Fewer examples") < 0:
+            all_items.append(txt)
+
+    save_new_item(url, all_items)
+
+    #print(f"Extracted Text:\n{all_text}")
+
+    return {
+        "status": "ok",
+        "all_text": all_items,
+        "items_count": "items:" + str(len(all_items)),
+    }
 
 
 class SelectionTags(BaseModel):

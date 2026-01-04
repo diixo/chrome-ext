@@ -1,6 +1,6 @@
 
-const originUrl = 'https://viix.co'
-//const originUrl = 'http://127.0.0.1:8001';
+//const originUrl = 'https://viix.co'
+const originUrl = 'http://127.0.0.1:8001';
 
 
 
@@ -346,16 +346,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     const [{ result: selectionHtml }] = await chrome.scripting.executeScript({
       target: { tabId: tab.id },
       function: () => {
-        const selection = window.getSelection();
-        const range = selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
-        if (range) {
-          const container = document.createElement('div');
-          container.appendChild(range.cloneContents());
-          return container.innerHTML;
+        const sel = window.getSelection();
+        if (!sel || sel.rangeCount === 0) return '';
+
+        const range = sel.getRangeAt(0);
+        const container = document.createElement('div');
+        container.appendChild(range.cloneContents());
+
+        let html = container.innerHTML;
+        if (!sel.toString().trim()) return '';
+
+        // если "голый текст" — экранируем (в твоём случае html уже содержит <a>, так что не трогаем)
+        const hasTags = /<[^>]+>/.test(html);
+        if (!hasTags) {
+          const esc = (s) =>
+            s.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+          html = esc(sel.toString());
         }
-        return '';
+
+        // ВОТ ТУТ: всегда даём внешнюю границу
+        return `<span class="sel-wrap">${html}</span>`;
       },
     });
+
 
     if (!selectionHtml) {
       alert('No text selected.');
@@ -372,17 +389,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     else
     {
       console.log("No valid user found for selection, starting authentication...");
-      alert('No valid user found for selection, starting authentication...!');
-      await authenticate(statusEl, redirectUri);
-      return;
+      // alert('No valid user found for selection, starting authentication...!');
+      // await authenticate(statusEl, redirectUri);
+      // return;
     }
 
     try {
       const response = await fetch(`${originUrl}/save-selection`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${stored.token}`,
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           url: tab.url,
@@ -397,7 +413,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const resultText = data.all_text;
         document.getElementById('output').value = resultText;
 
-        alert('Selection sent successfully!');
+        //alert('Selection sent successfully!');
       }
       else
       {
@@ -424,7 +440,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
   document.getElementById('open-main').addEventListener('click', () => {
-    chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
+    if (originUrl.startsWith('http://127.0.0.1') || originUrl.startsWith('http://localhost'))
+    {
+      targetUrl = 'http://127.0.0.1:8000';
+    }
+    else
+    {
+      targetUrl = 'https://viix.co';
+    }
+    chrome.tabs.create({ url: targetUrl });
+    //chrome.tabs.create({ url: chrome.runtime.getURL('main.html') });
   });
 
   /*
