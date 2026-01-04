@@ -61,10 +61,18 @@ def save_new_item(url: str, i_txt: list):
     if url not in chapter:
         chapter[url] = []
 
-    txt = chapter[url]
-    txt_set = set(txt)
+    txt = chapter[url]  # list of dict's as items
+
+    txt_set = set([d["example"] for d in txt])
+    # check dublicates
     for t in i_txt:
-        if t not in txt_set: txt.append(t)
+        if t not in txt_set:
+            txt.append({
+                "example": t,
+                "verb": "",
+                "meaning": "",
+                "verb-template": ""
+                })
     chapter[url] = txt
 
     with open(filepath, 'w', encoding='utf-8') as fd:

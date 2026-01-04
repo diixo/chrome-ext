@@ -3713,5 +3713,451 @@
       "Upscale images, remove backgrounds, remove unwanted elements from images",
       "Use AI to upscale small or pixelated images"
     ]
+  },
+  "examples": {
+    "https://dictionary.cambridge.org/dictionary/english/take-after": [
+      {
+        "example": "He takes after his mother /his mother's side of the family .",
+        "verb": "",
+        "meaning": "to be similar to an older member of your family in appearance or character",
+        "verb-template": "take after someone"
+      },
+      {
+        "example": "Lazy? He takes after his father .",
+        "verb": "",
+        "meaning": "to be similar to an older member of your family in appearance or character",
+        "verb-template": "take after someone"
+      },
+      {
+        "example": "She takes after me with her love of horses .",
+        "verb": "",
+        "meaning": "to be similar to an older member of your family in appearance or character",
+        "verb-template": "take after someone"
+      },
+      {
+        "example": "I hope the children don't take after their grandfather .",
+        "verb": "",
+        "meaning": "to be similar to an older member of your family in appearance or character",
+        "verb-template": "take after someone"
+      },
+      {
+        "example": "Most of my children take after my husband .",
+        "verb": "",
+        "meaning": "to be like or to look like another family member or part of the family",
+        "verb-template": "take after someone"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-apart": [
+      {
+        "example": "We took the engine apart to see what the problem was.",
+        "verb": "",
+        "meaning": "to separate something into its different parts",
+        "verb-template": "take something apart"
+      },
+      {
+        "example": "He took the computer apart .",
+        "verb": "",
+        "meaning": "to separate something into its different parts",
+        "verb-template": "take something apart"
+      },
+      {
+        "example": "She took apart the gun to clean it.",
+        "verb": "",
+        "meaning": "to separate something into its different parts",
+        "verb-template": "take something apart"
+      },
+      {
+        "example": "They had to take the whole engine apart .",
+        "verb": "",
+        "meaning": "to separate something into its different parts",
+        "verb-template": "take something apart"
+      },
+      {
+        "example": "He took their defence apart , scoring three goals in the first 20 minutes .",
+        "verb": "",
+        "meaning": "to defeat someone very easily in a sport",
+        "verb-template": "take someone apart"
+      },
+      {
+        "example": "I like to take things apart to see how they work .",
+        "verb": "",
+        "meaning": "to separate the parts of something so that they are not together",
+        "verb-template": "take apart something"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-away": [
+      {
+        "example": "Take these chairs away - we don't need them.",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "Supermarkets are taking business away from small local shops .",
+        "verb": "",
+        "meaning": "take something away from someone/something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "Mum was so cross with him, she threatened to take all his toys away.",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "The men didn't come to take the rubbish away.",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "I can't eat any more, thanks - you can take it away now.",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "I was a bit worried when an official came and took my passport away.",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "Every individual has rights that must never be taken away.",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "Four take away two is two.",
+        "verb": "",
+        "meaning": "to calculate the difference between two numbers",
+        "verb-template": "take something away from something"
+      },
+      {
+        "example": "If you take 4 away from 12 you get 8.",
+        "verb": "",
+        "meaning": "to calculate the difference between two numbers",
+        "verb-template": "take something away from something"
+      },
+      {
+        "example": "What I took away from his talk is that going to university is definitely worth it.",
+        "verb": "",
+        "meaning": "to get a particular message or piece of information from something you read or are told",
+        "verb-template": "take something away"
+      },
+      {
+        "example": "Is that to eat in or take away?",
+        "verb": "",
+        "meaning": "to buy food in a restaurant and eat it somewhere else",
+        "verb-template": "take away something"
+      },
+      {
+        "example": "Take these chairs away – we don’t need them.",
+        "verb": "",
+        "meaning": "to remove or subtract something",
+        "verb-template": "take away something"
+      },
+      {
+        "example": "Twelve take away four equals eight.",
+        "verb": "",
+        "meaning": "to remove or subtract something",
+        "verb-template": "take away something"
+      },
+      {
+        "example": "The federal government threatened to take away $1 billion in highway funds .",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take sth away"
+      },
+      {
+        "example": "The amendments are not really taking any power away from the Civil Service .",
+        "verb": "",
+        "meaning": "take sth away from sb/sth",
+        "verb-template": "take sth away"
+      },
+      {
+        "example": "The Bank's rate increases have taken impetus away from housing demand .",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take sth away"
+      },
+      {
+        "example": "They will take away $45m if the shares are sold at the top end of the range .",
+        "verb": "",
+        "meaning": "to make money from something",
+        "verb-template": "take sth away"
+      },
+      {
+        "example": "After the disposal , the directors took away a combined payoff of £2.9m.",
+        "verb": "",
+        "meaning": "to make money from something",
+        "verb-template": "take sth away"
+      },
+      {
+        "example": "If there is one thing that people should take away from Black Tuesday , it is that we need regulators .",
+        "verb": "",
+        "meaning": "to learn something from an experience or activity",
+        "verb-template": "take sth away from sth"
+      },
+      {
+        "example": "What do you hope people will take away from this?",
+        "verb": "",
+        "meaning": "to learn something from an experience or activity",
+        "verb-template": "take sth away"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-back": [
+      {
+        "example": "Is it too small ? Take it back and get a refund .",
+        "verb": "",
+        "meaning": "to return something you have bought to a shop",
+        "verb-template": "take something back"
+      },
+      {
+        "example": "If the skirt doesn't fit , you can take it back.",
+        "verb": "",
+        "meaning": "to return something you have bought to a shop",
+        "verb-template": "take something back"
+      },
+      {
+        "example": "I took the radio back because it was faulty .",
+        "verb": "",
+        "meaning": "to return something you have bought to a shop",
+        "verb-template": "take something back"
+      },
+      {
+        "example": "All right , I take it all back. It wasn't your fault .",
+        "verb": "",
+        "meaning": "to admit that something you said was wrong",
+        "verb-template": "take something back"
+      },
+      {
+        "example": "He refused to take back his assertion that I had lied .",
+        "verb": "",
+        "meaning": "to admit that something you said was wrong",
+        "verb-template": "take something back"
+      },
+      {
+        "example": "OK, I take it all back - Florida was a fantastic place for a holiday .",
+        "verb": "",
+        "meaning": "to admit that something you said was wrong",
+        "verb-template": "take something back"
+      },
+      {
+        "example": "His wife said she would never take him back.",
+        "verb": "",
+        "meaning": "to allow a partner who previously left your home because of a disagreement or another relationship to come back to live with you",
+        "verb-template": "take someone back"
+      },
+      {
+        "example": "That piece of music really took me back (to my schooldays ).",
+        "verb": "",
+        "meaning": "If something takes you back, it makes you remember a period or an event",
+        "verb-template": "take someone back (to something)"
+      },
+      {
+        "example": "These athletes take us back to our youth and make us remember that we always dreamed of doing the things that they do.",
+        "verb": "",
+        "meaning": "to make someone remember or learn about an earlier period in time",
+        "verb-template": "take someone back"
+      },
+      {
+        "example": "If you’re not satisfied with your purchase , we’ll take it back and refund your money .",
+        "verb": "",
+        "meaning": "to receive or accept something that you previously sold, offered, or gave away",
+        "verb-template": "take back something"
+      },
+      {
+        "example": "I said she was lying , but I take it back.",
+        "verb": "",
+        "meaning": "If you take back something you have said, you admit that it was wrong",
+        "verb-template": "take back something"
+      },
+      {
+        "example": "He took the faulty kettle back and demanded a refund .",
+        "verb": "",
+        "meaning": "to return something that you have bought to a store",
+        "verb-template": "take sth back"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-down": [
+      {
+        "example": "The Indiana Pacers took down Cleveland, 80–74.",
+        "verb": "",
+        "meaning": "to defeat or kill someone, or to stop someone from causing harm",
+        "verb-template": "take someone down"
+      },
+      {
+        "example": "I took the pictures down.",
+        "verb": "",
+        "meaning": "to remove something that is on a wall or something that is temporary, or to remove a structure by separating its different parts",
+        "verb-template": "take something down"
+      },
+      {
+        "example": "We took down the partitions between our desks .",
+        "verb": "",
+        "meaning": "to remove something that is on a wall or something that is temporary, or to remove a structure by separating its different parts",
+        "verb-template": "take something down"
+      },
+      {
+        "example": "After the divorce , my parents took down her photo .",
+        "verb": "",
+        "meaning": "to remove something that is on a wall or something that is temporary, or to remove a structure by separating its different parts",
+        "verb-template": "take something down"
+      },
+      {
+        "example": "He took down my address and phone number and said he'd call me.",
+        "verb": "",
+        "meaning": "to write something that another person has just said",
+        "verb-template": "take something down"
+      },
+      {
+        "example": "It must be time to take down the holiday decorations .",
+        "verb": "",
+        "meaning": "to remove something that was previously put up or put in place",
+        "verb-template": "take down something"
+      },
+      {
+        "example": "I can take down the messages that come in.",
+        "verb": "",
+        "meaning": "to write something that you are looking at or listening to",
+        "verb-template": "take down something"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-in": [
+      {
+        "example": "I had to read the letter twice before I could take it all in.",
+        "verb": "",
+        "meaning": "to understand completely the meaning or importance of something",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "It was an interesting exhibition , but there was too much to take in at once .",
+        "verb": "",
+        "meaning": "to understand completely the meaning or importance of something",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "She was telling me he was dead , and I couldn't take it in.",
+        "verb": "",
+        "meaning": "to understand completely the meaning or importance of something",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "It is difficult to take in the scale of the disaster .",
+        "verb": "",
+        "meaning": "to understand completely the meaning or importance of something",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "The new town takes in three former villages .",
+        "verb": "",
+        "meaning": "to include something",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "The show took in an astonishing $100,000 in its first week .",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for entrance to an event",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "I thought we could get something to eat and then take in a movie .",
+        "verb": "",
+        "meaning": "to go to watch a film or performance, or to visit a place such as a museum",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "I'll have to take this dress in at the waist - it's too big .",
+        "verb": "",
+        "meaning": "to make a piece of clothing narrower, by changing the position of some of the stitches joining it together",
+        "verb-template": "take something in at something"
+      },
+      {
+        "example": "She supported her family by taking in laundry .",
+        "verb": "",
+        "meaning": "to do paid work for other people, such as washing or sewing, in your home",
+        "verb-template": "take something in"
+      },
+      {
+        "example": "Several families took in foreign students .",
+        "verb": "",
+        "meaning": "to take care of someone and provide a place in your home for them",
+        "verb-template": "take someone in"
+      },
+      {
+        "example": "I can't believe she was taken in by him.",
+        "verb": "",
+        "meaning": "to cause someone to believe something that is not true, or to trick or deceive someone",
+        "verb-template": "take someone in"
+      },
+      {
+        "example": "Detectives on the murder inquiry have taken in a new suspect for questioning .",
+        "verb": "",
+        "meaning": "If the police take you in, they take you to the police station",
+        "verb-template": "take someone in"
+      },
+      {
+        "example": "His aunt took him in when he first came to the city .",
+        "verb": "",
+        "meaning": "to provide a place for someone to live or stay",
+        "verb-template": "take in someone"
+      },
+      {
+        "example": "Let's go to take in a movie.",
+        "verb": "",
+        "meaning": "to go to see something of interest",
+        "verb-template": "take in something"
+      },
+      {
+        "example": "We drove around the island and took in all the sights .",
+        "verb": "",
+        "meaning": "to go to see something of interest",
+        "verb-template": "take in something"
+      },
+      {
+        "example": "Do you think the teacher was taken in by your excuse ?",
+        "verb": "",
+        "meaning": "to deceive or trick someone",
+        "verb-template": "take in someone"
+      },
+      {
+        "example": "That sales pitch totally took us in.",
+        "verb": "",
+        "meaning": "to deceive or trick someone",
+        "verb-template": "take in someone"
+      },
+      {
+        "example": "These pants fit much better since I had them taken in.",
+        "verb": "",
+        "meaning": "to make clothes smaller",
+        "verb-template": "take in something"
+      },
+      {
+        "example": "The show took in $100,000.",
+        "verb": "",
+        "meaning": "to receive money from sales",
+        "verb-template": "take in something"
+      },
+      {
+        "example": "A comprehensive carbon tax that took in other fuels , such as coal , would be much greener than just petrol taxes .",
+        "verb": "",
+        "meaning": "to include something",
+        "verb-template": "take sth in"
+      },
+      {
+        "example": "These figures are open to dispute because they take in the entire UK holiday business .",
+        "verb": "",
+        "meaning": "to include something",
+        "verb-template": "take sth in"
+      },
+      {
+        "example": "Worldwide, the film took in $230 million in its first weekend .",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for something",
+        "verb-template": "take sth in"
+      }
+    ]
   }
 }
