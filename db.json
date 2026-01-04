@@ -4158,6 +4158,396 @@
         "meaning": "to receive money from sales or as payment for something",
         "verb-template": "take sth in"
       }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-off": [
+      {
+        "example": "He took off his clothes and got into the shower .",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "After the poisoning scare , the product was taken off the shelves /the market (= removed from sale ) .",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "He took off his shoes to cool his sweaty feet .",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "When he took off his hat , we saw that he was completely bald !",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "Oops - I forgot to take the price label off your present .",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "She took off her rings to do the washing-up , and now she can't find them.",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "The doctor told me to take off my shirt so he could listen to my chest .",
+        "verb": "",
+        "meaning": "to remove something, especially clothes",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "He took two weeks off in September .",
+        "verb": "",
+        "meaning": "to spend time away from your work",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "I need to take some time off to see my mother .",
+        "verb": "",
+        "meaning": "to spend time away from your work",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "I took the whole summer off to work on my book .",
+        "verb": "",
+        "meaning": "to spend time away from your work",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "We're planning to take some time off at Christmas .",
+        "verb": "",
+        "meaning": "to spend time away from your work",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "The plane took off at 8.30 a.m.",
+        "verb": "",
+        "meaning": "If an aircraft, bird, or insect takes off, it leaves the ground and begins to fly",
+        "verb-template": "take off"
+      },
+      {
+        "example": "The plane took off three hours late.",
+        "verb": "",
+        "meaning": "If an aircraft, bird, or insect takes off, it leaves the ground and begins to fly",
+        "verb-template": "take off"
+      },
+      {
+        "example": "When should we expect to take off?",
+        "verb": "",
+        "meaning": "If an aircraft, bird, or insect takes off, it leaves the ground and begins to fly",
+        "verb-template": "take off"
+      },
+      {
+        "example": "Her singing career had just begun to take off.",
+        "verb": "",
+        "meaning": "to suddenly start to be successful or popular",
+        "verb-template": "take off"
+      },
+      {
+        "example": "With all that publicity , the business really took off.",
+        "verb": "",
+        "meaning": "to suddenly start to be successful or popular",
+        "verb-template": "take off"
+      },
+      {
+        "example": "His career really took off after that concert .",
+        "verb": "",
+        "meaning": "to suddenly start to be successful or popular",
+        "verb-template": "take off"
+      },
+      {
+        "example": "When he saw me, he took off in the other direction .",
+        "verb": "",
+        "meaning": "to suddenly leave somewhere, usually without telling anyone that you are going",
+        "verb-template": "take off"
+      },
+      {
+        "example": "She's really good at taking people off.",
+        "verb": "",
+        "meaning": "to copy the way a particular person speaks or behaves, or the way something is done, usually in order to entertain other people",
+        "verb-template": "take someone off"
+      },
+      {
+        "example": "Night take-offs and landings are banned at this airport .",
+        "verb": "",
+        "meaning": "the moment when an aircraft leaves the ground and begins to fly",
+        "verb-template": "take-off"
+      },
+      {
+        "example": "It was the best take-off of the prime minister that I have ever seen .",
+        "verb": "",
+        "meaning": "a piece of acting or writing, etc. that copies the way a particular person speaks or behaves, or the way something is done, usually to entertain other people",
+        "verb-template": "take-off"
+      },
+      {
+        "example": "He took off his shirt and shoes and jumped in the lake .",
+        "verb": "",
+        "meaning": "to remove or get rid of something",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "After the poisoning scare , the product was taken off the market .",
+        "verb": "",
+        "meaning": "to remove or get rid of something",
+        "verb-template": "take something off"
+      },
+      {
+        "example": "The plane took off on time .",
+        "verb": "",
+        "meaning": "(of an aircraft) to leave the ground and fly",
+        "verb-template": "take off"
+      },
+      {
+        "example": "When he saw me coming, he took off in the other direction .",
+        "verb": "",
+        "meaning": "To take off is also to leave suddenly",
+        "verb-template": "take off"
+      },
+      {
+        "example": "The new product really took off among teens .",
+        "verb": "",
+        "meaning": "to suddenly become popular or successful",
+        "verb-template": "take off"
+      },
+      {
+        "example": "I’ve decided to take next semester off and travel and write.",
+        "verb": "",
+        "meaning": "to use a period of time for a purpose that is different from what a person usually does",
+        "verb-template": "take off something"
+      },
+      {
+        "example": "She became an ethical financial adviser ten years ago, just as green investing began to take off.",
+        "verb": "",
+        "meaning": "to suddenly start to be successful",
+        "verb-template": "take off"
+      },
+      {
+        "example": "He taught for years before his writing career took off.",
+        "verb": "",
+        "meaning": "to suddenly start to be successful",
+        "verb-template": "take off"
+      },
+      {
+        "example": "The shares took off, climbing more than 130%.",
+        "verb": "",
+        "meaning": "to suddenly increase in value or amount",
+        "verb-template": "take off"
+      },
+      {
+        "example": "The time to protect your finances from inflation is now, before prices really take off.",
+        "verb": "",
+        "meaning": "to suddenly increase in value or amount",
+        "verb-template": "take off"
+      },
+      {
+        "example": "After the business trip she took a few days off.",
+        "verb": "",
+        "meaning": "to have a period of time away from work",
+        "verb-template": "take sth off"
+      },
+      {
+        "example": "I am definitely looking forward to taking some time off.",
+        "verb": "",
+        "meaning": "to have a period of time away from work",
+        "verb-template": "take sth off"
+      },
+      {
+        "example": "Being too near a train track could take thousands off the price of a house .",
+        "verb": "",
+        "meaning": "to reduce a price by a particular amount",
+        "verb-template": "take sth off"
+      },
+      {
+        "example": "It demonstrates that public pensions can lead to a take-off from a low growth trap to a higher growth equilibrium.",
+        "verb": "",
+        "meaning": "change from one state to another",
+        "verb-template": "take something off"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-on": [
+      {
+        "example": "She took too much on and made herself ill .",
+        "verb": "",
+        "meaning": "to accept a particular job or responsibility",
+        "verb-template": "take something on"
+      },
+      {
+        "example": "She has taken on far too much work .",
+        "verb": "",
+        "meaning": "to accept a particular job or responsibility",
+        "verb-template": "take something on"
+      },
+      {
+        "example": "You can't take on responsibility for the whole event .",
+        "verb": "",
+        "meaning": "to accept a particular job or responsibility",
+        "verb-template": "take something on"
+      },
+      {
+        "example": "Her voice took on a troubled tone .",
+        "verb": "",
+        "meaning": "to begin to have a particular quality",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "She was taken on as a laboratory assistant .",
+        "verb": "",
+        "meaning": "take someone on as a something",
+        "verb-template": "take someone on"
+      },
+      {
+        "example": "We're taking on new staff at the moment .",
+        "verb": "",
+        "meaning": "take someone on as a something",
+        "verb-template": "take someone on"
+      },
+      {
+        "example": "He was taken on as a security guard .",
+        "verb": "",
+        "meaning": "take someone on as a something",
+        "verb-template": "take someone on"
+      },
+      {
+        "example": "The government took on the unions and won .",
+        "verb": "",
+        "meaning": "to compete against or fight someone",
+        "verb-template": "take someone on"
+      },
+      {
+        "example": "We'd love to hear your take on this issue .",
+        "verb": "",
+        "meaning": "an opinion about something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "Most people would be upset at this sort of criticism , but Louis has a different take on it.",
+        "verb": "",
+        "meaning": "an opinion about something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "He was eager to share his take on the outcome of the recent elections .",
+        "verb": "",
+        "meaning": "an opinion about something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "She had a really weird take on what happened .",
+        "verb": "",
+        "meaning": "an opinion about something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "My take on this is that Jenkyns didn't really want the job .",
+        "verb": "",
+        "meaning": "an opinion about something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "The restaurant offers a new take on traditional French cooking .",
+        "verb": "",
+        "meaning": "a version of something that shows someone's attitude towards it",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "Her novels offer an unusual take on the traditional vampire story .",
+        "verb": "",
+        "meaning": "a version of something that shows someone's attitude towards it",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "The game is a new take on Monopoly.",
+        "verb": "",
+        "meaning": "a version of something that shows someone's attitude towards it",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "The dessert is a more modern take on sherry trifle .",
+        "verb": "",
+        "meaning": "a version of something that shows someone's attitude towards it",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "His jacket was a stylish take on the sort of tweed his father would have worn .",
+        "verb": "",
+        "meaning": "a version of something that shows someone's attitude towards it",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "A chameleon takes on the color of its surroundings .",
+        "verb": "",
+        "meaning": "to begin to have, use, or do something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "Her voice took on a troubled tone .",
+        "verb": "",
+        "meaning": "to begin to have, use, or do something",
+        "verb-template": "take on something"
+      },
+      {
+        "example": "I’ll take you on in a game of chess .",
+        "verb": "",
+        "meaning": "to fight or compete against someone or something",
+        "verb-template": "take on someone/something"
+      },
+      {
+        "example": "You have to be brave to take on a big corporation in court .",
+        "verb": "",
+        "meaning": "to fight or compete against someone or something",
+        "verb-template": "take on someone/something"
+      },
+      {
+        "example": "The bank is taking on 1,000 new staff .",
+        "verb": "",
+        "meaning": "to employ someone",
+        "verb-template": "take sb on"
+      },
+      {
+        "example": "These new demands may be hard for traditional managers to take on.",
+        "verb": "",
+        "meaning": "to accept a particular job or responsibility",
+        "verb-template": "take sth on"
+      },
+      {
+        "example": "Secretaries are now far more able to take on a more substantial support role .",
+        "verb": "",
+        "meaning": "to accept a particular job or responsibility",
+        "verb-template": "take sth on"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-out-on": [
+      {
+        "example": "I know you've had a bad day , but you don't have to take it out on me!",
+        "verb": "",
+        "meaning": "to treat someone badly because you are upset or angry, even if they have done nothing wrong",
+        "verb-template": "take something out on someone"
+      },
+      {
+        "example": "He took out his anger on his family .",
+        "verb": "",
+        "meaning": "to treat someone badly because you are upset or angry, even if they have done nothing wrong",
+        "verb-template": "take something out on someone"
+      },
+      {
+        "example": "I know you've got a headache , but don't take it out on me!",
+        "verb": "",
+        "meaning": "to treat someone badly because you are upset or angry, even if they have done nothing wrong",
+        "verb-template": "take something out on someone"
+      },
+      {
+        "example": "Don’t take it out on me – I’m not your boss !",
+        "verb": "",
+        "meaning": "to make someone else suffer or be responsible for your own mistakes, anger, sadness, etc.",
+        "verb-template": "take something out on someone"
+      }
     ]
   }
 }
