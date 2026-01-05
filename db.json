@@ -4548,6 +4548,394 @@
         "meaning": "to make someone else suffer or be responsible for your own mistakes, anger, sadness, etc.",
         "verb-template": "take something out on someone"
       }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-out": [
+      {
+        "example": "They had to take out two of his teeth .",
+        "verb": "",
+        "meaning": "to remove something from somewhere",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "They took out a benign lump from her breast .",
+        "verb": "",
+        "meaning": "to remove something from somewhere",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "I need to get this tooth taken out.",
+        "verb": "",
+        "meaning": "to remove something from somewhere",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "I took out some money for the weekend .",
+        "verb": "",
+        "meaning": "to get money from a bank account",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "I’m going to take out a life insurance policy .",
+        "verb": "",
+        "meaning": "to get money from a bank account",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "He had to take out a loan to pay his taxes .",
+        "verb": "",
+        "meaning": "to get money from a bank account",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "Is that to eat in or take out?",
+        "verb": "",
+        "meaning": "to buy food in a restaurant and eat it somewhere else",
+        "verb-template": "take something out"
+      },
+      {
+        "example": "Dad's taking the whole family out to the cinema .",
+        "verb": "",
+        "meaning": "to go somewhere and do something with someone, usually something you plan and pay for",
+        "verb-template": "take someone out to something"
+      },
+      {
+        "example": "Our boss took us out for drinks .",
+        "verb": "",
+        "meaning": "to go somewhere and do something with someone, usually something you plan and pay for",
+        "verb-template": "take someone out to something"
+      },
+      {
+        "example": "Daniel asked Shona if he could take her out some time .",
+        "verb": "",
+        "meaning": "to go somewhere and do something with someone, usually something you plan and pay for",
+        "verb-template": "take someone out"
+      },
+      {
+        "example": "Their grandparents are taking them out for the day .",
+        "verb": "",
+        "meaning": "to go somewhere and do something with someone, usually something you plan and pay for",
+        "verb-template": "take someone out"
+      },
+      {
+        "example": "He took us out for a pizza .",
+        "verb": "",
+        "meaning": "to go somewhere and do something with someone, usually something you plan and pay for",
+        "verb-template": "take someone out"
+      },
+      {
+        "example": "The soldiers said that they were trying to take out the snipers .",
+        "verb": "",
+        "meaning": "to kill someone or destroy something",
+        "verb-template": "take someone out"
+      },
+      {
+        "example": "Our boss took us out for dinner .",
+        "verb": "",
+        "meaning": "to go with someone to a restaurant, theater, performance, etc. and pay for everything",
+        "verb-template": "ake out someone"
+      },
+      {
+        "example": "Take out the seeds before you slice the papaya .",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": "take out something"
+      },
+      {
+        "example": "He took out a $44,000 startup loan .",
+        "verb": "",
+        "meaning": "to arrange and pay for insurance, a loan, an advertisement, etc",
+        "verb-template": "take sth out"
+      },
+      {
+        "example": "They decided to take out extra life insurance .",
+        "verb": "",
+        "meaning": "to arrange and pay for insurance, a loan, an advertisement, etc",
+        "verb-template": "take out a loan/mortgage"
+      },
+      {
+        "example": "They took out an ad in USA Today.",
+        "verb": "",
+        "meaning": "to arrange and pay for insurance, a loan, an advertisement, etc",
+        "verb-template": "take out an ad/advertisement"
+      },
+      {
+        "example": "I had to take $10,000 out of a savings account in order to pay for the car .",
+        "verb": "",
+        "meaning": "to remove money from a bank account",
+        "verb-template": "take sth out"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-over": [
+      {
+        "example": "He took over from the previous headmaster in February .",
+        "verb": "",
+        "meaning": "to start doing a job or being responsible for something that another person did or had responsibility for before",
+        "verb-template": "take over from"
+      },
+      {
+        "example": "She took over as manager two weeks ago.",
+        "verb": "",
+        "meaning": "to start doing a job or being responsible for something that another person did or had responsibility for before",
+        "verb-template": "take over as"
+      },
+      {
+        "example": "Jason Lamb has taken over responsibility for this project .",
+        "verb": "",
+        "meaning": "to start doing a job or being responsible for something that another person did or had responsibility for before",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "Do you know who's taking over the restaurant ?",
+        "verb": "",
+        "meaning": "to start doing a job or being responsible for something that another person did or had responsibility for before",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "I've taken over from Vanessa as head of the sales department .",
+        "verb": "",
+        "meaning": "to start doing a job or being responsible for something that another person did or had responsibility for before",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "The company he works for has recently been taken over.",
+        "verb": "",
+        "meaning": "to get control of a company by buying enough of the shares in it",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "Our company was taken over in May.",
+        "verb": "",
+        "meaning": "to get control of a company by buying enough of the shares in it",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "There are rumours that a German firm is bidding to take over the shoe factory .",
+        "verb": "",
+        "meaning": "to get control of a company by buying enough of the shares in it",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "It's only a matter of time before they take over completely .",
+        "verb": "",
+        "meaning": "to become more successful or powerful than something or someone else that is involved in the same type of activity",
+        "verb-template": "take (something) over"
+      },
+      {
+        "example": "He’s taken over the spare bedroom for his model railroad .",
+        "verb": "",
+        "meaning": "to get control of something, or to do something instead of someone else",
+        "verb-template": "take over (something)"
+      },
+      {
+        "example": "She took over management of this department last winter .",
+        "verb": "",
+        "meaning": "to get control of something, or to do something instead of someone else",
+        "verb-template": "take over (something)"
+      },
+      {
+        "example": "They made changes the minute they took over.",
+        "verb": "",
+        "meaning": "to get control of something, or to do something instead of someone else",
+        "verb-template": "take over (something)"
+      },
+      {
+        "example": "The firm was badly in need of restructuring when she took over.",
+        "verb": "",
+        "meaning": "to begin to have control of something",
+        "verb-template": "take sth over"
+      },
+      {
+        "example": "The asset management company took over the bank's bad loans .",
+        "verb": "",
+        "meaning": "to begin to have control of something",
+        "verb-template": "take sth over"
+      },
+      {
+        "example": "The firm has been taken over by one of its main competitors .",
+        "verb": "",
+        "meaning": "to take control of a company by buying enough shares to do this",
+        "verb-template": "take sth over"
+      },
+      {
+        "example": "Some workers will lose their jobs as machines take over.",
+        "verb": "",
+        "meaning": "to replace someone or something",
+        "verb-template": "take over"
+      },
+      {
+        "example": "When he died , his son took over as CEO .",
+        "verb": "",
+        "meaning": "to replace someone or something",
+        "verb-template": "take over as sth"
+      },
+      {
+        "example": "He took over from Tony as head of department last year .",
+        "verb": "",
+        "meaning": "to replace someone or something",
+        "verb-template": "take over from sb"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-a-turn": [
+      {
+        "example": "The battle for control of the company took an interesting turn today.",
+        "verb": "",
+        "meaning": "to develop in a particular way",
+        "verb-template": "take turn"
+      },
+      {
+        "example": "Events took an unexpected turn when her mother suddenly arrived .",
+        "verb": "",
+        "meaning": "to develop in a particular way",
+        "verb-template": "take turn"
+      },
+      {
+        "example": "The author's career took a surprising turn when he released a jazz record .",
+        "verb": "",
+        "meaning": "to develop in a particular way",
+        "verb-template": "take turn"
+      },
+      {
+        "example": "The scene then takes a nasty turn and you might be well-advised to look away.",
+        "verb": "",
+        "meaning": "to develop in a particular way",
+        "verb-template": "take turn"
+      },
+      {
+        "example": "The plot took a strange turn in the last episode – I wasn't expecting that!",
+        "verb": "",
+        "meaning": "to develop in a particular way",
+        "verb-template": "take turn"
+      },
+      {
+        "example": "Things at the party then took a mysterious turn when the host was nowhere to be found .",
+        "verb": "",
+        "meaning": "to develop in a particular way",
+        "verb-template": "take turn"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-personally": [
+      {
+        "example": "These criticisms should not be taken personally (= they are not meant to criticize any one person in particular ) .",
+        "verb": "",
+        "meaning": "to think that someone is offending you when they are not",
+        "verb-template": "take personally"
+      },
+      {
+        "example": "She's always grumpy in the mornings , so don't take it personally .",
+        "verb": "",
+        "meaning": "to think that someone is offending you when they are not",
+        "verb-template": "take personally"
+      },
+      {
+        "example": "He insisted that he didn't take the criticism personally .",
+        "verb": "",
+        "meaning": "to think that someone is offending you when they are not",
+        "verb-template": "take personally"
+      },
+      {
+        "example": "The more confident you are, the easier it is to ignore a rude remark and not take it personally .",
+        "verb": "",
+        "meaning": "to think that someone is offending you when they are not",
+        "verb-template": "take personally"
+      },
+      {
+        "example": "She took his remarks personally and refused to speak to him again.",
+        "verb": "",
+        "meaning": "to think that someone is offending you when they are not",
+        "verb-template": "take personally"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-through": [
+      {
+        "example": "I'll take you through it one more time , then you can try it yourself.",
+        "verb": "",
+        "meaning": "to explain something to someone",
+        "verb-template": "take someone through something"
+      },
+      {
+        "example": "Greene's essay takes the reader through the events leading up to the disaster .",
+        "verb": "",
+        "meaning": "to give someone information about something",
+        "verb-template": "take someone through something"
+      },
+      {
+        "example": "Without a fee , the defense attorney took his case through two trials , finally winning in the Ohio Supreme Court .",
+        "verb": "",
+        "meaning": "to continue doing something during a period of time",
+        "verb-template": "take something through something"
+      },
+      {
+        "example": "This helpful guide will take you through the application procedure .",
+        "verb": "",
+        "meaning": "to explain something to someone",
+        "verb-template": "take sb through sth"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-to": [
+      {
+        "example": "The two dogs took to each other immediately and started to play .",
+        "verb": "",
+        "meaning": "to start to like someone or something",
+        "verb-template": "take to someone"
+      },
+      {
+        "example": "She's taken to basketball like a duck to water (= she likes it and is good at it) .",
+        "verb": "",
+        "meaning": "take to someone/something like a duck to water",
+        "verb-template": "take to something"
+      },
+      {
+        "example": "She was so depressed she took to drink .",
+        "verb": "",
+        "meaning": "to start doing something often",
+        "verb-template": "take to something"
+      },
+      {
+        "example": "He's taken to staying out very late.",
+        "verb": "",
+        "meaning": "to start doing something often",
+        "verb-template": "take to something"
+      },
+      {
+        "example": "The refugees took to the hills for safety .",
+        "verb": "",
+        "meaning": "to go somewhere, usually because you are in a difficult or dangerous situation",
+        "verb-template": "take to somewhere"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-up-on": [
+      {
+        "example": "Could I take you up on that offer of a lift , Rob?",
+        "verb": "",
+        "meaning": "to accept an offer that someone has made",
+        "verb-template": "take someone up on something"
+      },
+      {
+        "example": "I think I’ll take him up on his offer of a free ticket .",
+        "verb": "",
+        "meaning": "to accept an offer or invitation from someone",
+        "verb-template": "take someone up on something"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-up-with": [
+      {
+        "example": "She's taken up with a strange crowd of people .",
+        "verb": "",
+        "meaning": "to become friendly or start a relationship with someone, especially someone who might have a bad influence on you",
+        "verb-template": "take up with someone"
+      },
+      {
+        "example": "You’ll have to take this up with the head of the department .",
+        "verb": "",
+        "meaning": "to begin discussing a subject with someone",
+        "verb-template": "take something up with someone"
+      },
+      {
+        "example": "She’s recently taken up with a strange group of people .",
+        "verb": "",
+        "meaning": "to become friendly with or spend time with someone",
+        "verb-template": "take up with someone"
+      }
     ]
   }
 }
