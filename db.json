@@ -6337,6 +6337,440 @@
         "verb": "",
         "meaning": "to travel on something to get from one place to another",
         "verb-template": ""
+      },
+      {
+        "example": "That scene needed ten takes before they got it right",
+        "verb": "",
+        "meaning": "the filming of a small part of a movie",
+        "verb-template": ""
+      },
+      {
+        "example": "The box office take has been huge for the new show.",
+        "verb": "",
+        "meaning": "the amount of money received from an activity",
+        "verb-template": ""
+      },
+      {
+        "example": "What’s your take on the new proposals for new health care ?",
+        "verb": "",
+        "meaning": "a particular feeling, opinion, or reaction",
+        "verb-template": ""
+      },
+      {
+        "example": "You'll need to take $2,000 from the $8,000 to allow for tax .",
+        "verb": "",
+        "meaning": "to subtract one number or amount from another",
+        "verb-template": "take sth from sth"
+      },
+      {
+        "example": "What are we left with after we take off our costs ?",
+        "verb": "",
+        "meaning": "to remove something or someone from somewhere",
+        "verb-template": ""
+      },
+      {
+        "example": "I asked for her name to be taken off the list .",
+        "verb": "",
+        "meaning": "to remove something or someone from somewhere",
+        "verb-template": ""
+      },
+      {
+        "example": "They decided to take him off the job and assign him to another department .",
+        "verb": "",
+        "meaning": "to remove something or someone from somewhere",
+        "verb-template": ""
+      },
+      {
+        "example": "The police took away all of the files for investigation .",
+        "verb": "",
+        "meaning": "to remove something or someone from somewhere",
+        "verb-template": ""
+      },
+      {
+        "example": "Do you take credit cards ?",
+        "verb": "",
+        "meaning": "to accept or receive something",
+        "verb-template": ""
+      },
+      {
+        "example": "We're taking 5,000 orders a day .",
+        "verb": "",
+        "meaning": "to accept or receive something",
+        "verb-template": ""
+      },
+      {
+        "example": "Top executives will take a 10% pay cut .",
+        "verb": "",
+        "meaning": "to accept or receive something",
+        "verb-template": ""
+      },
+      {
+        "example": "He took a job as salesman in a local company .",
+        "verb": "",
+        "meaning": "to accept or receive something",
+        "verb-template": ""
+      },
+      {
+        "example": "Are you going to take the job if you get offered it?",
+        "verb": "",
+        "meaning": "to accept or receive something",
+        "verb-template": ""
+      },
+      {
+        "example": "They took an astonishing $100,000 in their first week .",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for something",
+        "verb-template": ""
+      },
+      {
+        "example": "The company will make money by taking 5% from each bet .",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for something",
+        "verb-template": ""
+      },
+      {
+        "example": "The good news is that they have decided to take 200 units a year .",
+        "verb": "",
+        "meaning": "to buy or choose something",
+        "verb-template": ""
+      },
+      {
+        "example": "50% of our total production is taken by just three customers .",
+        "verb": "",
+        "meaning": "to buy or choose something",
+        "verb-template": ""
+      },
+      {
+        "example": "It takes determination to succeed in a new business venture .",
+        "verb": "",
+        "meaning": "to need something",
+        "verb-template": ""
+      },
+      {
+        "example": "They estimated that the project would take about 6 months to complete .",
+        "verb": "",
+        "meaning": "if something takes a particular amount of time, that time is needed in order to finish it",
+        "verb-template": ""
+      },
+      {
+        "example": "Have you got what it takes to be in charge of a department ?",
+        "verb": "",
+        "meaning": "to have the necessary qualities or abilities to do something",
+        "verb-template": ""
+      },
+      {
+        "example": "If you don't have what it takes, you're not going to last long .",
+        "verb": "",
+        "meaning": "to have the necessary qualities or abilities to do something",
+        "verb-template": ""
+      },
+      {
+        "example": "And that's our final offer . Take it or leave it.",
+        "verb": "",
+        "meaning": "used when you are offering something to someone to say that you will not improve your offer",
+        "verb-template": ""
+      },
+      {
+        "example": "Most of the board members took part in the discussions .",
+        "verb": "",
+        "meaning": "to be involved in something with other people",
+        "verb-template": ""
+      },
+      {
+        "example": "When markets touch new highs , investors need to take stock .",
+        "verb": "",
+        "meaning": "to think carefully about a situation or event and form an opinion about it, so that you can decide what to do",
+        "verb-template": ""
+      },
+      {
+        "example": "I am currently taking stock of our position .",
+        "verb": "",
+        "meaning": "to think carefully about a situation or event and form an opinion about it, so that you can decide what to do",
+        "verb-template": ""
+      },
+      {
+        "example": "It's going to take time to get this department running smoothly again.",
+        "verb": "",
+        "meaning": "to need a lot of tim",
+        "verb-template": "take time"
+      },
+      {
+        "example": "The players now get 75% of the take.",
+        "verb": "",
+        "meaning": "money that is received from sales or as payment for something",
+        "verb-template": ""
+      },
+      {
+        "example": "Tour operators had come to rely on the commission from insurance to increase their take.",
+        "verb": "",
+        "meaning": "money that is received from sales or as payment for something",
+        "verb-template": ""
+      },
+      {
+        "example": "Last weekend's take was down over 50%.",
+        "verb": "",
+        "meaning": "money that is received from sales or as payment for something",
+        "verb-template": ""
+      },
+      {
+        "example": "They vowed to punish officials on the take.",
+        "verb": "",
+        "meaning": "to accept money for helping someone to do something illegal",
+        "verb-template": ""
+      },
+      {
+        "example": "They plotted out the area and drew up plans before taking it over.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The two players alternately take new edges, one edge per move.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Take the three-person game introduced above and suppose the players' beliefs are as specified.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Although it was well-known that rice is mainly self-pollinating, it was also known that some cross-pollination can take place.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "An ordinary industrial robot hanging over the workcell suspended by an iron portal takes care of hexapod translocations.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Five organic components and the presence of amorphous organic matter were taken into account in the palynofacies analysis.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "His contribution contains the most detailed phonetic analysis, taking into account not only prosodic features but segmental characteristics as well.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "In his visits to and walks around allotments, public housing projects and wasteland, he took photographs, drew maps and interviewed inhabitants or users of space.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Placing and orientation of the camera for taking the pictures followed the same method as described for 38-mm photographs.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The location of sulci could nonetheless be determined by referring to the photographs taken during each stage of the flatmounting process.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "All photographs were taken using identical camera settings.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The present study aimed to assess, in a community sample, actions taken to cope with depression at different levels of psychological distress.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Having taken these precautions, no associations between any of the immune or inflammatory measures and psychological health outcomes were observed.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Even if ' verb ' is taken here as a shorthand for ' argument-taker ', it may be thought that no harm is done, because prototypical argument-takers are verbs.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The generating extension takes the values classified as static as parameters and returns the source program specialized with respect to these values.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/on-the-take": [
+      {
+        "example": "He's obviously on the take - where else did all that money come from?",
+        "verb": "",
+        "meaning": "trying to profit in a personal and usually financial way from a situation",
+        "verb-template": "on take"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/not-take-long": [
+      {
+        "example": "I'm just going to the shops - I won't take long .",
+        "verb": "",
+        "meaning": "to act or happen over a short period of time",
+        "verb-template": "not take long"
+      },
+      {
+        "example": "It didn't take long before we realized our mistake .",
+        "verb": "",
+        "meaning": "to act or happen over a short period of time",
+        "verb-template": "not take long"
+      },
+      {
+        "example": "It didn't take the police long to catch the thief .",
+        "verb": "",
+        "meaning": "to act or happen over a short period of time",
+        "verb-template": "not take long"
+      },
+      {
+        "example": "It doesn't take long to run up a huge bill in a place like this.",
+        "verb": "",
+        "meaning": "to act or happen over a short period of time",
+        "verb-template": "not take long"
+      },
+      {
+        "example": "Loading the trucks didn't take long .",
+        "verb": "",
+        "meaning": "to act or happen over a short period of time",
+        "verb-template": "not take long"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-time": [
+      {
+        "example": "The builders are really taking their time .",
+        "verb": "",
+        "meaning": "to do something too slowly",
+        "verb-template": "take time"
+      },
+      {
+        "example": "Broken bones always take time to heal .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "It takes time for investments like this to pay off.",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "You could learn to play an instrument , but that takes time .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "Rebuilding their relationship took time , but today they are very close .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "It took time to complete all the necessary paperwork .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "He took his time before answering the question .",
+        "verb": "",
+        "meaning": "to not hurry",
+        "verb-template": ""
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/takings": [
+      {
+        "example": "The price should be as high as possible to maximise takings but as low as possible to maximise sales.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "Under these conditions most people's subsistence needs would be met by hunting as long as they all confined their takings to the subsistence level.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The ultimate source of value on my view would be these takings of attitudinal pleasure in the sensations rather than the sensations themselves.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "At the time the case was decided, neither the statutes nor the case law governing wills expressly prohibited such takings .",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "While owners can reasonably expect some regulatory \" takings \" to occur,27 they will normally expect that, having acquired property, they will be able to retain it.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "They may manifest themselves in turn takings and new paragraphs added in texts, in the particular way in which an internal note is written, or in repetitions during interviews.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "While the middle of the conversations still tended to contain errors and confusion, the addition of greetings and leave takings was evident and made an important impact on the interactions.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The north-west has realised that retailing stories of doom and gloom will not increase takings .",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "There are two kiosks within a quarter of a mile and takings would need to be increased to justify a third.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The average annual takings of a jackpot machine are estimated to be at least £7,500.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "I will digress slightly to make the observation that those public houses that have either banned or curtailed smoking have increased their takings .",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The proposal to abolish the standard method of reckoning gross takings would impact on those retailers, including mail order companies, which provide self-financed credit facilities.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The national income of this country has increased tenfold, and the surtax rates have trebled, and the surtax takings have increased twice.",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
       }
     ]
   }
