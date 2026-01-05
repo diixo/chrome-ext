@@ -5334,6 +5334,1010 @@
         "meaning": "to walk through a building or visit a place with someone, showing them the most interesting or important parts",
         "verb-template": "take someone round"
       }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take": [
+      {
+        "example": "Has anything been taken?",
+        "verb": "",
+        "meaning": "to remove something, especially without permission",
+        "verb-template": "take"
+      },
+      {
+        "example": "Here's your pen - I took it by mistake .",
+        "verb": "",
+        "meaning": "to remove something, especially without permission",
+        "verb-template": "take"
+      },
+      {
+        "example": "All her possessions had been taken from her.",
+        "verb": "",
+        "meaning": "to remove something, especially without permission",
+        "verb-template": "take"
+      },
+      {
+        "example": "\"Did you take any money out of my purse ?\" \"Certainly not!\"",
+        "verb": "",
+        "meaning": "take something (away) from something",
+        "verb-template": "take something (away) from something"
+      },
+      {
+        "example": "When they got divorced , his wife took everything.",
+        "verb": "",
+        "meaning": "take something (away) from something",
+        "verb-template": "take something (away) from something"
+      },
+      {
+        "example": "They took blood and urine specimens for analysis .",
+        "verb": "",
+        "meaning": "take something (away) from something",
+        "verb-template": "take something (away) from something"
+      },
+      {
+        "example": "OK, very funny - who took my clothes ?",
+        "verb": "",
+        "meaning": "take something (away) from something",
+        "verb-template": "take something (away) from something"
+      },
+      {
+        "example": "If anyone found out that I took the money , I'd die of shame .",
+        "verb": "",
+        "meaning": "take something (away) from something",
+        "verb-template": "take something (away) from something"
+      },
+      {
+        "example": "The weather forecast said rain , so take your umbrella (with you) when you go out.",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "The suitcases were taken to San Antonio by mistake .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "Take the book up/down to the third floor of the library .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I suggested that he should take her some chocolates.",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I suggest that he takes some sugar to her.",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "Take the vase off the shelf .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "Could you take this letter to John , please ?",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I took some food from the table .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I took some of the flowers for Mrs Bright.",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I took several books with me for the journey .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "Do they take credit cards here?",
+        "verb": "",
+        "meaning": "to accept or have",
+        "verb-template": ""
+      },
+      {
+        "example": "This container will take (= has room for) six litres .",
+        "verb": "",
+        "meaning": "to accept or have",
+        "verb-template": ""
+      },
+      {
+        "example": "Which newspaper do you take (= regularly buy ) ?",
+        "verb": "",
+        "meaning": "to accept or have",
+        "verb-template": ""
+      },
+      {
+        "example": "He continually abuses her, and she just sits there and takes it.",
+        "verb": "",
+        "meaning": "to accept or have",
+        "verb-template": ""
+      },
+      {
+        "example": "If you think I'm going to take that lying down (= accept it without complaining ) , you're very much mistaken .",
+        "verb": "",
+        "meaning": "to accept or have",
+        "verb-template": ""
+      },
+      {
+        "example": "I take the/ your point (= accept the argument ) , but I still don't think you should have gone.",
+        "verb": "",
+        "meaning": "to accept or have",
+        "verb-template": ""
+      },
+      {
+        "example": "I've been very busy recently . Take last week , I had meetings every night after work , except Friday .",
+        "verb": "",
+        "meaning": "used when you want to mention something as a particular example of what you are talking about",
+        "verb-template": ""
+      },
+      {
+        "example": "These creatures are generally taken to be descended from primitive fishes .",
+        "verb": "",
+        "meaning": "If you take someone or something to be something, or if you take someone or something for something, you accept or believe that they are that thing",
+        "verb-template": ""
+      },
+      {
+        "example": "I can't take it any more. I'm leaving .",
+        "verb": "",
+        "meaning": "to not be able to deal with an unpleasant situation",
+        "verb-template": ""
+      },
+      {
+        "example": "That's my final offer - you can take it or leave it.",
+        "verb": "",
+        "meaning": "to move in order to hold something in the hand(s)",
+        "verb-template": ""
+      },
+      {
+        "example": "Do you usually take a morning / afternoon break ?",
+        "verb": "",
+        "meaning": "to move in order to hold something in the hand(s)",
+        "verb-template": ""
+      },
+      {
+        "example": "I took this new job because I felt that the career prospects were much better .",
+        "verb": "",
+        "meaning": "to move in order to hold something in the hand(s)",
+        "verb-template": ""
+      },
+      {
+        "example": "The director took a risk in giving the movie's main role to an unknown actor .",
+        "verb": "",
+        "meaning": "to move in order to hold something in the hand(s)",
+        "verb-template": ""
+      },
+      {
+        "example": "She took a few spoonfuls of soup but left her main course untouched .",
+        "verb": "",
+        "meaning": "to move in order to hold something in the hand(s)",
+        "verb-template": ""
+      },
+      {
+        "example": "He took a drop in salary when he changed jobs .",
+        "verb": "",
+        "meaning": "to move in order to hold something in the hand(s)",
+        "verb-template": ""
+      },
+      {
+        "example": "Can you take this bag while I open the door ?",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "He took my arm and led me outside .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "Take an egg and break it into the bowl .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "He took hold of the plant's root and pulled .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "The baby took my finger in its tenacious little fist .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "Take my hand as we cross the road .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "Each player takes three cards .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "The doctor had to take my shoulder and click the joint back into place .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "He took my arm and guided me to the bar .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "We're taking the kids to the zoo on Saturday .",
+        "verb": "",
+        "meaning": "to go with",
+        "verb-template": ""
+      },
+      {
+        "example": "I took my elderly parents to look at some new houses .",
+        "verb": "",
+        "meaning": "to go with",
+        "verb-template": ""
+      },
+      {
+        "example": "Will you take me swimm ing tomorrow ?",
+        "verb": "",
+        "meaning": "to go with",
+        "verb-template": ""
+      },
+      {
+        "example": "Let me take you to your room .",
+        "verb": "",
+        "meaning": "to show someone how to get to somewhere by going there with them",
+        "verb-template": ""
+      },
+      {
+        "example": "Who's taking you to the dance ?",
+        "verb": "",
+        "meaning": "to go to a social event, place with someone",
+        "verb-template": "take someone to something "
+      },
+      {
+        "example": "As a special treat , I'll take you to my favourite tea-shop.",
+        "verb": "",
+        "meaning": "to go to a social event, place with someone",
+        "verb-template": "take someone to something "
+      },
+      {
+        "example": "I had to get up early to take her to the airport .",
+        "verb": "",
+        "meaning": "to go to a social event, place with someone",
+        "verb-template": "take someone to something "
+      },
+      {
+        "example": "If he gets any worse I'll take him to the doctor's.",
+        "verb": "",
+        "meaning": "to go to a social event, place with someone",
+        "verb-template": "take someone to something "
+      },
+      {
+        "example": "Three days after the birth , Paul and Sandra took their precious bundle of joy home .",
+        "verb": "",
+        "meaning": "to go to a social event, place with someone",
+        "verb-template": "take someone to something "
+      },
+      {
+        "example": "I took my two-year old nephew down to the beach with his bucket and spade .",
+        "verb": "",
+        "meaning": "to go to a social event, place with someone",
+        "verb-template": "take someone to something "
+      },
+      {
+        "example": "I always take the train - it's less hassle than a car .",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "She took the 10.30 flight to Edinburgh.",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "If you take the road on the left , you'll come to the post office .",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "We took a bus to Mexico City.",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "From Heathrow, you can take a taxi .",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "I took the 6.30 train to Manchester.",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "Why don't you take the train to Paris ?",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "We took a flight to Denver .",
+        "verb": "",
+        "meaning": "to travel somewhere by using a particular form of transport or a particular vehicle, route, etc.",
+        "verb-template": "take to"
+      },
+      {
+        "example": "Parachuting takes a lot of nerve .",
+        "verb": "",
+        "meaning": "to need",
+        "verb-template": ""
+      },
+      {
+        "example": "Transitive verbs take a direct object .",
+        "verb": "",
+        "meaning": "to need",
+        "verb-template": ""
+      },
+      {
+        "example": "His story took some believing (= was difficult to believe ) .",
+        "verb": "",
+        "meaning": "to need",
+        "verb-template": ""
+      },
+      {
+        "example": "What size shoes do you take?",
+        "verb": "",
+        "meaning": "to wear a particular size of clothes or shoes",
+        "verb-template": ""
+      },
+      {
+        "example": "The cooking process only takes ten minutes .",
+        "verb": "",
+        "meaning": "If something takes a particular time, that period is needed in order to complete it",
+        "verb-template": ""
+      },
+      {
+        "example": "How long does this paint take to dry ?",
+        "verb": "",
+        "meaning": "If something takes a particular time, that period is needed in order to complete it",
+        "verb-template": ""
+      },
+      {
+        "example": "It took us all day to drive home .",
+        "verb": "",
+        "meaning": "If something takes a particular time, that period is needed in order to complete it",
+        "verb-template": ""
+      },
+      {
+        "example": "I'm just going to the shops - I won't take long .",
+        "verb": "",
+        "meaning": "to act or happen over a short period of time",
+        "verb-template": ""
+      },
+      {
+        "example": "Broken bones always take time to heal .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "They took two hours to discuss the plans and considered it time well spent .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "It took a lot of courage to do what she did.",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "The insurance company took months to settle my claim .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "The jury took four days to reach a verdict .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "This recipe takes four cloves of garlic .",
+        "verb": "",
+        "meaning": "to need a long time",
+        "verb-template": ""
+      },
+      {
+        "example": "Nurses took my temperature and blood pressure .",
+        "verb": "",
+        "meaning": "to measure something",
+        "verb-template": ""
+      },
+      {
+        "example": "Take this medicine three times a day .",
+        "verb": "",
+        "meaning": "to swallow or use a medicine or drug, especially in a regular way",
+        "verb-template": ""
+      },
+      {
+        "example": "Do you think she takes drugs ?",
+        "verb": "",
+        "meaning": "to swallow or use a medicine or drug, especially in a regular way",
+        "verb-template": ""
+      },
+      {
+        "example": "Do you take milk ?",
+        "verb": "",
+        "meaning": "used to talk about the way in which someone likes to have a particular drink",
+        "verb-template": ""
+      },
+      {
+        "example": "He takes his coffee black .",
+        "verb": "",
+        "meaning": "used to talk about the way in which someone likes to have a particular drink",
+        "verb-template": ""
+      },
+      {
+        "example": "She takes her tea with lemon .",
+        "verb": "",
+        "meaning": "used to talk about the way in which someone likes to have a particular drink",
+        "verb-template": ""
+      },
+      {
+        "example": "How do you take your scotch ? With water ?",
+        "verb": "",
+        "meaning": "used to talk about the way in which someone likes to have a particular drink",
+        "verb-template": ""
+      },
+      {
+        "example": "I take my coffee strong with a dash of milk .",
+        "verb": "",
+        "meaning": "used to talk about the way in which someone likes to have a particular drink",
+        "verb-template": ""
+      },
+      {
+        "example": "Shelley is taking (= studying ) economics at university .",
+        "verb": "",
+        "meaning": "to do or perform",
+        "verb-template": ""
+      },
+      {
+        "example": "The Archbishop took our service of thanksgiving .",
+        "verb": "",
+        "meaning": "to do or perform",
+        "verb-template": ""
+      },
+      {
+        "example": "I think we'll take a break (= we'll stop for a break ) there.",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "If you're tired you should take a rest (= you should rest ) .",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "I always like to take a walk (= to walk ) after lunch .",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "I usually take a nap after lunch .",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "Who takes this class on Tuesdays ?",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "I agreed to take Nicola's aerobics class for her next week .",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "I'm going to take some French lessons .",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "After the next song , we'll take a break .",
+        "verb": "",
+        "meaning": "instruction: used with many nouns to make a verb phrase that is equal in meaning to the related verb",
+        "verb-template": ""
+      },
+      {
+        "example": "We're taking the bomb threats very seriously .",
+        "verb": "",
+        "meaning": "to think about something or someone in a particular way",
+        "verb-template": ""
+      },
+      {
+        "example": "I was just teasing him, but he took it the wrong way.",
+        "verb": "",
+        "meaning": "to understand something in a particular way",
+        "verb-template": ""
+      },
+      {
+        "example": "I'm not sure whether to take that as a compliment or an insult .",
+        "verb": "",
+        "meaning": "to understand something in a particular way",
+        "verb-template": ""
+      },
+      {
+        "example": "She gave a nod , which we took to mean that she agreed .",
+        "verb": "",
+        "meaning": "to understand something in a particular way",
+        "verb-template": ""
+      },
+      {
+        "example": "He doesn't take any interest in his children .",
+        "verb": "",
+        "meaning": "to have or come to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "Don't take any notice of the cameras .",
+        "verb": "",
+        "meaning": "to have or come to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "She takes offence too easily .",
+        "verb": "",
+        "meaning": "to have or come to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "They took pity on the stray cat and fed it.",
+        "verb": "",
+        "meaning": "to have or come to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "I take the view that fuel should be heavily taxed to reduce road use.",
+        "verb": "",
+        "meaning": "to have or come to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "The sudden noise took her by surprise .",
+        "verb": "",
+        "meaning": "to surprise someone",
+        "verb-template": ""
+      },
+      {
+        "example": "The show took an astonishing $100,000 in its first week .",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for entrance to an event",
+        "verb-template": ""
+      },
+      {
+        "example": "The restaurant took a lot of money that night .",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for entrance to an event",
+        "verb-template": ""
+      },
+      {
+        "example": "How much do you usually take in an evening ?",
+        "verb": "",
+        "meaning": "to receive money from sales or as payment for entrance to an event",
+        "verb-template": ""
+      },
+      {
+        "example": "Rebels ambushed the train and took several prisoners .",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "The Liberals need just 200 more votes to take the seat from Labour .",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "With these wins , the Democrats have now taken the House back from the Republicans.",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "Centre-left parties look set to take power .",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "Adam , I'd like you to take control of the aircraft now.",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "His party took control from the Communists.",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "We'll take a lot of Labour's vote over the issue of fox hunting .",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "The terrorists have taken hundreds of hostages .",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "The soldiers were taken behind enemy lines .",
+        "verb": "",
+        "meaning": "to get possession of something or someone",
+        "verb-template": ""
+      },
+      {
+        "example": "The pitcher had not thrown a strike so I decided to take a pitch .",
+        "verb": "",
+        "meaning": "in baseball, to let the ball go past without trying to hit it",
+        "verb-template": "take (leave)"
+      },
+      {
+        "example": "He was taking all the way on that pitch .",
+        "verb": "",
+        "meaning": "in baseball, to let the ball go past without trying to hit it",
+        "verb-template": "take (leave)"
+      },
+      {
+        "example": "I hope you're all taking notes .",
+        "verb": "",
+        "meaning": "to write",
+        "verb-template": "take (write)"
+      },
+      {
+        "example": "These new plants haven't taken - they don't like this dry soil .",
+        "verb": "",
+        "meaning": "to work or perform as expected",
+        "verb-template": ""
+      },
+      {
+        "example": "The box office take was huge for the new show.",
+        "verb": "",
+        "meaning": "money that is received from sales or as payment for entrance to an event",
+        "verb-template": ""
+      },
+      {
+        "example": "This scene needed ten takes before we felt it was right .",
+        "verb": "",
+        "meaning": "the filming of a scene (= small part of a film)",
+        "verb-template": ""
+      },
+      {
+        "example": "We'd love to hear your take on this issue .",
+        "verb": "",
+        "meaning": "an opinion about something",
+        "verb-template": ""
+      },
+      {
+        "example": "The restaurant offers a new take on traditional French cooking .",
+        "verb": "",
+        "meaning": "a version of something that shows someone's attitude towards it",
+        "verb-template": ""
+      },
+      {
+        "example": "Please, take me with you!",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "It may rain , so take your umbrella .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "The suitcases were taken to Madrid by mistake .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I thought I’d take her some chocolates .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "I take home about $200 a week .",
+        "verb": "",
+        "meaning": "to move something or someone from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "Here’s your pen – I took it by mistake .",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": ""
+      },
+      {
+        "example": "A radio was taken from the car .",
+        "verb": "",
+        "meaning": "to remove something",
+        "verb-template": ""
+      },
+      {
+        "example": "The fire took her life .",
+        "verb": "",
+        "meaning": "To take someone’s life is to kill someone",
+        "verb-template": ""
+      },
+      {
+        "example": "I tried to phone him, but he refused to take my call .",
+        "verb": "",
+        "meaning": "to accept something, or to receive something willingly",
+        "verb-template": ""
+      },
+      {
+        "example": "Does this restaurant take credit cards ?",
+        "verb": "",
+        "meaning": "to accept something, or to receive something willingly",
+        "verb-template": ""
+      },
+      {
+        "example": "I can take three more people in my car .",
+        "verb": "",
+        "meaning": "to accept something, or to receive something willingly",
+        "verb-template": ""
+      },
+      {
+        "example": "It’s a girls ’ school that has now started taking boys .",
+        "verb": "",
+        "meaning": "to accept something, or to receive something willingly",
+        "verb-template": ""
+      },
+      {
+        "example": "Bob took a lot of criticism for his decision .",
+        "verb": "",
+        "meaning": "to accept something, or to receive something willingly",
+        "verb-template": ""
+      },
+      {
+        "example": "I refuse to take responsibility for what’s happened .",
+        "verb": "",
+        "meaning": "to accept something, or to receive something willingly",
+        "verb-template": ""
+      },
+      {
+        "example": "I took him to be more honest than he really was.",
+        "verb": "",
+        "meaning": "to think of someone or understand something in a particular way; perceive",
+        "verb-template": ""
+      },
+      {
+        "example": "The police are taking the robberies very seriously .",
+        "verb": "",
+        "meaning": "to think of someone or understand something in a particular way; perceive",
+        "verb-template": ""
+      },
+      {
+        "example": "In the dim light I could have taken them for brothers .",
+        "verb": "",
+        "meaning": "to think of someone or understand something in a particular way; perceive",
+        "verb-template": ""
+      },
+      {
+        "example": "I’m not going to forge his signature ! What do you take me for?",
+        "verb": "",
+        "meaning": "to think of someone or understand something in a particular way; perceive",
+        "verb-template": ""
+      },
+      {
+        "example": "It’s been really busy . Take last week – we had meetings every day .",
+        "verb": "",
+        "meaning": "Take is sometimes used to introduce an example of what you mean",
+        "verb-template": ""
+      },
+      {
+        "example": "He took my arm and led me to my seat . Can you take this bag while I open the door ?",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "He took my arm and led me to my seat .",
+        "verb": "",
+        "meaning": "to hold something",
+        "verb-template": ""
+      },
+      {
+        "example": "Rebels ambushed the train and took several prisoners.",
+        "verb": "",
+        "meaning": "to catch, win, or get possession of something",
+        "verb-template": ""
+      },
+      {
+        "example": "My roses took first prize at the flower show.",
+        "verb": "",
+        "meaning": "to catch, win, or get possession of something",
+        "verb-template": ""
+      },
+      {
+        "example": "I take a size 9 shoe .",
+        "verb": "",
+        "meaning": "to have as a necessary condition; need",
+        "verb-template": ""
+      },
+      {
+        "example": "It didn’t take much persuasion to get her to go with us.",
+        "verb": "",
+        "meaning": "to have as a necessary condition; need",
+        "verb-template": ""
+      },
+      {
+        "example": "Broken bones always take time to mend .",
+        "verb": "",
+        "meaning": "to have as a necessary condition; need",
+        "verb-template": ""
+      },
+      {
+        "example": "How long time does this paint take to dry?",
+        "verb": "",
+        "meaning": "to have as a necessary condition; need",
+        "verb-template": ""
+      },
+      {
+        "example": "In rush-hour traffic , it takes forever to get home .",
+        "verb": "",
+        "meaning": "If something takes forever, it happens very slowly",
+        "verb-template": ""
+      },
+      {
+        "example": "I’ve started taking piano lessons .",
+        "verb": "",
+        "meaning": "to do something (act)",
+        "verb-template": ""
+      },
+      {
+        "example": "The government urged both sides to take steps to end the strike .",
+        "verb": "",
+        "meaning": "to do something (act)",
+        "verb-template": ""
+      },
+      {
+        "example": "We can’t delay any longer – we have to take action (= to act ) .",
+        "verb": "",
+        "meaning": "to act",
+        "verb-template": ""
+      },
+      {
+        "example": "In the evening I like to take a walk (= to walk ) .",
+        "verb": "",
+        "meaning": "to walk",
+        "verb-template": ""
+      },
+      {
+        "example": "If you’re tired , you need to take a nap (= to sleep ) .",
+        "verb": "",
+        "meaning": "to sleep",
+        "verb-template": ""
+      },
+      {
+        "example": "The medicine should take effect quite quickly .",
+        "verb": "",
+        "meaning": "to take effect means to start working",
+        "verb-template": ""
+      },
+      {
+        "example": "The mothers in our group take turns driving the children to school .",
+        "verb": "",
+        "meaning": "If you take turns, you and other people do the same thing, one after the other",
+        "verb-template": ""
+      },
+      {
+        "example": "Better take the baby’s temperature – she may have a fever .",
+        "verb": "",
+        "meaning": "to measure something",
+        "verb-template": ""
+      },
+      {
+        "example": "He takes little interest in current events .",
+        "verb": "",
+        "meaning": "to have or cause to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "She takes offense too easily .",
+        "verb": "",
+        "meaning": "to have or cause to have a particular feeling or opinion",
+        "verb-template": ""
+      },
+      {
+        "example": "His sudden proposal took her totally by surprise .",
+        "verb": "",
+        "meaning": "to take someone by surprise means to do something that is completely unexpected",
+        "verb-template": ""
+      },
+      {
+        "example": "You paid $500 for that thing? I think you got taken.",
+        "verb": "",
+        "meaning": "to cheat someone",
+        "verb-template": ""
+      },
+      {
+        "example": "Take notes as you read .",
+        "verb": "",
+        "meaning": "to write information provided by someone or something",
+        "verb-template": ""
+      },
+      {
+        "example": "Journalists took down every word he said during the interview .",
+        "verb": "",
+        "meaning": "to write information provided by someone or something",
+        "verb-template": ""
+      },
+      {
+        "example": "We took lots of pictures of the new baby .",
+        "verb": "",
+        "meaning": "to make a photograph of someone or something",
+        "verb-template": ""
+      },
+      {
+        "example": "I always take the train .",
+        "verb": "",
+        "meaning": "to travel on something to get from one place to another",
+        "verb-template": ""
+      },
+      {
+        "example": "Take the road on the left to get to my house .",
+        "verb": "",
+        "meaning": "to travel on something to get from one place to another",
+        "verb-template": ""
+      }
     ]
   }
 }
