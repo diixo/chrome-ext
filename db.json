@@ -6772,6 +6772,134 @@
         "meaning": "",
         "verb-template": ""
       }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-place": [
+      {
+        "example": "The concert takes place next Thursday .",
+        "verb": "",
+        "meaning": "to happen",
+        "verb-template": ""
+      },
+      {
+        "example": "The novel takes place over the course of a single day .",
+        "verb": "",
+        "meaning": "to happen",
+        "verb-template": "take place"
+      },
+      {
+        "example": "A pitched battle took place between the two groups .",
+        "verb": "",
+        "meaning": "to happen",
+        "verb-template": "take place"
+      },
+      {
+        "example": "Bribery and intimidation took place under the noses of the bureaucrats .",
+        "verb": "",
+        "meaning": "to happen",
+        "verb-template": "take place"
+      },
+      {
+        "example": "Elections are to take place for local council seats next month .",
+        "verb": "",
+        "meaning": "to happen",
+        "verb-template": "take place"
+      },
+      {
+        "example": "The story takes place in the 18th century .",
+        "verb": "",
+        "meaning": "to happen",
+        "verb-template": "take place"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-sides": [
+      {
+        "example": "My mother never takes sides when my brother and I argue .",
+        "verb": "",
+        "meaning": "to support one person or group rather than another, in an argument or war",
+        "verb-template": "take sides"
+      },
+      {
+        "example": "Listen, I'm not going to take sides . You both have made good points .",
+        "verb": "",
+        "meaning": "to support one person or group rather than another, in an argument or war",
+        "verb-template": "take sides"
+      },
+      {
+        "example": "Don't force me to take sides between my two children .",
+        "verb": "",
+        "meaning": "to support one person or group rather than another, in an argument or war",
+        "verb-template": "take sides"
+      },
+      {
+        "example": "They refused to take sides .",
+        "verb": "",
+        "meaning": "to support one person or group rather than another, in an argument or war",
+        "verb-template": "take sides"
+      },
+      {
+        "example": "All of her friends had taken sides against Dylan.",
+        "verb": "",
+        "meaning": "to support one person or group rather than another, in an argument or war",
+        "verb-template": "take sides"
+      },
+      {
+        "example": "She won't take sides in the presidential race .",
+        "verb": "",
+        "meaning": "to support one person or group rather than another, in an argument or war",
+        "verb-template": "take sides"
+      },
+      {
+        "example": "My mother never took sides when my brother and I argued .",
+        "verb": "",
+        "meaning": "to support one person or opinion over another",
+        "verb-template": "take sides"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-shape": [
+      {
+        "example": "We watched the vase begin to take shape in the potter's hands .",
+        "verb": "",
+        "meaning": "to start to develop a more clear or certain form",
+        "verb-template": "take shape"
+      },
+      {
+        "example": "Our ideas are beginning to take shape .",
+        "verb": "",
+        "meaning": "to start to develop a more clear or certain form",
+        "verb-template": "take shape"
+      }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-the-place-of": [
+      {
+        "example": "These portable machines can take the place of your desktop PC.",
+        "verb": "",
+        "meaning": "to be used instead of someone or something",
+        "verb-template": "take place of"
+      },
+      {
+        "example": "Virtual reality should never take the place of real imagination .",
+        "verb": "",
+        "meaning": "to be used instead of someone or something",
+        "verb-template": "take place of"
+      },
+      {
+        "example": "In providing a role model for boys , these gangs took the place of fathers .",
+        "verb": "",
+        "meaning": "to be used instead of someone or something",
+        "verb-template": "take place of"
+      },
+      {
+        "example": "These automated systems will never fully take the place of human doctors .",
+        "verb": "",
+        "meaning": "to be used instead of someone or something",
+        "verb-template": "take place of"
+      },
+      {
+        "example": "The books are intended to be supplements , not to take the place of the core curriculum .",
+        "verb": "",
+        "meaning": "to be used instead of someone or something",
+        "verb-template": "take place of"
+      }
     ]
   }
 }
