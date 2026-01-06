@@ -162,7 +162,7 @@ if __name__ == "__main__":
 
     import uvicorn
     config = uvicorn.Config(
-        app,
+        app=app,
         host="0.0.0.0",
         port=8001,
         log_level="info",
