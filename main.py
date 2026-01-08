@@ -54,26 +54,27 @@ def save_new_item(url: str, i_txt: list):
         fd = open(filepath, 'r', encoding='utf-8')
         dataset = json.load(fd)
 
-    if "examples" not in dataset:
-        dataset["examples"] = dict()
-    chapter = dataset["examples"]
+    field = "dictionary.cambridge.org"
+    if field not in dataset:
+        dataset[field] = dict()
+    chapter = dataset[field]
 
     if url not in chapter:
         chapter[url] = []
 
-    txt = chapter[url]  # list of dict's as items
+    items = chapter[url]  # list of dict's as items
 
-    txt_set = set([d["example"] for d in txt])
+    txt_set = set([d["example"] for d in items])
     # check dublicates
     for t in i_txt:
         if t not in txt_set:
-            txt.append({
+            items.append({
                 "example": t,
                 "verb": "",
                 "meaning": "",
                 "verb-template": ""
                 })
-    chapter[url] = txt
+    chapter[url] = items
 
     with open(filepath, 'w', encoding='utf-8') as fd:
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
