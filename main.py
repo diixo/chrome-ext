@@ -82,12 +82,13 @@ def save_new_item(url: str, i_txt: list):
 
 
 class Item(BaseModel):
-    kind: Literal["def","eg","deg","other"]
+    kind: Literal["def","eg","deg","example","other"]
     html: str = Field(min_length=1)
 
 class ScrapePayload(BaseModel):
     url: str
     items: List[Item]
+    urls: Optional[List[str]] = []
 
 class SelectionData(BaseModel):
     url: str
@@ -99,12 +100,16 @@ def html_to_text(html: str) -> str:
 
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
-    return soup.get_text(" ", strip=True)
+    txt = soup.get_text(" ", strip=True)
+    txt = txt.replace("=", "")
+    txt = txt.replace("’", "'")
+    txt = txt.replace("–", "-")
+    return txt
 
 
 @app.post("/parse-save")
 async def scrape_ordered(payload: ScrapePayload):
-    print("/parse-save")
+    print(f"/parse-save items.sz={len(payload.items)}, urls.sz={len(payload.urls)}")
 
     if not payload.items:
         raise HTTPException(status_code=400, detail="Empty items")
@@ -131,9 +136,6 @@ async def scrape_ordered(payload: ScrapePayload):
 
                 example = obj.get("example", "")
                 if example != "":
-                    example = example.replace("=", "")
-                    example = example.replace("’", "'")
-                    example = example.replace("–", "-")
                     data_set.add(example)
 
                 url = obj.get("url", "")

@@ -350,19 +350,31 @@ document.getElementById('parse-save').addEventListener('click', async () => {
       target: { tabId: tab.id },
       func: () => {
         const nodes = Array.from(
-          document.querySelectorAll("div.def.ddef_d.db, span.eg.deg, span.deg")
+          document.querySelectorAll("div.def.ddef_d.db, span.eg.deg, span.deg, span.example.dexample")
         );
 
+        const links = Array.from(document.querySelectorAll("a[href]"))
+          .map(a => a.href)                 // уже абсолютный URL в браузере
+          .filter(h => h && !h.startsWith("javascript:"))
+          .filter(h => !h.startsWith("mailto:") && !h.startsWith("tel:"));
+
+        const links_unique = Array.from(new Set(links));
+
+        const items = nodes.map((el, i) => ({
+          idx: i,
+          kind:
+                  el.matches("div.def.ddef_d.db") ? "def" :
+                  el.matches("span.eg.deg")       ? "eg"  :
+                  el.matches("span.deg")          ? "deg" :
+                  el.matches("span.example.dexample")  ? "example" :
+            "other",
+          html: el.outerHTML,
+        }));
+
         return {
-          url: location.href,
-          items: nodes.map((el, i) => ({
-            kind:
-              el.matches("div.def.ddef_d.db") ? "def" :
-              el.matches("span.eg.deg")       ? "eg"  :
-              el.matches("span.deg")          ? "deg" :
-              "other",
-            html: el.outerHTML,
-          })),
+          "url": location.href,
+          "items": items,
+          "urls": links_unique,
         };
       },
     });
