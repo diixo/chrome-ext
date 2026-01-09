@@ -243,7 +243,7 @@ async def scrape_ordered(payload: ScrapePayload):
         "egs": egs_count,
         "degs": degs_count,
         "urls": str(len(urls_set)),
-        "items_all": str(len(data_set))
+        "items_all": str(len(data_set) + added_new)
     }
 
 
