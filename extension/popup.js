@@ -339,6 +339,66 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   */
 
+document.getElementById('parse-save').addEventListener('click', async () => {
+  try {
+
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (!tab?.id) throw new Error("No active tab");
+
+    // 1) Собираем данные ВНУТРИ страницы
+    const [{ result: payload }] = await chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: () => {
+        const nodes = Array.from(
+          document.querySelectorAll("div.def.ddef_d.db, span.eg.deg, span.deg")
+        );
+
+        return {
+          url: location.href,
+          items: nodes.map((el, i) => ({
+            kind:
+              el.matches("div.def.ddef_d.db") ? "def" :
+              el.matches("span.eg.deg")       ? "eg"  :
+              el.matches("span.deg")          ? "deg" :
+              "other",
+            html: el.outerHTML,
+          })),
+        };
+      },
+    });
+
+    if (!payload.items || payload.items.length === 0) {
+      console.warn("Nothing found, skip sending");
+      document.getElementById('output').value = "0";
+      alert("Ничего не найдено на странице (0 элементов).");
+      return;
+    }
+
+    // 2) Отправляем на FastAPI
+    const res = await fetch(`${originUrl}/parse-save`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.log(errText)
+      throw new Error(`${res.status} ${res.statusText}\n${errText}`);
+    }
+
+    // Если ок — читаем JSON
+    const data = await res.json();
+    document.getElementById('output').value = data.received_sz;
+
+    console.log("Sent OK:", data.received_sz);
+    alert(`Sent: ${data.received_sz} items`);
+  }
+  catch (err) {
+    console.error(err);
+    alert("Error sending: " + (err?.message || err));
+  }
+});
 
   document.getElementById('save-selection').addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });

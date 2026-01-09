@@ -1,9 +1,10 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 from bs4 import BeautifulSoup
 import json
 from pathlib import Path
+from typing import List, Literal, Optional
 
 
 filepath = "db.json"
@@ -80,9 +81,56 @@ def save_new_item(url: str, i_txt: list):
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
 
+class Item(BaseModel):
+    kind: Literal["def","eg","deg","other"]
+    html: str = Field(min_length=1)
+
+class ScrapePayload(BaseModel):
+    url: str
+    items: List[Item]
+
 class SelectionData(BaseModel):
     url: str
     selection_html: str
+
+
+def html_to_text(html: str) -> str:
+    soup = BeautifulSoup(html, "html.parser")
+
+    for tag in soup(["script", "style", "noscript"]):
+        tag.decompose()
+    return soup.get_text(" ", strip=True)
+
+
+@app.post("/parse-save")
+async def scrape_ordered(payload: ScrapePayload):
+    print("/parse-save")
+
+    if not payload.items:
+        raise HTTPException(status_code=400, detail="Empty items")
+
+    defs_count = sum(1 for x in payload.items if x.kind == "def")
+    egs_count  = sum(1 for x in payload.items if x.kind == "eg")
+
+    out_file = "pretrain.jsonl"
+
+    with Path(out_file).open("a", encoding="utf-8") as f:
+        for x in payload.items:
+
+            rec = {
+                "url": payload.url,
+                "kind": x.kind,
+                "example": html_to_text(x.html),
+            }
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+    return {
+        "ok": True,
+        "url": payload.url,
+        "received_sz": len(payload.items),
+        "defs": defs_count,
+        "egs": egs_count,
+    }
 
 
 @app.post("/save-selection")
