@@ -389,7 +389,7 @@ document.getElementById('parse-save').addEventListener('click', async () => {
 
     // Если ок — читаем JSON
     const data = await res.json();
-    document.getElementById('output').value = `Added_new: ${data.added_new}`;
+    document.getElementById('output').value = `Added (new): ${data.added_new}\nPages (all):${data.urls}`;
 
     console.log("Sent OK, added_new:", data.added_new);
     //alert(`Sent: ${data.added_new} items`);

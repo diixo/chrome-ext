@@ -114,6 +114,8 @@ async def scrape_ordered(payload: ScrapePayload):
     degs_count  = sum(1 for x in payload.items if x.kind == "deg")
 
     data_set = set()
+    urls_set = set()
+    urls_set.add(payload.url)
 
     out_path = Path("dictionary.cambridge.org-parsing.jsonl")
 
@@ -126,9 +128,17 @@ async def scrape_ordered(payload: ScrapePayload):
                     continue
 
                 obj = json.loads(line)
+
                 example = obj.get("example", "")
                 if example != "":
+                    example = example.replace("=", "")
+                    example = example.replace("’", "'")
+                    example = example.replace("–", "-")
                     data_set.add(example)
+
+                url = obj.get("url", "")
+                if url != "":
+                    urls_set.add(url)
 
 
     added_new = 0
@@ -153,6 +163,7 @@ async def scrape_ordered(payload: ScrapePayload):
         "defs": defs_count,
         "egs": egs_count,
         "degs": degs_count,
+        "urls": str(len(urls_set))
     }
 
 
