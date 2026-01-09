@@ -351,7 +351,7 @@ document.getElementById('parse-save').addEventListener('click', async () => {
       func: () => {
         const nodes = Array.from(
           document.querySelectorAll(
-            "div.def.ddef_d.db, span.eg.deg, span.deg, span.example.dexample, li.eg.dexamp.hax, div.ti.lpl-10.lmt-5, span.text.dtext"
+            "div.def.ddef_d.db, span.eg.deg, span.deg, span.example.dexample, li.eg.dexamp.hax, div.ti.lpl-10.lmt-5, span.text.dtext, span.dexamp.fs18.ti"
           )
         );
 
@@ -374,6 +374,7 @@ document.getElementById('parse-save').addEventListener('click', async () => {
               el.matches("div.ti.lpl-10.lmt-5") ? "etc" :
               el.matches("span.text.dtext") ? "etc" :
               el.matches("div.lp-10.lb.lb-cm.lbt0") ? "etc" :
+              el.matches("span.dexamp.fs18.ti") ? "exm" :
               "other",
             html: el.outerHTML,
           };
