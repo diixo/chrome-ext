@@ -14516,6 +14516,26 @@
         "meaning": "to make people want to visit a place or find out more about something",
         "verb-template": "attract visitors/audiences/fans"
       }
+    ],
+    "https://dictionary.cambridge.org/dictionary/english/take-out-insurance": [
+      {
+        "example": "The airline advises passengers to take out additional insurance for valuable items .",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "All travellers should take out travel insurance that provides comprehensive medical cover .",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      },
+      {
+        "example": "The couple took out a wedding insurance policy to insure their wedding in case of a catastrophe .",
+        "verb": "",
+        "meaning": "",
+        "verb-template": ""
+      }
     ]
   }
 }

@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import json
 from pathlib import Path
 from typing import List, Literal, Optional
-
+import re
 
 filepath = "db.json"
 app = FastAPI()
@@ -18,6 +18,66 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+from urllib.parse import urlsplit, urlunsplit
+
+ALLOW_PREFIXES = (
+    "https://dictionary.cambridge.org/dictionary/english/",
+    "https://dictionary.cambridge.org/example/english/",
+    "https://dictionary.cambridge.org/search/english/?q=",
+)
+
+def normalize_url(u: str) -> str:
+    # убираем фрагмент (#...), оставляем query
+    s = urlsplit(u)
+    return urlunsplit((s.scheme, s.netloc, s.path, s.query, ""))
+
+
+def load_links_fragment(path: str) -> set[str]:
+
+    HREF_RE = re.compile(r'href="([^"]+)"')
+
+    seen = set()
+
+    file_path = Path(path)
+    if file_path.is_file():
+        text = file_path.read_text(encoding="utf-8")
+        links = HREF_RE.findall(text)
+
+        # unique preserving order
+        for u in links:
+            seen.add(u)
+    return seen
+
+
+def write_new_urls(content_urls, incoming_urls):
+
+    output_name = "dictionary.cambridge.org-urls.html"
+    seen = set()
+
+    for u in incoming_urls:
+        if not u:
+            continue
+        nu = normalize_url(u)
+
+        if nu.startswith(ALLOW_PREFIXES) and nu not in seen:
+            seen.add(nu)
+    incoming_urls = seen
+    #####################
+
+    loaded_urls = load_links_fragment(output_name)
+
+    result = loaded_urls | incoming_urls
+
+    result = result - content_urls
+
+    print("result_urls:", len(result), "loaded:", len(loaded_urls))
+
+    content = "\n".join(
+        f'<a href="{u}" target="_blank" rel="noopener noreferrer">{u}</a><br>'
+        for u in result
+    )
+    Path(output_name).write_text(content, encoding="utf-8")
 
 
 def save_new_tags(key: str, i_tags: list):
@@ -111,8 +171,8 @@ def html_to_text(html: str) -> str:
 async def scrape_ordered(payload: ScrapePayload):
     print(f"/parse-save items.sz={len(payload.items)}, urls.sz={len(payload.urls)}")
 
-    if not payload.items:
-        raise HTTPException(status_code=400, detail="Empty items")
+    # if not payload.items:
+    #     raise HTTPException(status_code=400, detail="Empty items")
 
     defs_count = sum(1 for x in payload.items if x.kind == "def")
     egs_count  = sum(1 for x in payload.items if x.kind == "eg")
@@ -157,6 +217,8 @@ async def scrape_ordered(payload: ScrapePayload):
                 }
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         f.flush()
+
+    write_new_urls(urls_set, payload.urls)
 
     return {
         "ok": True,

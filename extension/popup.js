@@ -361,12 +361,12 @@ document.getElementById('parse-save').addEventListener('click', async () => {
         const links_unique = Array.from(new Set(links));
 
         const items = nodes.map((el, i) => ({
-          idx: i,
           kind:
                   el.matches("div.def.ddef_d.db") ? "def" :
                   el.matches("span.eg.deg")       ? "eg"  :
                   el.matches("span.deg")          ? "deg" :
                   el.matches("span.example.dexample")  ? "example" :
+                  el.matches("li.eg.dexamp.hax")  ? "eg" :
             "other",
           html: el.outerHTML,
         }));
@@ -379,12 +379,12 @@ document.getElementById('parse-save').addEventListener('click', async () => {
       },
     });
 
-    if (!payload.items || payload.items.length === 0) {
-      console.warn("Nothing found, skip sending");
-      document.getElementById('output').value = "0";
-      alert("Ничего не найдено на странице (0 элементов).");
-      return;
-    }
+    // if (!payload.items || payload.items.length === 0) {
+    //   console.warn("Nothing found, skip sending");
+    //   document.getElementById('output').value = "0";
+    //   alert("Ничего не найдено на странице (0 элементов).");
+    //   return;
+    // }
 
     // 2) Отправляем на FastAPI
     const res = await fetch(`${originUrl}/parse-save`, {
