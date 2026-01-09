@@ -111,25 +111,48 @@ async def scrape_ordered(payload: ScrapePayload):
 
     defs_count = sum(1 for x in payload.items if x.kind == "def")
     egs_count  = sum(1 for x in payload.items if x.kind == "eg")
+    degs_count  = sum(1 for x in payload.items if x.kind == "deg")
 
-    out_file = "pretrain.jsonl"
+    data_set = set()
 
-    with Path(out_file).open("a", encoding="utf-8") as f:
+    out_path = Path("dictionary.cambridge.org-parsing.jsonl")
+
+    if out_path.is_file():
+        with out_path.open("r", encoding="utf-8") as fin:
+            for line in fin:
+                txt = line.strip()
+
+                if not txt:
+                    continue
+
+                obj = json.loads(line)
+                example = obj.get("example", "")
+                if example != "":
+                    data_set.add(example)
+
+
+    added_new = 0
+    with out_path.open("a", encoding="utf-8") as f:
+
         for x in payload.items:
-
-            rec = {
-                "url": payload.url,
-                "kind": x.kind,
-                "example": html_to_text(x.html),
-            }
-            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            txt = html_to_text(x.html).strip()
+            if txt not in data_set:
+                added_new += 1
+                rec = {
+                    "url": payload.url,
+                    "kind": x.kind,
+                    "example": txt,
+                }
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        f.flush()
 
     return {
         "ok": True,
         "url": payload.url,
-        "received_sz": len(payload.items),
+        "added_new": str(added_new),
         "defs": defs_count,
         "egs": egs_count,
+        "degs": degs_count,
     }
 
 
