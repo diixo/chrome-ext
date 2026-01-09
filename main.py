@@ -26,6 +26,7 @@ ALLOW_PREFIXES = (
     "https://dictionary.cambridge.org/example/english/",
     "https://dictionary.cambridge.org/search/english/?q=",
     "https://dictionary.cambridge.org/grammar/british-grammar/",
+    "https://dictionary.cambridge.org/thesaurus/",
 )
 
 def normalize_url(u: str) -> str:
@@ -156,7 +157,7 @@ def save_new_item(url: str, i_txt: list):
 
 
 class Item(BaseModel):
-    kind: Literal["def","eg","deg","exm","egli","other"]
+    kind: Literal["def","eg","deg","exm","egli","etc","other"]
     html: str = Field(min_length=1)
 
 class ScrapePayload(BaseModel):
@@ -241,7 +242,8 @@ async def scrape_ordered(payload: ScrapePayload):
         "defs": defs_count,
         "egs": egs_count,
         "degs": degs_count,
-        "urls": str(len(urls_set))
+        "urls": str(len(urls_set)),
+        "items_all": str(len(data_set))
     }
 
 
