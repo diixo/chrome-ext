@@ -350,26 +350,31 @@ document.getElementById('parse-save').addEventListener('click', async () => {
       target: { tabId: tab.id },
       func: () => {
         const nodes = Array.from(
-          document.querySelectorAll("div.def.ddef_d.db, span.eg.deg, span.deg, span.example.dexample")
+          document.querySelectorAll(
+            "div.def.ddef_d.db, span.eg.deg, span.deg, span.example.dexample, li.eg.dexamp.hax"
+          )
         );
 
         const links = Array.from(document.querySelectorAll("a[href]"))
-          .map(a => a.href)                 // уже абсолютный URL в браузере
+          .map(a => a.href)
           .filter(h => h && !h.startsWith("javascript:"))
           .filter(h => !h.startsWith("mailto:") && !h.startsWith("tel:"));
 
         const links_unique = Array.from(new Set(links));
 
-        const items = nodes.map((el, i) => ({
-          kind:
-                  el.matches("div.def.ddef_d.db") ? "def" :
-                  el.matches("span.eg.deg")       ? "eg"  :
-                  el.matches("span.deg")          ? "deg" :
-                  el.matches("span.example.dexample")  ? "example" :
-                  el.matches("li.eg.dexamp.hax")  ? "eg" :
-            "other",
-          html: el.outerHTML,
-        }));
+        const items = nodes.map((el) => {
+
+          return {
+            kind:
+              el.matches("div.def.ddef_d.db") ? "def" :
+              el.matches("span.eg.deg")       ? "eg"  :
+              el.matches("span.deg")          ? "deg" :
+              el.matches("span.example.dexample") ? "exm" :
+              el.matches("li.eg.dexamp.hax") ? "egli" :
+              "other",
+            html: el.outerHTML,
+          };
+        });
 
         return {
           "url": location.href,
@@ -385,6 +390,7 @@ document.getElementById('parse-save').addEventListener('click', async () => {
     //   alert("Ничего не найдено на странице (0 элементов).");
     //   return;
     // }
+    if (!payload) throw new Error("No payload returned from executeScript");
 
     // 2) Отправляем на FastAPI
     const res = await fetch(`${originUrl}/parse-save`, {
@@ -395,16 +401,14 @@ document.getElementById('parse-save').addEventListener('click', async () => {
 
     if (!res.ok) {
       const errText = await res.text();
-      console.log(errText)
+      console.log(errText);
       throw new Error(`${res.status} ${res.statusText}\n${errText}`);
     }
 
-    // Если ок — читаем JSON
     const data = await res.json();
     document.getElementById('output').value = `Added (new): ${data.added_new}\nPages (all):${data.urls}`;
 
     console.log("Sent OK, added_new:", data.added_new);
-    //alert(`Sent: ${data.added_new} items`);
   }
   catch (err) {
     console.error(err);

@@ -33,11 +33,12 @@ def normalize_url(u: str) -> str:
     return urlunsplit((s.scheme, s.netloc, s.path, s.query, ""))
 
 
-def load_links_fragment(path: str) -> set[str]:
+def load_links_fragment(path: str) -> list[str]:
 
     HREF_RE = re.compile(r'href="([^"]+)"')
 
     seen = set()
+    out = []
 
     file_path = Path(path)
     if file_path.is_file():
@@ -47,8 +48,19 @@ def load_links_fragment(path: str) -> set[str]:
         # unique preserving order
         for u in links:
             seen.add(u)
-    return seen
+            out.append(u)
+    return out
 
+def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
+    seen = set(loaded)
+    result = list(loaded)
+
+    for u in incoming:
+        if u not in seen:
+            seen.add(u)
+            result.append(u)
+
+    return result
 
 def write_new_urls(content_urls, incoming_urls):
 
@@ -67,9 +79,10 @@ def write_new_urls(content_urls, incoming_urls):
 
     loaded_urls = load_links_fragment(output_name)
 
-    result = loaded_urls | incoming_urls
+    result = merge_preserve_order(loaded_urls, incoming_urls)
 
-    result = result - content_urls
+    content_urls_set = set(content_urls)
+    result = [i for i in result if i not in content_urls_set]
 
     print("result_urls:", len(result), "loaded:", len(loaded_urls))
 
@@ -142,7 +155,7 @@ def save_new_item(url: str, i_txt: list):
 
 
 class Item(BaseModel):
-    kind: Literal["def","eg","deg","example","other"]
+    kind: Literal["def","eg","deg","exm","egli","other"]
     html: str = Field(min_length=1)
 
 class ScrapePayload(BaseModel):
@@ -212,7 +225,7 @@ async def scrape_ordered(payload: ScrapePayload):
                 added_new += 1
                 rec = {
                     "url": payload.url,
-                    "kind": x.kind,
+                    "ext": x.kind,
                     "example": txt,
                 }
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
