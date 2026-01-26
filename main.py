@@ -158,7 +158,7 @@ def save_new_item(url: str, i_txt: list):
 
 
 class Item(BaseModel):
-    kind: Literal["def","eg","deg","exm","egli","etc","other"]
+    kind: Literal["def", "eg", "deg", "exm", "egli", "etc", "other"]
     html: str = Field(min_length=1)
 
 class ScrapePayload(BaseModel):
