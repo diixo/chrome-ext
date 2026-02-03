@@ -28,6 +28,7 @@ ALLOW_PREFIXES = (
     "https://dictionary.cambridge.org/grammar/british-grammar/",
     "https://dictionary.cambridge.org/thesaurus/",
     "https://dictionary.cambridge.org/collocation/english/",
+    "https://dictionary.cambridge.org/topics/",
 )
 
 def normalize_url(u: str) -> str:
