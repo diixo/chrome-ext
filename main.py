@@ -191,10 +191,6 @@ async def scrape_ordered(payload: ScrapePayload):
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
 
-    defs_count = sum(1 for x in payload.items if x.kind == "def")
-    egs_count  = sum(1 for x in payload.items if x.kind == "eg")
-    degs_count  = sum(1 for x in payload.items if x.kind == "deg")
-
     data_set = set()
     urls_set = set()
     urls_set.add(payload.url)
@@ -241,9 +237,6 @@ async def scrape_ordered(payload: ScrapePayload):
         "ok": True,
         "url": payload.url,
         "added_new": str(added_new),
-        "defs": defs_count,
-        "egs": egs_count,
-        "degs": degs_count,
         "urls": str(len(urls_set)),
         "items_all": str(len(data_set) + added_new)
     }
