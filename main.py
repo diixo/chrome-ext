@@ -308,7 +308,7 @@ async def scrape_ordered(payload: ScrapePayload):
         "url": payload.url,
         "added_new": str(added_new),
         "urls": urls_cntr,
-        "items_all": str(len(data_set) + added_new)
+        "items_all": str(len(data_set))
     }
 
 
