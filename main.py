@@ -37,6 +37,15 @@ def normalize_url(u: str) -> str:
     return urlunsplit((s.scheme, s.netloc, s.path, s.query, ""))
 
 
+def filter_str(s: str) -> str:
+    import re
+    if s is not None:
+        s = re.sub(r"\s+([.,!?:;\)])", r"\1", s)   # пробелы перед пунктуацией и ')'
+        s = re.sub(r"(\()\s+", r"\1", s)           # пробелы после '('
+    return s
+
+
+
 def load_links_fragment(path: str) -> list[str]:
 
     HREF_RE = re.compile(r'href="([^"]+)"')
@@ -208,6 +217,7 @@ async def scrape_ordered(payload: ScrapePayload):
                 url = obj.get("url", None)
 
                 example = obj.get("example", None)
+                example = filter_str(example)
                 if example is not None and example not in data_set:
                     data_set[example] = obj.get("ext", "")
 
@@ -252,21 +262,24 @@ async def scrape_ordered(payload: ScrapePayload):
     with out_path.open("a", encoding="utf-8") as f:
 
         for x in payload.items:
-            txt = html_to_text(x.html).strip()
-            if txt not in data_set:
+            example = html_to_text(x.html).strip()
+            example = filter_str(example)
+
+            if example not in data_set:
                 added_new += 1
                 rec = {
                     "ext": x.kind,
-                    "example": txt,
+                    "example": example,
                 }
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         f.flush()
 
     # append new url if added
     if added_new > 0:
-        with out_urls.open("a", encoding="utf-8") as f:
-            f.write(json.dumps({"url": payload.url}, ensure_ascii=False) + "\n")
-            f.flush()
+        if payload.url not in urls_set:
+            with out_urls.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"url": payload.url}, ensure_ascii=False) + "\n")
+                f.flush()
 
     urls_set.add(payload.url)
     urls_set.update(payload.urls)
