@@ -207,12 +207,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   else
   {
-    statusEl.textContent = "Authentication: undefined user";
-    console.log("No valid token found, starting authentication...");
-    await authenticate(statusEl, redirectUri);
+    //statusEl.textContent = "Authentication: undefined user";
+    //console.log("No valid token found, starting authentication...");
+    //await authenticate(statusEl, redirectUri);
   }
 
-  stored = await getStoredToken();
+  //stored = await getStoredToken();
 
   // highlight "AI"
   function highlightAI() {
