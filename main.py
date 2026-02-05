@@ -37,6 +37,15 @@ def normalize_url(u: str) -> str:
     return urlunsplit((s.scheme, s.netloc, s.path, s.query, ""))
 
 
+def filter_str(s: str) -> str:
+    import re
+    if s is not None:
+        s = re.sub(r"\s+([.,!?:;\)])", r"\1", s)   # пробелы перед пунктуацией и ')'
+        s = re.sub(r"(\()\s+", r"\1", s)           # пробелы после '('
+    return s
+
+
+
 def load_links_fragment(path: str) -> list[str]:
 
     HREF_RE = re.compile(r'href="([^"]+)"')
@@ -55,6 +64,7 @@ def load_links_fragment(path: str) -> list[str]:
             out.append(u)
     return out
 
+
 def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
     seen = set(loaded)
     result = list(loaded)
@@ -66,7 +76,8 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
 
     return result
 
-def write_new_urls(content_urls, incoming_urls):
+
+def write_new_urls(incoming_urls):
 
     output_name = "dictionary.cambridge.org-urls.html"
     seen = set()
@@ -78,23 +89,20 @@ def write_new_urls(content_urls, incoming_urls):
 
         if nu.startswith(ALLOW_PREFIXES) and nu not in seen:
             seen.add(nu)
-    incoming_urls = seen
+
     #####################
 
     loaded_urls = load_links_fragment(output_name)
 
-    result = merge_preserve_order(loaded_urls, incoming_urls)
+    result_list = merge_preserve_order(loaded_urls, seen)
 
-    content_urls_set = set(content_urls)
-    result = [i for i in result if i not in content_urls_set]
+    print("result_urls:", len(result_list), "loaded:", len(loaded_urls))
 
-    print("result_urls:", len(result), "loaded:", len(loaded_urls))
-
-    content = "\n".join(
-        f'<a href="{u}" target="_blank" rel="noopener noreferrer">{u}</a><br>'
-        for u in result
-    )
-    Path(output_name).write_text(content, encoding="utf-8")
+    with open(output_name, "w", encoding="utf-8") as f:
+        f.writelines(
+            f'<a href="{u}" target="_blank" rel="noopener noreferrer">{u}</a><br>\n'
+            for u in result_list
+        )
 
 
 def save_new_tags(key: str, i_tags: list):
@@ -191,9 +199,8 @@ async def scrape_ordered(payload: ScrapePayload):
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
 
-    data_set = set()
+    data_set = dict()
     urls_set = set()
-    urls_set.add(payload.url)
 
     out_path = Path("dictionary.cambridge.org-parsing.jsonl")
 
@@ -207,31 +214,76 @@ async def scrape_ordered(payload: ScrapePayload):
 
                 obj = json.loads(line)
 
-                example = obj.get("example", "")
-                if example != "":
-                    data_set.add(example)
+                url = obj.get("url", None)
 
-                url = obj.get("url", "")
-                if url != "":
+                example = obj.get("example", None)
+                example = filter_str(example)
+                if example is not None and example not in data_set:
+                    data_set[example] = obj.get("ext", "")
+
+                    if url is not None:
+                        urls_set.add(url)
+
+    ##########################################################################
+    out_urls = Path("dictionary.cambridge.org-urls.jsonl")
+
+    # converting
+    if len(urls_set) > 0:
+        with out_path.open("w", encoding="utf-8") as fin:
+            for k, v in data_set.items():
+                rec = {
+                    "ext": v,
+                    "example": k,
+                }
+                fin.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            fin.flush()
+
+        with out_urls.open("w", encoding="utf-8") as f:
+            for u in urls_set:
+                f.write(json.dumps({"url": u}, ensure_ascii=False) + "\n")
+            f.flush()
+    else:
+
+        with out_urls.open("r", encoding="utf-8") as fin:
+            for line in fin:
+                txt = line.strip()
+
+                if not txt:
+                    continue
+
+                obj = json.loads(line)
+
+                url = obj.get("url", None)
+                if url is not None:
                     urls_set.add(url)
 
-
+    # append new items
     added_new = 0
     with out_path.open("a", encoding="utf-8") as f:
 
         for x in payload.items:
-            txt = html_to_text(x.html).strip()
-            if txt not in data_set:
+            example = html_to_text(x.html).strip()
+            example = filter_str(example)
+
+            if example not in data_set:
                 added_new += 1
                 rec = {
-                    "url": payload.url,
                     "ext": x.kind,
-                    "example": txt,
+                    "example": example,
                 }
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         f.flush()
 
-    write_new_urls(urls_set, payload.urls)
+    # append new url if added
+    if added_new > 0:
+        if payload.url not in urls_set:
+            with out_urls.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"url": payload.url}, ensure_ascii=False) + "\n")
+                f.flush()
+
+    urls_set.add(payload.url)
+    urls_set.update(payload.urls)
+    write_new_urls(urls_set)
 
     return {
         "ok": True,
