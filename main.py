@@ -32,7 +32,7 @@ ALLOW_PREFIXES = (
 )
 
 def normalize_url(u: str) -> str:
-    # remove fragment (#...), оставляем query
+    # убираем фрагмент (#...), оставляем query
     s = urlsplit(u)
     return urlunsplit((s.scheme, s.netloc, s.path, s.query, ""))
 
@@ -55,7 +55,6 @@ def load_links_fragment(path: str) -> list[str]:
             out.append(u)
     return out
 
-
 def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
     seen = set(loaded)
     result = list(loaded)
@@ -67,13 +66,11 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
 
     return result
 
-
-def write_new_urls(incoming_urls):
+def write_new_urls(content_urls, incoming_urls):
 
     output_name = "dictionary.cambridge.org-urls.html"
     seen = set()
 
-    ##################### filter incoming urls:
     for u in incoming_urls:
         if not u:
             continue
@@ -86,15 +83,18 @@ def write_new_urls(incoming_urls):
 
     loaded_urls = load_links_fragment(output_name)
 
-    result_list = merge_preserve_order(loaded_urls, incoming_urls)
+    result = merge_preserve_order(loaded_urls, incoming_urls)
 
-    print("result_urls:", len(result_list), "loaded:", len(loaded_urls))
+    content_urls_set = set(content_urls)
+    result = [i for i in result if i not in content_urls_set]
 
-    with open(output_name, "w", encoding="utf-8") as f:
-        f.writelines(
-            f'<a href="{u}" target="_blank" rel="noopener noreferrer">{u}</a><br>\n'
-            for u in result_list
-        )
+    print("result_urls:", len(result), "loaded:", len(loaded_urls))
+
+    content = "\n".join(
+        f'<a href="{u}" target="_blank" rel="noopener noreferrer">{u}</a><br>'
+        for u in result
+    )
+    Path(output_name).write_text(content, encoding="utf-8")
 
 
 def save_new_tags(key: str, i_tags: list):
@@ -207,12 +207,12 @@ async def scrape_ordered(payload: ScrapePayload):
 
                 obj = json.loads(line)
 
-                example = obj.get("example", None)
-                if example != None:
+                example = obj.get("example", "")
+                if example != "":
                     data_set.add(example)
 
-                url = obj.get("url", None)
-                if url is not None:
+                url = obj.get("url", "")
+                if url != "":
                     urls_set.add(url)
 
 
@@ -224,14 +224,14 @@ async def scrape_ordered(payload: ScrapePayload):
             if txt not in data_set:
                 added_new += 1
                 rec = {
+                    "url": payload.url,
                     "ext": x.kind,
                     "example": txt,
                 }
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         f.flush()
 
-    urls_set.update(payload.urls)
-    write_new_urls(urls_set)
+    write_new_urls(urls_set, payload.urls)
 
     return {
         "ok": True,
