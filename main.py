@@ -199,10 +199,10 @@ async def scrape_ordered(payload: ScrapePayload):
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
 
+    out_path = Path("dictionary.cambridge.org-parsing.jsonl")
+
     data_set = dict()
     urls_set = set()
-
-    out_path = Path("dictionary.cambridge.org-parsing.jsonl")
 
     if out_path.is_file():
         with out_path.open("r", encoding="utf-8") as fin:
