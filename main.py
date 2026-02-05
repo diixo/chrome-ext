@@ -44,6 +44,34 @@ def filter_str(s: str) -> str:
         s = re.sub(r"(\()\s+", r"\1", s)           # пробелы после '('
     return s
 
+STR_CAMBRIDGE_PATH = "dictionary.cambridge.org-parsing.jsonl"
+
+def load_cambridge(out_path: Path) -> tuple[dict, set]:
+    data_set = dict()
+    urls_set = set()
+
+    if out_path.is_file():
+        with out_path.open("r", encoding="utf-8") as fin:
+            for line in fin:
+                txt = line.strip()
+
+                if not txt:
+                    continue
+
+                obj = json.loads(line)
+
+                url = obj.get("url", None)
+
+                example = obj.get("example", None)
+                example = filter_str(example)
+                if example is not None and example not in data_set:
+                    data_set[example] = obj.get("ext", "")
+
+                    if url is not None:
+                        urls_set.add(url)
+    return data_set, urls_set
+
+data_set, urls_set = load_cambridge(Path(STR_CAMBRIDGE_PATH))
 
 
 def load_links_fragment(path: str) -> list[str]:
@@ -199,30 +227,10 @@ async def scrape_ordered(payload: ScrapePayload):
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
 
-    out_path = Path("dictionary.cambridge.org-parsing.jsonl")
+    out_path = Path(STR_CAMBRIDGE_PATH)
 
-    data_set = dict()
-    urls_set = set()
-
-    if out_path.is_file():
-        with out_path.open("r", encoding="utf-8") as fin:
-            for line in fin:
-                txt = line.strip()
-
-                if not txt:
-                    continue
-
-                obj = json.loads(line)
-
-                url = obj.get("url", None)
-
-                example = obj.get("example", None)
-                example = filter_str(example)
-                if example is not None and example not in data_set:
-                    data_set[example] = obj.get("ext", "")
-
-                    if url is not None:
-                        urls_set.add(url)
+    global data_set # dict
+    global urls_set # set
 
     ##########################################################################
     out_urls = Path("dictionary.cambridge.org-urls.jsonl")
@@ -271,6 +279,8 @@ async def scrape_ordered(payload: ScrapePayload):
                     "ext": x.kind,
                     "example": example,
                 }
+                # updated global data_set
+                data_set[example] = x.kind
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         f.flush()
 
@@ -280,16 +290,24 @@ async def scrape_ordered(payload: ScrapePayload):
             with out_urls.open("a", encoding="utf-8") as f:
                 f.write(json.dumps({"url": payload.url}, ensure_ascii=False) + "\n")
                 f.flush()
+                # update global urls_set
+                urls_set.add(payload.url)
 
-    urls_set.add(payload.url)
+    # updated counter for pages, that was handled manually. Keep it before upating urls_set
+    urls_cntr = str(len(urls_set))
+
+    ##########################################################################
+    # write global urls_set to html file
     urls_set.update(payload.urls)
     write_new_urls(urls_set)
+
+    urls_set = set()
 
     return {
         "ok": True,
         "url": payload.url,
         "added_new": str(added_new),
-        "urls": str(len(urls_set)),
+        "urls": urls_cntr,
         "items_all": str(len(data_set) + added_new)
     }
 
