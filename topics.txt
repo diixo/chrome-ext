@@ -32,12 +32,12 @@ https://dictionary.cambridge.org/topics/time/in-the-past/ !!!
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/single-double-and-multiple/ +++
 
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numbers-including-nought-and-zero/
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/addition-subtraction-multiplication-and-division/
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/terms-for-numbers/ !!!
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numbers-including-nought-and-zero/ !!!!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/numbering-and-counting/ !!!!!
 
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/branches-and-types-of-mathematics/ ++
@@ -76,7 +76,7 @@ https://dictionary.cambridge.org/topics/finance/costs-expenses/ !!!
 
 https://dictionary.cambridge.org/topics/moving-objects/placing-and-positioning-an-object/ !!!
 
-https://dictionary.cambridge.org/topics/comparing-and-classifying/linking-and-relating/ !!!!!!!!!
+https://dictionary.cambridge.org/topics/comparing-and-classifying/linking-and-relating/ +++
 
 
 
@@ -104,6 +104,7 @@ trailer , trailer camping, trailer park.
 boot ... categories
 
 off-...
+self-...
 
 drive
 
