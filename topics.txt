@@ -37,12 +37,15 @@ https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numb
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/addition-subtraction-multiplication-and-division/
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/terms-for-numbers/ !!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numbers-including-nought-and-zero/ !!!!!
+
+
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/branches-and-types-of-mathematics/ ++
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/calculations-and-calculating/ ++
 
 https://dictionary.cambridge.org/topics/business/working-hours/ ++
-
+https://dictionary.cambridge.org/topics/furniture-and-fittings/tables-and-desks/ ++
 
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/geometrical-shapes/ !!!
@@ -100,6 +103,8 @@ trailer , trailer camping, trailer park.
 
 boot ... categories
 
+off-...
+
 drive
 
 https://dictionary.cambridge.org/topics/seas-rivers-and-water/parts-of-watercourses/ ++
@@ -127,6 +132,11 @@ https://dictionary.cambridge.org/topics/earth-and-outer-space/areas-of-land-in-g
 https://dictionary.cambridge.org/topics/technology/electricity-and-electronics/ !!!
 
 https://dictionary.cambridge.org/topics/time/finished-and-over/ !!!
+
+####### personal
+
+https://dictionary.cambridge.org/topics/good-and-bad/selfishness/ +++
+https://dictionary.cambridge.org/topics/pride/showing-arrogance-and-conceit/ !!!
 
 
 https://dictionary.cambridge.org/topics/building-and-engineering/road-surfaces-and-features/
