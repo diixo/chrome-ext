@@ -36,9 +36,12 @@ https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numb
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/addition-subtraction-multiplication-and-division/
 
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/terms-for-numbers/
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/terms-for-numbers/ !!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/branches-and-types-of-mathematics/ ++
 
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/calculations-and-calculating/ !!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/calculations-and-calculating/ ++
+
+https://dictionary.cambridge.org/topics/business/working-hours/ ++
 
 
 
@@ -63,6 +66,14 @@ https://dictionary.cambridge.org/topics/drink/warm-drinks/ ++
 https://dictionary.cambridge.org/topics/kitchen-equipment/pots-and-pans/ ++
 
 https://dictionary.cambridge.org/topics/buildings/floors-and-parts-of-floors/ +++
+
+https://dictionary.cambridge.org/topics/size-and-quantity/some-and-quite/ ++
+
+https://dictionary.cambridge.org/topics/finance/costs-expenses/ !!!
+
+https://dictionary.cambridge.org/topics/moving-objects/placing-and-positioning-an-object/ !!!
+
+https://dictionary.cambridge.org/topics/comparing-and-classifying/linking-and-relating/ !!!!!!!!!
 
 
 
@@ -126,7 +137,7 @@ https://dictionary.cambridge.org/topics/technology/communicating-by-telephone/
 
 
 
-https://dictionary.cambridge.org/topics/technology/computer-programming-and-software/
+https://dictionary.cambridge.org/topics/technology/computer-programming-and-software/ !!!!!!!
 
 https://dictionary.cambridge.org/topics/travel/parking/
 
