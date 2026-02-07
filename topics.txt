@@ -37,7 +37,7 @@ https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/addition-subt
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/terms-for-numbers/ !!!
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numbers-including-nought-and-zero/ !!!!!
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/numbering-and-counting/ !!!!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/numbering-and-counting/ +++
 
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/branches-and-types-of-mathematics/ ++
@@ -78,7 +78,7 @@ https://dictionary.cambridge.org/topics/moving-objects/placing-and-positioning-a
 
 https://dictionary.cambridge.org/topics/comparing-and-classifying/linking-and-relating/ +++
 
-https://dictionary.cambridge.org/topics/furniture-and-fittings/furniture-for-storage/ !!!!!
+https://dictionary.cambridge.org/topics/furniture-and-fittings/furniture-for-storage/ +++
 
 
 
@@ -110,6 +110,8 @@ self-...
 
 drive
 
+https://dictionary.cambridge.org/topics/moving-in-particular-directions/crossing-and-moving-through/ !!!
+
 https://dictionary.cambridge.org/topics/seas-rivers-and-water/parts-of-watercourses/ ++
 
 https://dictionary.cambridge.org/topics/building-and-engineering/motorways/ ++
@@ -128,6 +130,8 @@ https://dictionary.cambridge.org/topics/comparing-and-classifying/samples-and-ex
 
 https://dictionary.cambridge.org/topics/travel/railways-and-railway-lines/ ++
 
+https://dictionary.cambridge.org/topics/time/relating-to-time/ ++
+
 
 https://dictionary.cambridge.org/topics/earth-and-outer-space/areas-of-land-in-general/
 
@@ -135,6 +139,9 @@ https://dictionary.cambridge.org/topics/earth-and-outer-space/areas-of-land-in-g
 https://dictionary.cambridge.org/topics/technology/electricity-and-electronics/ !!!
 
 https://dictionary.cambridge.org/topics/time/finished-and-over/ !!!
+
+
+https://dictionary.cambridge.org/topics/beliefs-and-opinions/opinions-beliefs-and-points-of-view/
 
 ####### personal
 
@@ -151,6 +158,9 @@ https://dictionary.cambridge.org/topics/technology/communicating-by-telephone/
 
 
 https://dictionary.cambridge.org/topics/technology/computer-programming-and-software/ !!!!!!!
+https://dictionary.cambridge.org/topics/technology/operating-computers/ !!!!!!!!
+
+
 
 https://dictionary.cambridge.org/topics/travel/parking/
 
