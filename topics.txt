@@ -48,7 +48,7 @@ https://dictionary.cambridge.org/topics/business/working-hours/ ++
 https://dictionary.cambridge.org/topics/furniture-and-fittings/tables-and-desks/ ++
 
 
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/geometrical-shapes/ !!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/geometrical-shapes/ +++
 
 
 
@@ -110,6 +110,7 @@ self-...
 
 drive
 
+https://dictionary.cambridge.org/topics/household-equipment/cords-ropes-cables-and-string/ +++
 
 https://dictionary.cambridge.org/topics/doing-and-achieving/acting-and-acts/ !!!
 
