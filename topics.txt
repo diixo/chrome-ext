@@ -50,6 +50,9 @@ https://dictionary.cambridge.org/topics/furniture-and-fittings/tables-and-desks/
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/geometrical-shapes/ +++
 
+https://dictionary.cambridge.org/topics/moving-on-foot/walking-and-walkers/ ++
+
+https://dictionary.cambridge.org/topics/business/office-practices/ +++
 
 
 https://dictionary.cambridge.org/topics/gardening/gardens-and-yards/ ++
@@ -94,7 +97,7 @@ https://dictionary.cambridge.org/topics/space/under-and-below/ !!!
 https://dictionary.cambridge.org/topics/ability-and-experience/wise-and-sensible/ !!!
 
 
-https://dictionary.cambridge.org/topics/eating-and-feeding/restaurants-and-cafes/ !!!
+https://dictionary.cambridge.org/topics/eating-and-feeding/restaurants-and-cafes/ +++
 
 https://dictionary.cambridge.org/topics/technology/machinery-and-machines/
 
@@ -128,6 +131,8 @@ https://dictionary.cambridge.org/topics/seas-rivers-and-water/parts-of-watercour
 https://dictionary.cambridge.org/topics/building-and-engineering/motorways/ ++
 
 https://dictionary.cambridge.org/topics/travel/drivers/ ++
+
+https://dictionary.cambridge.org/topics/building-and-engineering/urban-and-residential-streets/ +++
 
 https://dictionary.cambridge.org/topics/road-vehicles/buses-trams-and-coaches/ ++
 
