@@ -20,13 +20,15 @@ https://dictionary.cambridge.org/topics/strong-and-weak/physically-strong-and-po
 https://dictionary.cambridge.org/topics/ability-and-experience/skilled-talented-and-able/ !
 
 
-https://dictionary.cambridge.org/topics/liking-and-attractiveness/attractive/ !!!
-
 https://dictionary.cambridge.org/topics/art/art-and-culture/ !!!
+
 
 https://dictionary.cambridge.org/topics/time/now/ !
 
 https://dictionary.cambridge.org/topics/time/in-the-past/ !!!
+
+https://dictionary.cambridge.org/topics/time/in-the-future-and-soon/ !!!
+
 
 
 
@@ -94,7 +96,7 @@ https://dictionary.cambridge.org/topics/height-width-and-length/low-short-and-sh
 https://dictionary.cambridge.org/topics/space/under-and-below/ !!!
 
 
-https://dictionary.cambridge.org/topics/ability-and-experience/wise-and-sensible/ !!!
+https://dictionary.cambridge.org/topics/ability-and-experience/wise-and-sensible/ +++
 
 
 https://dictionary.cambridge.org/topics/eating-and-feeding/restaurants-and-cafes/ +++
@@ -113,6 +115,8 @@ self-...
 here ...
 
 aspectlia
+
+https://dictionary.cambridge.org/topics/liking-and-attractiveness/attractive/ !!!
 
 https://dictionary.cambridge.org/topics/interest-and-excitement/making-people-excited-and-interested/ !!!
 
