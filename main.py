@@ -222,7 +222,11 @@ def html_to_text(html: str) -> str:
 
 @app.post("/parse-save")
 async def scrape_ordered(payload: ScrapePayload):
-    print(f"/parse-save items.sz={len(payload.items)}, urls.sz={len(payload.urls)}")
+    from datetime import datetime
+
+    t_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    print(f"/parse-save items.sz={len(payload.items)} [{t_time}]")
 
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
