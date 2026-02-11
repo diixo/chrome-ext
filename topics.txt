@@ -35,7 +35,7 @@ https://dictionary.cambridge.org/topics/time/in-the-future-and-soon/ !!!
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/single-double-and-multiple/ +++
 
 
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/addition-subtraction-multiplication-and-division/
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/addition-subtraction-multiplication-and-division/ !!!
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/terms-for-numbers/ !!!
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/cardinal-numbers-including-nought-and-zero/ !!!!!
@@ -133,7 +133,7 @@ https://dictionary.cambridge.org/topics/time/continue-and-last/ !!!
 
 https://dictionary.cambridge.org/topics/pleasure/relieved-and-thankful/ !!!
 
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/describing-angles-lines-and-orientations/ !!!
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/describing-angles-lines-and-orientations/ +++
 
 https://dictionary.cambridge.org/topics/seas-rivers-and-water/inland-waters/ +++
 
@@ -243,8 +243,6 @@ https://dictionary.cambridge.org/topics/business/shops-and-auctions/
 https://dictionary.cambridge.org/topics/full-and-empty/detailed-and-careful/
 
 https://dictionary.cambridge.org/topics/easy-and-difficult/complexity/
-
-https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/describing-angles-lines-and-orientations/
 
 https://dictionary.cambridge.org/topics/education/types-of-school/
 
