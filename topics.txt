@@ -51,6 +51,7 @@ https://dictionary.cambridge.org/topics/furniture-and-fittings/tables-and-desks/
 
 
 https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/geometrical-shapes/ +++
+https://dictionary.cambridge.org/topics/mathematics-and-arithmetic/parts-of-geometrical-shapes/ !!!
 
 https://dictionary.cambridge.org/topics/moving-on-foot/walking-and-walkers/ ++
 
@@ -115,6 +116,8 @@ self-...
 here ...
 
 aspectlia
+
+https://dictionary.cambridge.org/topics/comparing-and-classifying/opposites/ ++
 
 https://dictionary.cambridge.org/topics/food/types-of-fruit/ +++
 
