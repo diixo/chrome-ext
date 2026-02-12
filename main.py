@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from typing import List, Literal, Optional
 import re
+from datetime import datetime
+
 
 filepath = "db.json"
 app = FastAPI()
@@ -222,19 +224,18 @@ def html_to_text(html: str) -> str:
 
 @app.post("/parse-save")
 async def scrape_ordered(payload: ScrapePayload):
-    from datetime import datetime
+
+    global data_set # dict
+    global urls_set # set
 
     t_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    print(f"/parse-save items.sz={len(payload.items)} [{t_time}]")
+    print(f"/parse-save items.sz={len(payload.items)} [{t_time}] db.items: {len(data_set.items())}")
 
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
 
     out_path = Path(STR_CAMBRIDGE_PATH)
-
-    global data_set # dict
-    global urls_set # set
 
     ##########################################################################
     out_urls = Path("dictionary.cambridge.org-urls.jsonl")
