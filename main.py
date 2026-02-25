@@ -46,11 +46,10 @@ def filter_str(s: str) -> str:
         s = re.sub(r"(\()\s+", r"\1", s)           # пробелы после '('
     return s
 
-STR_CAMBRIDGE_PATH = "dictionary.cambridge.org-parsing.jsonl"
+STR_CAMBRIDGE_00 = "dictionary.cambridge.org-parsing.jsonl"
+STR_CAMBRIDGE_01 = "dictionary.cambridge.org-01.jsonl"
 
-def load_cambridge(out_path: Path) -> tuple[dict, set]:
-    data_set = dict()
-    urls_set = set()
+def load_cambridge(out_path: Path, data_set: dict, urls_set: set) -> tuple[dict, set]:
 
     if out_path.is_file():
         with out_path.open("r", encoding="utf-8") as fin:
@@ -73,7 +72,11 @@ def load_cambridge(out_path: Path) -> tuple[dict, set]:
                         urls_set.add(url)
     return data_set, urls_set
 
-data_set, urls_set = load_cambridge(Path(STR_CAMBRIDGE_PATH))
+
+data_set = dict()
+urls_set = set()
+load_cambridge(Path(STR_CAMBRIDGE_00), data_set, urls_set)
+load_cambridge(Path(STR_CAMBRIDGE_01), data_set, urls_set)
 
 
 def load_links_fragment(path: str) -> list[str]:
@@ -235,7 +238,7 @@ async def scrape_ordered(payload: ScrapePayload):
     # if not payload.items:
     #     raise HTTPException(status_code=400, detail="Empty items")
 
-    out_path = Path(STR_CAMBRIDGE_PATH)
+    out_path = Path(STR_CAMBRIDGE_01)
 
     ##########################################################################
     out_urls = Path("dictionary.cambridge.org-urls.jsonl")
