@@ -46,7 +46,7 @@ def filter_str(s: str) -> str:
         s = re.sub(r"(\()\s+", r"\1", s)           # пробелы после '('
     return s
 
-STR_CAMBRIDGE_00 = "dictionary.cambridge.org-parsing.jsonl"
+STR_CAMBRIDGE_00 = "dictionary.cambridge.org-00.jsonl"
 STR_CAMBRIDGE_01 = "dictionary.cambridge.org-01.jsonl"
 
 def load_cambridge(out_path: Path, data_set: dict, urls_set: set) -> tuple[dict, set]:
