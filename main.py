@@ -83,7 +83,7 @@ def load_links_fragment(path: str) -> list[str]:
 
     HREF_RE = re.compile(r'href="([^"]+)"')
 
-    seen = set()
+    seen = dict()
     out = []
 
     file_path = Path(path)
@@ -91,9 +91,15 @@ def load_links_fragment(path: str) -> list[str]:
         text = file_path.read_text(encoding="utf-8")
         links = HREF_RE.findall(text)
 
+        # TODO: filter urls by allow prefixes and normalize them
+
         # unique preserving order
         for u in links:
-            seen.add(u)
+
+            if u.find("search/english/?q=") < 0:
+                continue
+
+            seen[u] = True
             out.append(u)
     return out
 
