@@ -49,7 +49,8 @@ def filter_str(s: str) -> str:
 STR_CAMBRIDGE_00 = "dictionary.cambridge.org-00.jsonl"
 STR_CAMBRIDGE_01 = "dictionary.cambridge.org-01.jsonl"
 
-def load_cambridge(out_path: Path, data_set: dict, urls_set: set) -> tuple[dict, set]:
+
+def load_cambridge(out_path: Path, data_set: dict) -> dict:
 
     if out_path.is_file():
         with out_path.open("r", encoding="utf-8") as fin:
@@ -61,32 +62,27 @@ def load_cambridge(out_path: Path, data_set: dict, urls_set: set) -> tuple[dict,
 
                 obj = json.loads(line)
 
-                url = obj.get("url", None)
-
                 example = obj.get("example", None)
                 example = filter_str(example)
                 if example is not None and example not in data_set:
                     data_set[example] = obj.get("ext", "")
 
-                    if url is not None:
-                        urls_set.add(url)
-    return data_set, urls_set
+    return data_set
 
 
 data_set = dict()
 urls_set = set()
-load_cambridge(Path(STR_CAMBRIDGE_00), data_set, urls_set)
-load_cambridge(Path(STR_CAMBRIDGE_01), data_set, urls_set)
+load_cambridge(Path(STR_CAMBRIDGE_00), data_set)
+load_cambridge(Path(STR_CAMBRIDGE_01), data_set)
 
 
-def load_links_fragment(path: str) -> list[str]:
+def load_html_links_fragment(html_path: str) -> list[str]:
 
     HREF_RE = re.compile(r'href="([^"]+)"')
 
     seen = dict()
-    out = []
 
-    file_path = Path(path)
+    file_path = Path(html_path)
     if file_path.is_file():
         text = file_path.read_text(encoding="utf-8")
         links = HREF_RE.findall(text)
@@ -100,25 +96,34 @@ def load_links_fragment(path: str) -> list[str]:
                 continue
 
             seen[u] = True
-            out.append(u)
-    return out
+    return list(seen.keys())
 
 
 def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
-    seen = set(loaded)
-    result = list(loaded)
 
+    result = dict()
+
+    # filter loaded
+    for u in loaded:
+
+        topic_id = u.find("?topic=")
+        if topic_id > 0:
+            u = u[:topic_id]
+        result[u] = True
+
+    # filter incoming
     for u in incoming:
-        if u not in seen:
-            seen.add(u)
-            result.append(u)
 
-    return result
+        topic_id = u.find("?topic=")
+        if topic_id > 0:
+            u = u[:topic_id]
+        result[u] = True
+
+    return list(result.keys())
 
 
 def write_new_urls(incoming_urls):
 
-    output_name = "dictionary.cambridge.org-urls.html"
     seen = set()
 
     for u in incoming_urls:
@@ -131,13 +136,15 @@ def write_new_urls(incoming_urls):
 
     #####################
 
-    loaded_urls = load_links_fragment(output_name)
+    output_html = "dictionary.cambridge.org-urls.html"
+
+    loaded_urls = load_html_links_fragment(output_html)
 
     result_list = merge_preserve_order(loaded_urls, seen)
 
     print("result_urls:", len(result_list), "loaded:", len(loaded_urls))
 
-    with open(output_name, "w", encoding="utf-8") as f:
+    with open(output_html, "w", encoding="utf-8") as f:
         f.writelines(
             f'<a href="{u}" target="_blank" rel="noopener noreferrer">{u}</a><br>\n'
             for u in result_list
@@ -249,35 +256,19 @@ async def scrape_ordered(payload: ScrapePayload):
     ##########################################################################
     out_urls = Path("dictionary.cambridge.org-urls.jsonl")
 
-    # converting
-    if len(urls_set) > 0:
-        with out_path.open("w", encoding="utf-8") as fin:
-            for k, v in data_set.items():
-                rec = {
-                    "ext": v,
-                    "example": k,
-                }
-                fin.write(json.dumps(rec, ensure_ascii=False) + "\n")
-            fin.flush()
+    with out_urls.open("r", encoding="utf-8") as fin:
+        for line in fin:
+            txt = line.strip()
 
-        with out_urls.open("w", encoding="utf-8") as f:
-            for u in urls_set:
-                f.write(json.dumps({"url": u}, ensure_ascii=False) + "\n")
-            f.flush()
-    else:
+            if not txt:
+                continue
 
-        with out_urls.open("r", encoding="utf-8") as fin:
-            for line in fin:
-                txt = line.strip()
+            obj = json.loads(line)
 
-                if not txt:
-                    continue
+            url = obj.get("url", None)
+            if url is not None:
+                urls_set.add(url)
 
-                obj = json.loads(line)
-
-                url = obj.get("url", None)
-                if url is not None:
-                    urls_set.add(url)
 
     # append new items
     added_new = 0
