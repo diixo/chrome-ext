@@ -107,6 +107,9 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
         if aaa > 0:
             u = u[:aaa]
 
+        if u.find("search/english/?q=") > 0 and u.find("+") < 0:
+            u = u.replace("search/english/?q=", "dictionary/english/")
+
         topic_id = u.find("?topic=")
         if topic_id > 0:
             u = u[:topic_id]
@@ -119,6 +122,9 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
         aaa = u.find("&")
         if aaa > 0:
             u = u[:aaa]
+
+        if u.find("search/english/?q=") > 0 and u.find("+") < 0:
+            u = u.replace("search/english/?q=", "dictionary/english/")
 
         topic_id = u.find("?topic=")
         if topic_id > 0:
