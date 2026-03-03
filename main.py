@@ -71,7 +71,7 @@ def load_cambridge(out_path: Path, data_set: dict) -> dict:
 
 
 data_set = dict()
-urls_set = set()
+
 load_cambridge(Path(STR_CAMBRIDGE_00), data_set)
 load_cambridge(Path(STR_CAMBRIDGE_01), data_set)
 
@@ -91,11 +91,8 @@ def load_html_links_fragment(html_path: str) -> list[str]:
 
         # unique preserving order
         for u in links:
-
-            if u.find("search/english/?q=") < 0:
-                continue
-
             seen[u] = True
+
     return list(seen.keys())
 
 
@@ -106,13 +103,22 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
     # filter loaded
     for u in loaded:
 
+        aaa = u.find("&")
+        if aaa > 0:
+            u = u[:aaa]
+
         topic_id = u.find("?topic=")
         if topic_id > 0:
             u = u[:topic_id]
         result[u] = True
 
+
     # filter incoming
     for u in incoming:
+
+        aaa = u.find("&")
+        if aaa > 0:
+            u = u[:aaa]
 
         topic_id = u.find("?topic=")
         if topic_id > 0:
@@ -122,11 +128,11 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
     return list(result.keys())
 
 
-def write_new_urls(incoming_urls):
+def write_new_urls(incoming_urls: dict[str, bool]):
 
     seen = set()
 
-    for u in incoming_urls:
+    for u in incoming_urls.keys():
         if not u:
             continue
         nu = normalize_url(u)
@@ -242,7 +248,8 @@ def html_to_text(html: str) -> str:
 async def scrape_ordered(payload: ScrapePayload):
 
     global data_set # dict
-    global urls_set # set
+    
+    urls_dict = dict()
 
     t_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -267,7 +274,7 @@ async def scrape_ordered(payload: ScrapePayload):
 
             url = obj.get("url", None)
             if url is not None:
-                urls_set.add(url)
+                urls_dict[url] = True
 
 
     # append new items
@@ -291,22 +298,20 @@ async def scrape_ordered(payload: ScrapePayload):
 
     # append new url if added
     if added_new > 0:
-        if payload.url not in urls_set:
+        if payload.url not in urls_dict:
             with out_urls.open("a", encoding="utf-8") as f:
                 f.write(json.dumps({"url": payload.url}, ensure_ascii=False) + "\n")
                 f.flush()
-                # update global urls_set
-                urls_set.add(payload.url)
+                # update global urls_dict
+                urls_dict[payload.url] = True
 
-    # updated counter for pages, that was handled manually. Keep it before upating urls_set
-    urls_cntr = str(len(urls_set))
+    # updated counter for pages, that was handled manually. Keep it before upating urls_dict
+    urls_cntr = str(len(urls_dict))
 
     ##########################################################################
-    # write global urls_set to html file
-    urls_set.update(payload.urls)
-    write_new_urls(urls_set)
-
-    urls_set = set()
+    # write global urls_dict to html file
+    urls_dict.update({url: True for url in payload.urls})
+    write_new_urls(urls_dict)
 
     return {
         "ok": True,
