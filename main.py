@@ -103,6 +103,9 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
     # filter loaded
     for u in loaded:
 
+        if u.find("collocation/english") > 0 or u.find("example/english") > 0:
+            continue
+
         aaa = u.find("&")
         if aaa > 0:
             u = u[:aaa]
@@ -118,6 +121,9 @@ def merge_preserve_order(loaded: list[str], incoming: list[str]) -> list[str]:
 
     # filter incoming
     for u in incoming:
+
+        if u.find("collocation/english") > 0 or u.find("example/english") > 0:
+            continue
 
         aaa = u.find("&")
         if aaa > 0:
