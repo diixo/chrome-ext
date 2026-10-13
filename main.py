@@ -10,6 +10,9 @@ from datetime import datetime
 
 
 filepath = "db.json"
+train_path = Path("train.json")
+train_records = json.loads(train_path.read_text(encoding="utf-8")) if train_path.exists() else []
+train_urls = {record["url"].rstrip('/') for record in train_records}
 app = FastAPI()
 
 
@@ -196,7 +199,7 @@ def save_new_tags(key: str, i_tags: list):
         json.dump(dataset, fd, ensure_ascii=False, indent=2)
 
 
-def save_new_item(url: str, i_txt: list):
+def save_cambridge_item(url: str, i_txt: list):
     dataset = dict()
     path = Path(filepath)
 
@@ -334,8 +337,8 @@ async def scrape_ordered(payload: ScrapePayload):
     }
 
 
-@app.post("/save-selection")
-async def save_selection(data: SelectionData):
+@app.post("/save-cambridge-selection")
+async def save_cambridge_selection(data: SelectionData):
 
     url = data.url.strip('/')
     print(f"Received URL: {url}")
@@ -357,14 +360,31 @@ async def save_selection(data: SelectionData):
         if txt.find("More examples") < 0 and txt.find("Fewer examples") < 0:
             all_items.append(txt)
 
-    save_new_item(url, all_items)
+    save_cambridge_item(url, all_items)
 
     #print(f"Extracted Text:\n{all_text}")
 
+
+@app.post("/save-selection")
+async def save_selection(data: SelectionData):
+    url = data.url.rstrip('/')
+    soup = BeautifulSoup(data.selection_html, 'html.parser')
+    text = soup.get_text(" ", strip=True)
+    added = url not in train_urls
+    if added:
+        train_records.append({"url": url, "text": text})
+        try:
+            train_path.write_text(
+                json.dumps(train_records, ensure_ascii=False, indent=2),
+                encoding="utf-8")
+        except OSError:
+            train_records.pop()
+            raise
+        train_urls.add(url)
     return {
         "status": "ok",
-        "all_text": all_items,
-        "items_count": "items:" + str(len(all_items)),
+        "all_text": text,
+        "items_count": "items:" + str(int(added)),
     }
 
 
