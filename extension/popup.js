@@ -433,8 +433,12 @@ document.getElementById('parse-save').addEventListener('click', async () => {
         const container = document.createElement('div');
         container.appendChild(range.cloneContents());
 
+        container.querySelectorAll(
+          'form, button, input, select, textarea, script, style, noscript, [hidden], [aria-hidden="true"]'
+        ).forEach(el => el.remove());
+
         let html = container.innerHTML;
-        if (!sel.toString().trim()) return '';
+        if (!container.textContent.trim()) return '';
 
         // если "голый текст" — экранируем (в твоём случае html уже содержит <a>, так что не трогаем)
         const hasTags = /<[^>]+>/.test(html);
@@ -445,7 +449,7 @@ document.getElementById('parse-save').addEventListener('click', async () => {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
-          html = esc(sel.toString());
+          html = esc(container.textContent);
         }
 
         // ВОТ ТУТ: всегда даём внешнюю границу

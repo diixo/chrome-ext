@@ -365,11 +365,36 @@ async def save_cambridge_selection(data: SelectionData):
     #print(f"Extracted Text:\n{all_text}")
 
 
+def clean_selection_text(text: str) -> str:
+    lines = []
+    for line in text.splitlines():
+        line = re.sub(r"\s+", " ", line).strip()
+        line = re.sub(r"\s+([.,!?:;\)])", r"\1", line)
+        line = re.sub(r"(\()\s+", r"\1", line)
+        if line:
+            lines.append(line)
+    return "\n".join(lines)
+
+
+def selection_html_to_text(html: str) -> str:
+    soup = BeautifulSoup(html, 'html.parser')
+    for tag in soup.select(
+        'form, button, input, select, textarea, script, style, noscript, [hidden], [aria-hidden="true"]'
+    ):
+        tag.decompose()
+    for tag in soup.find_all('br'):
+        tag.replace_with('\n')
+    for tag in soup.find_all(['p', 'div', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+                              'section', 'article', 'blockquote', 'pre', 'tr']):
+        tag.insert_before('\n')
+        tag.insert_after('\n')
+    return clean_selection_text(soup.get_text(' ', strip=False))
+
+
 @app.post("/save-selection")
 async def save_selection(data: SelectionData):
     url = data.url.rstrip('/')
-    soup = BeautifulSoup(data.selection_html, 'html.parser')
-    text = soup.get_text(" ", strip=True)
+    text = selection_html_to_text(data.selection_html)
     added = url not in train_urls
     if added:
         train_records.append({"url": url, "text": text})
